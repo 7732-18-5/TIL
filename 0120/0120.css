@@ -10,8 +10,10 @@
 
     div.wrapper {
         width: 940px;
-        margin: 180px auto;
+        margin: 0 auto;
     }
+    
+    container {}
     
     header.header {
         height: 120px;

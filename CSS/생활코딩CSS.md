@@ -43,4 +43,26 @@ http://flukeout.github.io/
 http://flukeout.github.io/
 ![CSS cheatsheet selector](./CSS_Diner.png)
 
+---
 
+# 'CSS Property'를 공부하는 방법 
+
+![CSS Property](https://files.slack.com/files-tmb/T8NQQ8N22-F8W03BM6G-b50f2e7f8a/property_1024.png)
+
+---
+
+# CSS Property - Typography
+
+## Font-Size 
+- rem (권장)
+- epx
+- em
+
+rem
+html 태그의 폰트 크기에 따라서 상대적으로 크기가 결정된다. 사용자가 글자 크기를 본인의 취향과 필요에 맞춰 변경 할 수 있다. 가장 권장되는 폰트 사이즈 단위 중 하나이다.
+
+px
+이미지를 구성하는 최소 단위로서 '점'을 의미하고 '도트(Dot)'라고 부르기도 한다. 고정된 값으로 사용자가 글꼴의 크기를 조정할 수 없다.
+
+em
+부모 태그의 영향을 받아 상대적으로 크기가 결정된다. 부모 태그의 글자 크기에 따라서 변하기 때문에 파악하기 어렵다. rem의 등장으로 이 단위의 사용이 권장되지 않는다. 

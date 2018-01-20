@@ -66,3 +66,19 @@ px
 
 em
 부모 태그의 영향을 받아 상대적으로 크기가 결정된다. 부모 태그의 글자 크기에 따라서 변하기 때문에 파악하기 어렵다. rem의 등장으로 이 단위의 사용이 권장되지 않는다. 
+
+---
+
+## Color
+
+https://www.w3schools.com/css/css_colors.asp
+
+-rgb (Truecolor)
+-hexadecimal (16진수 방식 #000000)
+-color (ex tomato, red, blue, black ...)
+
+## Text-align
+
+align: 문서를 작성할 때 문자열을 오른쪽, 중앙, 왼쪽 가운데 어느 한쪽을 기준으로 하여 맞추는 것
+
+---

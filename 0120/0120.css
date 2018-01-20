@@ -1,0 +1,108 @@
+
+    body {
+        /* width: 1300px;
+        height: 2880px; */
+    }
+     
+    *, *::before {
+        box-sizing: border-box;
+    }
+
+    div.wrapper {
+        width: 940px;
+        margin: 180px auto;
+    }
+    
+    header.header {
+        height: 120px;
+        background-color: #515151;
+    }
+    
+    .logo {
+        position: relative;
+        top: 46px;
+        left: 180px;
+        z-index: 10;
+    }
+
+    h1 ::before {
+        position: absolute;
+        left: 11px;
+    }
+
+    nav.menu
+    /* nav.menu {
+        width: 498px;
+        height: 12px;
+        font-size: 16px;
+        font-weight: bold;
+        line-height: 1.12;
+        letter-spacing: 1.6px;
+        text-align: left;
+        color: #ffffff;
+    } */
+
+    /* .menu > li {
+        top: 55px;
+        left: 622px;
+    } */
+
+    div.slider1 {
+        width: 1300px;
+        height: 408px;
+        background-color: #b5b5b5;
+    }
+
+    article {
+        width: 1300px;
+        height: 2880px;
+    }
+
+    div.slider2 {
+        width: 940px;
+        height: 408px;
+        background-color: #959595;
+    }
+    div.inquire button {
+        width: 300px;
+        height: 72px;
+        border-radius: 4px;
+        background-color: #4d4b4a;
+    }
+    input.yourname {
+        width: 460px;
+        height: 48px;
+        border-radius: 4px;
+        background-color: #ffffff;
+        border: solid 1px #dadee8;
+        padding: 2328px 0 0 180px;
+    }
+
+    input.youremail {
+        width: 460px;
+        height: 48px;
+        border-radius: 4px;
+        background-color: #ffffff;
+        border: solid 1px #dadee8;
+        padding: 2328px 0 0 660px;
+    }
+
+    input.yourmessage {
+        width: 940px;
+        height: 240px;
+        border-radius: 4px;
+        background-color: #ffffff;
+        border: solid 1px #dadee8;
+    }
+
+    div.map {
+        width: 1300px;
+        height: 360px;
+        background-color: #f8d2c5;
+    }
+
+    footer {
+        width: 1300px;
+        height: 72px;
+        background-color: #f1f1f1;
+    }

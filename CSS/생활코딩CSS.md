@@ -82,3 +82,17 @@ https://www.w3schools.com/css/css_colors.asp
 align: 문서를 작성할 때 문자열을 오른쪽, 중앙, 왼쪽 가운데 어느 한쪽을 기준으로 하여 맞추는 것
 
 ---
+
+## Font-family: 서체를 지정한다.
+
+- serif (획의 일부 끝이 돌출된 형태를 가진 글씨체)
+- sans-serif (획에 삐침이 없는 글씨체:고딕체)
+- cursive (흘림체)
+- fantasy
+- monospace (고정폭)
+
+## font-weight: 서체의 두께
+
+## line-height: 자간
+
+## font: font-style font-variant font-weight font-size/line-height font-family|caption|icon|menu|message-box|small-caption|status-bar|initial|inherit; 

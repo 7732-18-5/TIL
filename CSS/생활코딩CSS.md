@@ -99,7 +99,7 @@ align: 문서를 작성할 때 문자열을 오른쪽, 중앙, 왼쪽 가운데 
 
 ---
 
-# 서체
+## 서체
 서체는 크게 가변폭과 고정폭으로 구분된다.
 
 ## Sans serif
@@ -111,3 +111,14 @@ http://www.fontreach.com/#top
 
 ## Naver Font 
 http://software.naver.com/software/fontList.nhn?categoryId=I0000000#brandId=
+
+---
+## Web Font
+
+사용자가 가지고 있지 않은 폰트를 웹페이지에서 사용할 수 있는 방법입니다.
+
+## Google Font
+https://fonts.google.com/?authuser=1
+
+## Web-Font-Generator
+https://www.web-font-generator.com/

@@ -128,3 +128,20 @@ https://www.web-font-generator.com/
 상속은 부모 엘리먼트의 속성을 자식 엘리먼트가 물려받는 것을 의미합니다. 
 상속은 CSS에서 생산성을 높이기 위한 중요한 기능이다
 https://www.w3.org/TR/CSS21/propidx.html
+
+---
+stackoverflow
+https://stackoverflow.com/
+
+stylish
+https://userstyles.org/
+
+
+!important;
+
+---
+# Cascading
+
+CSS는 Cascading Style Sheet의 약자입니다. Cascading은 CSS의 첫번째 글자로 등장할만큼 가장 중요한 기능 다시 말해 철학이라는 의미가 있습니다. Cascading을 사전에서 찾아보면 폭포라는 의미가 있습니다. 즉 웹페이지의 디자인이 웹브라우저의 기본 디자인과 브라우저 사용자의 디자인 그리고 웹페이지 저자의 디자인이 결합될 수 있다는 점에 착안하고 있다고 할 수 있습니다.
+
+즉 웹브라우저, 사용자, 컨텐츠 생산자의 조화를 중요한 철학으로 삼고 있다고 생각됩니다. 여기서는 하나의 엘리먼트에 대해서 다양한 효과가 영향력을 행사하려고 할 때 우선순위를 어떻게 설정하는가에 대한 규칙을 '캐스캐이딩'이라고 한다.

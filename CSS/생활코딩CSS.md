@@ -96,3 +96,18 @@ align: 문서를 작성할 때 문자열을 오른쪽, 중앙, 왼쪽 가운데 
 ## line-height: 자간
 
 ## font: font-style font-variant font-weight font-size/line-height font-family|caption|icon|menu|message-box|small-caption|status-bar|initial|inherit; 
+
+---
+
+# 서체
+서체는 크게 가변폭과 고정폭으로 구분된다.
+
+## Sans serif
+- sans 는 '~이 아니다.' 라는 뜻을 가지고 있습니다.
+- serif 는 '글꼴에서 사용되는 장식(삐침)을 의미합니다.
+
+## Font Ranking  
+http://www.fontreach.com/#top
+
+## Naver Font 
+http://software.naver.com/software/fontList.nhn?categoryId=I0000000#brandId=

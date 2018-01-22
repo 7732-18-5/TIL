@@ -122,3 +122,9 @@ https://fonts.google.com/?authuser=1
 
 ## Web-Font-Generator
 https://www.web-font-generator.com/
+
+---
+
+상속은 부모 엘리먼트의 속성을 자식 엘리먼트가 물려받는 것을 의미합니다. 
+상속은 CSS에서 생산성을 높이기 위한 중요한 기능이다
+https://www.w3.org/TR/CSS21/propidx.html

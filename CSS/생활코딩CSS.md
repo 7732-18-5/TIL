@@ -173,5 +173,15 @@ div>ul>li
 div+p+bq
 
 ---
+# layout
 
+정보를 잘 정리 정돈해서 일관된 모습으로 보여지도록 하는 것은 디자인에서 매우 중요한 주제입니다. 구획을 나누고 적절히 정보를 배치하는 것을 레이아웃(layout)이라고 합니다. 안타깝게도 CSS를 이용해서 레이아웃을 잡는 것은 다소 어려운 것이 사실입니다. 하위 토픽에서는 레이아웃을 잡기 위해서 필요한 기본적인 개념들을 알아보고 실제로 사용하는 모습도 살펴보겠습니다.
+
+- inline element VS block level element 
+- boxmodel
+- 마진겹침 현상
+- 포지션
+- float
+ 
 ---
+block level element (block level tag)

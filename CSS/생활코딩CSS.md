@@ -184,4 +184,13 @@ div+p+bq
 - float
  
 ---
-block level element (block level tag)
+## block level element (block level tag)
+
+## inline level element
+
+---
+
+## Box Model
+- margin
+- border
+- pedding

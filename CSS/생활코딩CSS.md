@@ -194,3 +194,12 @@ div+p+bq
 - margin
 - border
 - pedding
+>- margin>border>pedding>content에 위치합니다.
+>- content 가 차지하는 공간을 'content-box'라고 합니다. 
+>- content-box는 width와 height를 사용해 변경 할 수 있습니다. 
+---
+## Box-sizing
+
+box-sizing은 박스의 크기를 화면에 표시하는 방식을 변경하는 속성입니다.
+box-sizing을 지정하지 않았을 때 초기값은 content-box입니다. 
+width와 height는 엘리먼트의 컨텐츠의 크기를 지정합니다. 따라서 테두리가 있는 경우에는 테두리의 두께로 인해서 원하는 크기를 직관적으로 파악하기 어렵습니다. box-sizing 속성을 border-box로 지정하면  테두리를 포함한 크기를 지정할 수 있기 때문에 예측하기가 더 쉽습니다. 최근엔 모든 엘리먼트에 이 값을 지정하는 추세입니다.

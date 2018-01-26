@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        #parent,#other,#grand {
+            border: 5px solid tomato;
+            padding: 30px;
+        }
+        #grand {
+            position: relative;
+        }
+        #me {
+            background-color: black;
+            color: white; 
+            position: relative;
+            /* position: static; */
+            /* position: absolute; */
+            /* left: 100px;
+            top: 100px; */
+        }
+    </style>
+</head>
+<body>
+    <div id="other">other</div>
+    <div id="grand">
+        grand
+        <div id="parent">
+            parent
+            <div id="me">me</div>
+        </div>
+    </div>
+
+</body>
+
+</html>

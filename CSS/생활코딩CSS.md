@@ -217,9 +217,64 @@ sibling (형제관계 element:동등한관계), parents child (부모-자식관�
 ---
 
 # Position
-html tag element 들이 화면상에 어디에 위치할 것인가를 결정하는 주제입니다. 박스 모델이 엘리먼트와 엘리먼트 간의 간격 부피감을 결정하는 주제였다면, 포지션은 각각의 엘리먼트의 위치를 결정하는 것과 관련있는 주제입니다.
+position은 'html element(tag+content)' 들이 화면상에 어디에 위치할 것인가를 결정하는 주제입니다. box-model이 element ~ element의 간격과 부피감을 결정하는 주제였다면, position은 각각의 element의 위치를 결정하는 것과 관련된 주제입니다.
 
-- static
-- relative
-- absolute
-- fixed
+- static (default) : 위치와 관련된 값을 설정을 하지 않은 상태의 기본값
+- relative : (offset) 위치와 관련된 값을 설정 할 수 있는 상태
+- absolute : 시각적으로 'parents-child' 관계가 끊기기 때문에, absolute 를 지정한 element의 부피는 자신의 content 크기 만해지고 'parents element'는 'child element'를 자신의 부피에 포함시키지 않는다. 절대적인 위치를 지정 할 수 있다.
+- fixed : 시각적으로 'parents-child' 관계가 끊기기 때문에, absolute 를 지정한 element의 부피는 자신의 content 크기 만해지고 'parents element'는 'child element'를 자신의 부피에 포함시키지 않는다. 스크롤과 관계없이 화면에 고정된다.
+
+---
+
+# offset
+
+컴퓨터 과학에서 배열이나 자료 구조 오브젝트 내의 오프셋(offset)은 일반적으로 동일 오브젝트 안에서 오브젝트 처음부터 주어진 요소나 지점까지의 <strong>변위차를 나타내는 정수형</strong>이다. 
+
+이를테면, 문자 A의 배열이 abcdef를 포함한다면 'c' 문자는 A 시작점에서 2의 오프셋을 지닌다고 할 수 있다. 어셈블리어와 같은 저급 프로그래밍 언어에서 오프셋은 상대 주소(relative address)로 부른다.
+top > bottom (top과 bottom 중 top이 우선순위이다.)
+left > right (left와 right 중 right가 우선순위이다.)
+
+---
+
+# relative : parent element를 기준으로 상대적으로 left top right bottom 위치값을 지정할 수 있다.
+
+# absolute : 상황에 따라 &lt;html&gt; element를 기준으로 offset(위치값)을 지정해야 할 때 absolute을 사용한다.
+
+---
+
+>## absolute : absolute에 left=0; top=0; 을 지정한 경우,  &lt;html&gt; element를 기준으로 위치값이 지정된다.
+
+>## absolute : absolute에 offset을 지정하지 않은 경우, 'parent element' 의 'content-box'의 바깥 부분에 위치값이 지정된다.
+---
+
+>## absolute : absolute를 지정하게 되면, 'parents' element에 영향을 받지 않고 offset 위치값이 지정되게 된다. (상위 레이어로 지정된다.) 
+
+>## absolute : position: type (static을 제외한) 이 'parents element'에 지정된 경우, 그 값을 기준으로 offset이 지정된다.
+
+---
+# fixed
+
+>## fixed : width 와 height 를 지정하지 않으면 content-box 크기가 된다. 
+
+>## fixed : fixed elements의 'parents element'는 fixed를 지정하는 순간, 시각적으로 parents-child 관계가 끊기게 된다. 즉 'parents element'는 'child element'의 크기를 포함하지 않는다.
+
+---
+# Position
+
+- static (default) : element가 생성된 곳에 위치값이 지정된다.
+- relative : (offset) 특정 element를 'parents element'를 기준으로 위치 지정하기 위해 사용한다.
+- absolute : &lt; html &gt; element를 (절대값) 기준으로 한 후, offset 값을 설정해 위치를 지정하기 위해 사용한다.
+- fixed : absolute와 마찬가지로 'parents element'와 시각적으로 독립되기 때문에 width 와 height를 다시 지정해주어야 한다.
+
+---
+## absolute,fixed
+>- absolute, fixed 를 설정하면 부피(면적), 위치관계 등 시각적인 정보가 'parents element'로 부터 독립된다.
+html tag markup 에서 설정한 'parents-child'등을 포함하는 구조적관계가 파괴되고 재정의 되는 것은 아니다.
+따라서 상속을 포함한 html의 모든 문법은 그대로 적용된다.
+
+
+>- html(Tag markup) , 구조적인 관계에서 'parents-child'관계에 영향을 미치지 않는다.. CSS (style sheet) , 시각적인 정보에서 'parents-child'관계가 독립된다. 
+
+
+>- absolute,fixed를 지정할 때 'parents-child' 에 연관된 시각적인 정보 (위치관계)가 독립되는 것을 "layout상에서 위치관계가 끊긴다." 고 표현한 사람도 있었다.
+

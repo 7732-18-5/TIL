@@ -203,3 +203,23 @@ div+p+bq
 box-sizing은 박스의 크기를 화면에 표시하는 방식을 변경하는 속성입니다.
 box-sizing을 지정하지 않았을 때 초기값은 content-box입니다. 
 width와 height는 엘리먼트의 컨텐츠의 크기를 지정합니다. 따라서 테두리가 있는 경우에는 테두리의 두께로 인해서 원하는 크기를 직관적으로 파악하기 어렵습니다. box-sizing 속성을 border-box로 지정하면  테두리를 포함한 크기를 지정할 수 있기 때문에 예측하기가 더 쉽습니다. 최근엔 모든 엘리먼트에 이 값을 지정하는 추세입니다.
+
+---
+## margin-collapsing 
+
+마진겹침(margin-collapsing) 현상은 상하 마진값이 어떤 상황에서 사라지는 현상을 의미합니다.
+sibling (형제관계 element:동등한관계), parents child (부모-자식관계 element:상하관계)
+
+1. sibling elements 의 마진이 중첩 될 때, 둘 중 마진이 큰 값이 둘 사이의 마진이 된다.
+2. elements 의 마진이 중첩되고, 둘중 하나의 element 의 시각적 요소가 없어지면, 중첩된 마진 값 중 큰 값이 마진으로 적용된다.
+3. parents-child element 에서 parents element 의 시각적 요소가 없어지면, 둘 중 마진이 큰 값이 child element의 마진으로 적용된다.
+
+---
+
+# Position
+html tag element 들이 화면상에 어디에 위치할 것인가를 결정하는 주제입니다. 박스 모델이 엘리먼트와 엘리먼트 간의 간격 부피감을 결정하는 주제였다면, 포지션은 각각의 엘리먼트의 위치를 결정하는 것과 관련있는 주제입니다.
+
+- static
+- relative
+- absolute
+- fixed

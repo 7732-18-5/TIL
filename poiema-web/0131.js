@@ -19,8 +19,27 @@ var i = 0;
 
 while (i < 10) {
     i++;
-    if (i % 2 == 0);
+    if (i % 2 == 0){
     console.log(i);
+    }
 }
 
 // while문을 사용하여 0부터 10까지 정수 중에서 홀수만을 작은 수부터 출력하시오.
+
+var i = 0;
+
+while (i < 10) {
+    i++;
+    if (i % 2 == 1) {
+        console.log(i);
+    }
+}
+
+// for문을 사용하여 0부터 10미만의 정수의 합을 출력하시오.
+var x =0
+for (var i = 0; i < 10; i++) {
+    x+=i;
+}
+
+console.log(x);
+

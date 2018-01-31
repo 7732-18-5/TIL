@@ -25,3 +25,13 @@ for (var i = 0; i < 5; i++) {
     }
 }
 //
+    
+var asterisk = '*'
+
+for (var i = 1; i <= 5; i++) {
+    asterisk += '\n' * i;
+    console.log(asterisk)
+}
+
+var asterisk = '';
+while (var asterisk='*')

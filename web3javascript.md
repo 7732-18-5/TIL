@@ -180,3 +180,42 @@ else if는 좀 더 다양한 케이스의 조건을 검사할 수 있는 기회�
 > ||
 
 `||`는 좌우항 중에 하나라도 true라면 true가 되는 논리 연산자다.
+
+> !
+
+`!`는 부정의 의미로, `Boolean`의 값을 역전시킨다. true를 false로 false를 true로 만든다. not 연산자라고 부른다. 
+
+> 조건문에 사용될 수 있는 데이터 형이 꼭 `Boolean` 인 것은 아니다. 관습적인 이유로 0는 false 0이 아닌 값은 true로 간주된다.
+
+```javascript
+if(0){
+    alert(1)
+}
+if(1){
+    alert(2)
+}
+```
+
+> false와 0 외에 false로 간주되는 데이터형의 리스트다. 
+
+if문의 조건으로 !(부정) 연산자를 사용했기 때문에 각 조건문의 첫번째 블록이 실행되는 것은 주어진 값이 false이기 때문이다.
+
+```javascript
+if(!''){
+    alert('빈 문자열')
+}
+if(!undefined){
+    alert('undefined');
+}
+var a;
+if(!a){
+    alert('값이 할당되지 않은 변수'); 
+}
+if(!null){
+    alert('null');
+}
+if(!NaN){
+    alert('NaN');
+}
+```
+

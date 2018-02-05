@@ -4,7 +4,7 @@
 
 var str = 0;
 
-for (var i = 0; i <= 10,000; i++) {
+for (var i = 1; i <= 10,000; i++) {
     if (str [i] == '8')
     console.log(str[i])
 }

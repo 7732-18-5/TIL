@@ -155,11 +155,11 @@ NaN은 0/0과 같은 연산의 결과로 만들어지는 특수한 데이터 형
 
 ---
 
-# 6. 조건문
+# 6. 조건문 Condision
 
 > Boolean
 
-비교 연산의 결과로 참(true)이나 거짓(false)을 . 여기서 참과 거짓은 '숫자와 문자 수업'에서 배운 숫자와 문자처럼 언어에서 제공하는 데이터 형이다. 이를 Boolean(불린)이라고 부르고 불린으로 올 수 있는 값은 true와 false 두가지 밖에 없다. 불린은 조건문에서 핵심적인 역할을 담당한다.
+비교 연산의 결과로 참(true)이나 거짓(false)을 제공하는 `data type` 이다. `Boolean` 에 올 수 있는 값은 true와 false 뿐이다. 조건문에서 핵심적이 역할을 한다.
 
 > 조건문
 
@@ -227,79 +227,53 @@ if(!NaN){
 
 `control + opion + n`
 
-boolean true
-
----
 
 
+If ('boolean value' = true : 조건식) {
 
-1. 변수란 무엇인가.
+​	실행구문;
 
-> 메모리 내부에 값을 할당 하는 것
+}
 
-2. 호이스팅
-
-> 모든 선언문들이 전역스코프 위로 올린 것 처럼 동작하는 것
-
-선언>초기화>할당
-
-3. Call-by-value
-4. Call-by-reference
-5. 선언식 표현식 생성자함수(new)
-
-> new생성자 함수 (prototype)
-
-6. 일급객체
-
-> 무명의 리터럴로 표현 할 수 있다. 
->
-> 변수나 자료구조에 저장 할 수 있다.
->
-> 함수의 파라미터로 전달 할 수 있다.
->
-> 리턴값으로 사용할 수 있다.
-
-7. 객체생성
-
-> 객체 리터럴
-
-> Object () 생성자 함수
-
-> 생성자 함수
-
-8. 기본자료형 immutable / pass by value 	
-
-9. var 키워드로 선언된 변수의 문제점 
-
-   1. Function-level scope 전역 변수의 남발 
-
-   for loop 초기화식에서 사용한 변수를 for loop 외부 또는 전역에서 참조할 수 있다.
-
-   2. var 키워드 생략 허용 
-
-   3. 의도하지 않은 변수의 전역화 중복 선언 허용 
-
-      의도하지 않은 변수값 변경 
-
-   4. 변수 호이스팅 변수를 선언하기 전에 참조가 가능하다.
-
-10. == === && ||
-
-11. ## Truthy & Falsy values
-
-     Boolean context에서 `false`로 평가된다.
-
-    - `false`
-    - `undefined`
-    - `null`
-    - `0`
-    - `NaN` (Not a Number)
-    - `''` (빈문자열)
-
-12. -
+```javascript
+if('boolean value' = true) {
+	alert(1);
+}
+```
 
 
-1. 함수 호출 패턴(Function Invocation Pattern)
-2. 메소드 호출 패턴(Method Invocation Pattern)
-3. 생성자 호출 패턴(Constructor Invocation Pattern)
-4. apply 호출 패턴(Apply Invocation Pattern)
+
+```javascript
+prompt('당신의 나이는?');
+alert(prompt('당신의 나이는?'));
+alert(prompt('당신의 나이는?')*2);
+```
+
+
+
+```html
+<!DOCTYPE html>
+<html>  
+<head>
+  <meta charset = "utf-8"/>
+</head>
+<body>
+  <script>
+  	var id = prompt('아이디를 입력해주세요.')
+    if(id == 'egoing'){
+      var password = prompt('비밀번호를 입력해주세요.')
+      if(password == '111111'){
+        alert('로그인 하셨습니다.')
+      } 
+      else {
+        alert('비밀번호가 다릅니다.')
+	  }     
+    }
+    else {
+      alert('아이디가 일치하지 않습니다.')
+    }
+  </script>
+</body>
+</html>
+```
+

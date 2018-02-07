@@ -389,7 +389,13 @@ true와 false가 `종료조건`이 되는데, 이 값을 통해서 `반복문`�
 
 `반목문`에서 `종료조건`을 잘못 지정하면, `무한반복`되거나 `반복문`이 실행되지 않는다.
 
+```javascript
+var i = 0;//변수 선언 및 초기화 (기준점)
+while(i < 10)// 반복 조건
+	document.write("coding hello everybody" +i+ "<br/>")
+	i = i + 1;// 증
+```
+
 
 
 > for
-

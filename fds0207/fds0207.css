@@ -1,0 +1,35 @@
+@charset "utf-8";
+@import "fonts.css";
+/*  */
+html, body{
+    margin: 0;
+}
+html{
+    font-size: 10px;
+}
+body{
+    background: #fff;
+    color: #181818;
+    /* font-family: ; */
+}
+/*  */
+.SPECIAL_PRODUCTS{
+    width: 1500px;
+    margin: 0;
+}
+ul{
+    list-style: none
+}
+.item {
+    width: 276px;
+    position: relative;
+}
+.price{
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+/* .SHOP_BY_CATEGORY{
+    width: 1500px;
+} */

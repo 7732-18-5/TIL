@@ -9,7 +9,10 @@
 // num.string
 // string()
 function strToInt(str) {
-
+    var a = parseInt(str);
+    console.log(typeof a);
+    return a;
+    //    return parseInt(str);
 }
 
 console.log(strToInt('1234'));  // 1234

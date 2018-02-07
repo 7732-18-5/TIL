@@ -16,19 +16,22 @@
 // toUppercase
 
 function toWeirdCase(s) {
-    var arr = toWeirdCase(s);
-    var splitArr = arr.split('');
 
-    for(var i = 0; i < splitArr.length; i++)
+    var split = s.split('');
+    for(var i = 0; i < split.length; i++)
 
         if(i % 2 == 0){
-            split.toLowercase()
+            split.toLowerCase();
         }
         else {
-            split.toUppercase()
+            split.toUpperCase();
         }
-        return string.arr
+        return split;
 }
 
 console.log(toWeirdCase('hello world'));
 console.log(toWeirdCase('my name is lee'));
+
+
+
+

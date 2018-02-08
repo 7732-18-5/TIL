@@ -404,5 +404,29 @@ while(i < 10)// 반복 조건
 for(var i = 0; i < 10; i++) {
   document.write("Coding everybody"+i+"<br/>")
 }
+
+for(초기화|1; 조건(t&f)|2|5; 증감|4|7){
+  |3|6
+}
+
+++i
+i = 0;
+alert(++i); //1
+
+i++
+i=0;
+alert(i++); //0
+
+i = iterate
 ```
+
+> Loop & Iterate 의 효용
+
+
+
+> Loop & Iterate 의 제어
+
+Break : 반복문의 종류
+
+Continue : 사용한 시점에 종료되고 반복문이 계속된다.
 

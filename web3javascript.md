@@ -399,3 +399,10 @@ while(i < 10)// 반복 조건
 
 
 > for
+
+```javascript
+for(var i = 0; i < 10; i++) {
+  document.write("Coding everybody"+i+"<br/>")
+}
+```
+

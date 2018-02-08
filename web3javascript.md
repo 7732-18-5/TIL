@@ -133,8 +133,6 @@ NaN은 0/0과 같은 연산의 결과로 만들어지는 특수한 데이터 형
 | :--------------------: | :-------: |
 | **null === undefined** | **false** |
 
-[http://dorey.github.io/JavaScript-Equality-Table/]()
-
 > `!=` 부등연산자 (inequality) 
 
 '!'는 부정을 의미한다. '같다'의 부정은 '같지 않다'이다. 이것을 기호로는 '!='로 표시한다. 아래의 결과는 !=의 결과인데 ==와 정반대의 결과를 보여준다.
@@ -434,9 +432,9 @@ Continue : 사용한 시점에 종료되고 반복문이 계속된다.
 
 # 8. 함수 function
 
-함수(function)란 하나의 로직을 재실행 할 수 있도록 하는 것으로 **'코드의 재사용성'**을 높여준다.
-
-
+> `Function`이란 로직을 재실행 할 수 있도록 해 
+>
+> **'코드의 재사용성'**, '유지보수의 효율', '가독성' 을 높인다.
 
 ```javascript
 function 함수명 ([인자][인자][인자][인자]){
@@ -445,3 +443,96 @@ function 함수명 ([인자][인자][인자][인자]){
 }
 ```
 
+
+
+> 함수의 효용
+
+> 반복문과 함수의 차이 Loop Iterate, Function
+
+반복문은 일정한 반복을 '그 자리' 에서 실행할 때 의미가 있고,
+함수는 일정한 반복을 '여러 곳' 에서 실행할 때 의미가 있다.
+
+
+
+> 함수의 호출 방법?
+
+```javascript
+function 함수명 (argument1, argument2){
+  코드
+  return 반환값
+}
+
+함수명(); //함수 호출
+```
+
+> 입력과 출력 (inputs outputs)
+
+Function : 기능, 작용
+
+함수(函數) 
+
+> 가설 1) 음역 한 것이다. 
+
+> 가설 2) function 의 본질적인요소를 반영한 조어 
+>
+> - 함수라는 상자안에 어떠한 값을 넣으면, 값에 따라 다른 값이 출력된다는 의미
+
+------
+
+> 함수의 출력 outputs `return` 
+
+함수를 종료하고, 그 값을 함수의 출력값으로 반환한다.
+
+---
+
+> 함수의 출력 return
+>
+> 함수안에서 제일 먼저 나오는 return을 보면, 값을 출력하고 함수를 빠져나간다.
+
+---
+
+> 함수의 입력 inputs `argument`
+
+```javascript
+function _(arg) { //3. arg = 1,2 
+  return arg; //4. return의 결과 1 과 2 를 순차적으로 출력한다. 
+}
+
+alert(_(1)); //1. arg = 1 
+alert(_(2)); //2. arg = 2
+```
+
+```javascript
+function _(arg) { //2. arg = 1 // 5. arg = 2
+  return arg*1000; 
+  //3. return > 1000이 출력된다. 
+  //6. return > 2000이 출력된다.
+}
+
+alert(_(1)); //1. arg = 1 
+alert(_(2)); //4. arg = 2
+
+(arg) = 매개변수 parameter
+(1) = 인자 argument
+(2) = 인자 argument
+```
+
+![](https://s3.ap-northeast-2.amazonaws.com/opentutorials-user-file/module/743/1514.gif)
+
+
+
+
+
+> parameter & argument 
+>
+> 매개변수와 인자
+
+
+
+- 매개변수와 인자(parameter & argument)
+  함수정의 function good ( a, b ) { ~ }
+  함수불러오기 good(1, 2);
+  위의 함수불러오는 코드에서, 괄호안에 들어가는 1과 2는 인자(argument)
+  그 인자가 들어가는 a와 b는 매개변수(parameter)라고 한다.
+- 여러개의 매개변수를 지정할 수 있다(매개변수가 많으면 인자도 많아 지겠죠?).
+- 함수를 정의하는 방법은 여러가지가 있다.

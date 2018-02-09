@@ -529,10 +529,62 @@ alert(_(2)); //4. arg = 2
 
 
 
-- 매개변수와 인자(parameter & argument)
-  함수정의 function good ( a, b ) { ~ }
-  함수불러오기 good(1, 2);
-  위의 함수불러오는 코드에서, 괄호안에 들어가는 1과 2는 인자(argument)
-  그 인자가 들어가는 a와 b는 매개변수(parameter)라고 한다.
-- 여러개의 매개변수를 지정할 수 있다(매개변수가 많으면 인자도 많아 지겠죠?).
-- 함수를 정의하는 방법은 여러가지가 있다.
+---
+
+# 9. 배열(Array)
+
+> 배열
+
+배열(Array)이란 연관된 데이터를 모아서 관리하기 위해 사용하는 `Data type`이다.
+
+변수(variable)는 하나의 데이터를 저장하기 위한 것이라면, 배열은 여러 개의 데이터를 하나의 변수에 저장하기 위한 것이라고 할 수 있다.
+
+
+
+```javascript
+var name = 'egoing'
+alert(name); //변수의 선언과 호출
+
+var member = ['egoing', 'k8805', 'sorialgi']; // 배열
+
+member // ['egoing', 'k8805', 'sorialgi']; // 변수 호출 
+
+alert(member); // egoing,k8805,sorialgi 
+
+alert(member[0]) // egoing
+alert(member[1]) // k8805
+```
+
+
+
+> 배열의 효용
+
+```javascript
+function get_member1(){
+    return 'egoing';
+}
+document.write(get_member1());
+ 
+function get_member2(){
+    return 'k8805';
+}
+document.write(get_member2());
+ 
+ 
+function get_member3(){
+    return 'sorialgi'
+}
+document.write(get_member3());
+
+//
+
+function get_members(){
+    return ['egoing', 'k8805', 'sorialgi'];
+}
+var members = get_members();
+document.write(members[0]);
+document.write(members[1]);
+document.write(members[2]);
+```
+
+> 배열의 사용 (반복문)

@@ -677,3 +677,38 @@ for(var i = 0; i < 3; i++) {
 
 
 #10. Object
+
+> 배열은 여러 개의 데이터에 대한 식별자로서 데이터들을 인덱스로 구분해서 식별한다. 
+
+> 배열은 데이터가 추가되면 배열 전체에서 중복되지 않는 인덱스가 **자동생성**되어 추가된 데이터에 대한 식별을 가능하게 한다. 이 인덱스를 이용해서, 데이터를 가져 올 수 있다. 
+
+> 만약 데이터의 인덱스로 문자를 사용하고 싶다면 객체를 사용해야 한다.
+
+> 다른 프로그래밍 언어에서는 연관배열(associative array), 맵( map), 딕셔너리(Dictionary)라는 데이터 타입이 객체에 해당한다.
+
+
+
+```javascript
+var _ = {'key':value, 'key':value, 'key':value};
+
+// alert(_['key']); 
+// alert(_.key);
+// _.key
+
+
+var _ = {};
+_['key'] = value;
+_['key'] = value;
+_['key'] = value;
+
+//
+
+var _ = new Object();
+_['key'] = value;
+_['key'] = value;
+_['key'] = value;
+
+//
+
+```
+

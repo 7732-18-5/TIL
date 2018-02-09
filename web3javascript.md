@@ -1,6 +1,4 @@
-
-
-# JavaScript
+#JavaScript
 
 ---
 
@@ -443,7 +441,11 @@ function 함수명 ([인자][인자][인자][인자]){
 }
 ```
 
-
+> i++ : 실행한 후, i 를 1 증가 시킨다. 
+>
+> //(초기값이 0이라고 가정) 실행 할 때는 `0` 이고  실행한 후 `1`이 된다.
+>
+> ++i는 1을 증가시킨 후, 실행한다. 
 
 > 함수의 효용
 
@@ -611,11 +613,9 @@ document.write(members[2]);
 
 > 배열의 사용 (반복문)
 
-배열은 반복문과 사용되었을 때 진가가 들어난다.
+배열은 반복문과 결합되었을 때 진가가 들어난다. 
 
-
-
-
+배열이란 연관된 데이터를 하나의 그룹으로 관리하기 위해 사용한다. 그리고 그 정를 처리 할 때 반복문을 이용한다.
 
 ```javascript
 function get_members(){
@@ -630,6 +630,11 @@ for(i = 0; i < members.length; i++){
     document.write(members[i].toUpperCase()); // EGOING 
     document.write('<br />');
 }
+	// 결과
+	//egoing
+	//k8805
+	//sorialgi
+
 ```
 
 ```javascript
@@ -640,3 +645,35 @@ a // 'egoing'
 a.toUpperCase(); // 'EGOING'
 ```
 
+```javascript
+function get_members() {
+	return ['egoing', 'k8805', 'sorialgi'];
+}
+
+members = get_members();
+
+for(var i = 0; i < 3; i++) {
+	document.write(members[i].toUpperCase()+"<br />");
+}
+```
+
+> 배열의 제어
+
+배열은 복수의 데이터를 효율적으로 관리, 전달하기 위한 목적으로 고안된 데이터 타입이다. 따라서 데이터의 추가, 수정, 삭제와 같은 작업을 효율적으로 하기 위해서 다양한 기능이 제공된다.
+
+
+
+- push
+
+
+- concat
+
+
+- unshift
+- splice
+- shift
+- pop
+
+
+
+#10. Object

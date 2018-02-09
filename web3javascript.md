@@ -766,3 +766,17 @@ for(var name in arr){
 
 - 배열 & 객체 무엇이 되었건, key와 value를 열거 할 수 있는 기능을 한다.
 
+## 객체 지향 프로그래밍
+
+```javascript
+var grades = {
+    'list': {'egoing': 10, 'k8805': 6, 'sorialgi': 80},
+    'show' : function(){
+        for(var name in this.list){
+            document.write(name+':'+this.list[name]+"<br />");
+        }
+    }
+};
+grades.show();
+```
+

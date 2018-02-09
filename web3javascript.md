@@ -678,6 +678,8 @@ for(var i = 0; i < 3; i++) {
 
 #10. Object
 
+##object
+
 > 배열은 여러 개의 데이터에 대한 식별자로서 데이터들을 인덱스로 구분해서 식별한다. 
 
 > 배열은 데이터가 추가되면 배열 전체에서 중복되지 않는 인덱스가 **자동생성**되어 추가된 데이터에 대한 식별을 가능하게 한다. 이 인덱스를 이용해서, 데이터를 가져 올 수 있다. 
@@ -711,4 +713,56 @@ _['key'] = value;
 //
 
 ```
+
+> 객체와 반복문
+
+```javascript
+var arr = ['a', 'b', 'c'];
+
+arr // ['a', 'b', 'c'];
+
+for(var i = 0; i < arr.length; i++) {
+  console.log(arr[i]);
+}
+//1
+//2
+//3
+```
+
+> 배열은 저장된 **데이터**들이 **순서**를 가지고 있다.
+
+> 객체 안에 저장된 데이터들은 순서가 없다. 다만 `key` 와 `value`가 있다.
+
+
+
+```javascript
+var grades = {'a:1', 'b:2', 'c:3'};
+for(key in grades) {
+	document.write("key : " +key+ "value : " +grades[key]+ "<br />");
+}
+```
+
+```javascript
+var arr = ['a', 'b', 'c'];
+
+for(var name in arr){
+	console.log(name);
+}
+
+//0
+//1
+//2
+
+for(var name in arr){
+	console.log(arr[name]);
+}
+
+//a
+//b
+//c
+```
+
+> For-in문 
+
+- 배열 & 객체 무엇이 되었건, key와 value를 열거 할 수 있는 기능을 한다.
 

@@ -891,3 +891,31 @@ javascript:alert("API란 무엇인가?") // browser 주소창에 입력하면, "
 
 
 
+> reference(참고문헌 : 레퍼런스) 명령어의 사전이라고 할 수 있다.
+
+> tutorial(안내서 : 튜토리얼) 언어의 문법이라고 할 수 있다.
+
+
+
+> Javascript API 의 종류
+
+- 자바스크립트 자체 API
+
+
+- 자바스크립트가 동작하는 호스트 환경의 API
+
+  ​
+
+> 자바스크립트 API 문서
+
+- [ECMAScript (표준문서)](http://www.ecma-international.org/publications/standards/Ecma-262.htm)
+- [자바스크립트 사전 (생활코딩)](http://opentutorials.org/course/50)
+- [자바스크립트 레퍼런스 (MDN)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference)
+- [jscript 레퍼런스 (MSDN)](http://msdn.microsoft.com/ko-kr/library/vstudio/z688wt03(v=vs.100).aspx)
+
+> 호스트 환경의 API 문서
+
+- [웹브라우저 API](https://developer.mozilla.org/en-US/docs/Web/API)
+- [Node.js API](http://nodejs.org/api/)
+- [Google Apps Script API](https://developers.google.com/apps-script/)
+

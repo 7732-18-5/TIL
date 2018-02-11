@@ -919,3 +919,34 @@ javascript:alert("API란 무엇인가?") // browser 주소창에 입력하면, "
 - [Node.js API](http://nodejs.org/api/)
 - [Google Apps Script API](https://developers.google.com/apps-script/)
 
+
+
+# 13. 정규표현식(regular expression)
+
+정규표현식(正規表現式, Regular Expression)은 문자열을 처리하는 방법 중의 하나이다. 특정한 조건의 문자를 '검색'하거나 '치환'하는 과정을 매우 간편하게 처리 할 수 있도록 하는 수단이다.
+
+
+
+> 정규표현식 생성
+
+컴파일(compile)과 실행(execution)
+
+컴파일은 검출하고자 하는 패턴을 만드는 일이다. 우선 정규표현식 객체를 만들어야 한다. 객체를 만드는 방법은 두가지가 있다. a라는 텍스트를 찾아내는 정규표현식을 만들어보자.
+
+>정규표현식 리터럴
+```javascript
+var pattern = /a/
+```
+
+> 정규표현식 객체 생성자
+
+```javascript
+var pattern = new RegExp('a');
+```
+
+> `정규표현식 리터럴`과 `정규표현식 객체 생성자` 의 
+>
+> - 차이점과 공통점은 무엇인가? 
+>
+>
+> - 장단점은 무엇인가?

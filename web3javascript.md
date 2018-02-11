@@ -927,15 +927,22 @@ javascript:alert("API란 무엇인가?") // browser 주소창에 입력하면, "
 
 
 
-> 정규표현식 생성
+> `컴파일(Compile)` 정규표현식 생성 
 
 컴파일(compile)과 실행(execution)
 
-컴파일은 검출하고자 하는 패턴을 만드는 일이다. 우선 정규표현식 객체를 만들어야 한다. 객체를 만드는 방법은 두가지가 있다. a라는 텍스트를 찾아내는 정규표현식을 만들어보자.
+컴파일은 검출하고자 하는 `패턴(pattern)` 을 만드는 것이다. 
 
->정규표현식 리터럴
+- 정규표현식 객체를 생성한다.
+
+
+- 객체를 만드는 방법은 두가지가 있다.
+
+ex) `a`라는 텍스트를 찾는 정규표현식을 생성하자
+
+> 정규표현식 리터럴
 ```javascript
-var pattern = /a/
+var pattern = /a/ 
 ```
 
 > 정규표현식 객체 생성자
@@ -945,8 +952,35 @@ var pattern = new RegExp('a');
 ```
 
 > `정규표현식 리터럴`과 `정규표현식 객체 생성자` 의 
->
-> - 차이점과 공통점은 무엇인가? 
->
->
-> - 장단점은 무엇인가?
+
+ - 차이점과 공통점은 무엇인가? 
+ - 장단점은 무엇인가?
+
+---
+
+> `실행(Execution)`
+
+> RegExp.exec()
+
+`exec` 는 필요한 정보를 추출하기 위해서 사용한다.
+
+``` javascript
+console.log(pattern.exec('abcdef')); // ["a"] 
+//실행결과 문자열 'a'를 배열로 리턴한다.
+
+console.log(pattern.exec('bcdefg')); // null
+
+//인자 'bcdef'에는 'a'가 없기 때문에 null을 리턴한다.
+```
+
+> RegExp.test()
+
+`test` 는 필요한 정보의 존재유무를 test 하기 위해서 사용한다.
+
+test는 인자 안에 패턴에 해당되는 문자열이 있으면 true, 없으면 false를 리턴한다.
+
+```javascript
+console.log(pattern.test('abcdef')); // true
+cnosole.log(pattern.test('bcdefg')); // false
+```
+

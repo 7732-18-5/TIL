@@ -925,11 +925,9 @@ javascript:alert("API란 무엇인가?") // browser 주소창에 입력하면, "
 
 정규표현식(正規表現式, Regular Expression)은 문자열을 처리하는 방법 중의 하나이다. 특정한 조건의 문자를 '검색'하거나 '치환'하는 과정을 매우 간편하게 처리 할 수 있도록 하는 수단이다.
 
+## `컴파일(compile)`과 `실행(execution)`
 
-
-> `컴파일(Compile)` 정규표현식 생성 
-
-컴파일(compile)과 실행(execution)
+> `컴파일(Compile)` : 정규표현식 생성 
 
 컴파일은 검출하고자 하는 `패턴(pattern)` 을 만드는 것이다. 
 
@@ -984,3 +982,79 @@ console.log(pattern.test('abcdef')); // true
 cnosole.log(pattern.test('bcdefg')); // false
 ```
 
+
+
+##String method 실행
+
+> String.match()
+
+RegExp.exec()와 비슷하다.
+
+```javascript
+console.log('abcdef'.match(pattern)); // ["a"]
+console.log('bcdefg'.match(pattern)); // null
+```
+
+> String.replace()
+
+```javascript
+console.log('abcdef'.replace(pattern, 'A'));  // Abcdef
+```
+
+문자열에서 패턴을 검색해서 이를 변경한 후에 변경된 값을 리턴한다.
+
+
+
+>`i` 를 붙이면, 대소문자를 구분하지 않는다.
+
+```javascript
+var xi = /a/;
+console.log("Abcde".match(xi)); // null
+
+var oi = /a/i;
+console.log("Abcde".match(oi)); // ["A"];
+```
+
+> `g` 를 붙이면, 검색된 모든 결과를 리턴한다.
+```javascript
+var xg = /a/;
+console.log("abcdea".match(xg));
+
+var og = /a/g;
+console.log("abcdea".match(og));
+```
+
+## 정규표현식
+
+```javascript
+var pattern = /(\w+)\s(\w+)/; 
+// () 는 그룹을 의미한다.
+// \w 는 문자를 의미한다. (a-z A-Z 0-9)
+// + 는 수량자를 의미한다. (앞에 문자열이 하나이상 있을 때 유효하다)
+// \s 는 공백을 의미한다.
+var str = "coding everybody"; //패턴과 일치한다.
+var result = str.replace(pattern, "$2, $1"); 
+//$2 $1 두번째 괄호 첫번째 괄호 
+console.log(result); // everybody, coding
+```
+
+## 치환
+
+```javascript
+var urlPattern = /\b(?:https?):\/\/[a-z0-9-+&@#\/%?=~_|!:,.;]*/gim;
+var content = '생활코딩 : http://opentutorials.org/course/1 입니다. 네이버 : http://naver.com 입니다. ';
+var result = content.replace(urlPattern, function(url){
+    return '<a href="'+url+'">'+url+'</a>';
+});
+console.log(result);
+
+//생활코딩 : <a href="http://opentutorials.org/course/1">http://opentutorials.org/course/1</a> 입니다. 네이버 : <a href="http://naver.com">http://naver.com</a> 입니다.
+
+```
+
+> Reference
+
+- [정규표현식을 시각화](http://www.regexper.com/)
+- [정규표현식 빌더](http://www.regexr.com/)
+
+# 14. 함수(function)

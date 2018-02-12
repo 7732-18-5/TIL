@@ -1150,3 +1150,109 @@ for(i = 0; i < 5; i++){
 
 `Local variable` 는 `Local scope(function-level scope)` 를 갖는다.
 
+## 전역변수의 사용
+
+> 불가피하게 전역변수를 사용해야하는 경우
+
+하나의 객체를 전역변수로 만들고 객체의 속성으로 변수를 관리한다. 
+(전역변수를 사용하더라도 변수명의 중복을 피할 수 있다.)
+
+```javascript
+var MYAPP = {} // 객체리터럴
+MYAPP.calculator = {
+    'left' : null,
+    'right' : null
+}
+//변수의 값은 객체이다. 그 객체는 속성을 갖는다.
+//객체 안에 있는 변수를 `속성`이라고 부른다.
+
+MYAPP.coordinate = {
+    'left' : null,
+    'right' : null
+}
+ 
+MYAPP.calculator.left = 10;
+MYAPP.calculator.right = 20;
+function sum(){
+    return MYAPP.calculator.left + MYAPP.calculator.right;
+} // 30
+document.write(sum());
+```
+
+
+
+```javascript
+function myappfn(){
+    var MYAPP = {} //지역변수
+    MYAPP.calculator = {
+        'left' : null,
+        'right' : null
+    }
+    MYAPP.coordinate = {
+        'left' : null,
+        'right' : null
+    }
+    MYAPP.calculator.left = 10;
+    MYAPP.calculator.right = 20;
+    function sum(){
+        return MYAPP.calculator.left + MYAPP.calculator.right;
+    }
+    document.write(sum());
+}
+
+myappfn(); 
+
+//myappfn이라는 함수명도 결국엔 변수안에 함수가 들어가 있는 것이기 때문에 myappfn이 전역변수가 되는 것이다. 그렇기 때문에 단하나의 전역변수도 허용하고 싶지 않을 때 함수를 정의하고 그것을 바로 호출하는 기법을 익명함수라고 한다.
+
+(function(){
+    var MYAPP = {} //지역변수
+    MYAPP.calculator = {
+        'left' : null,
+        'right' : null
+    }
+    MYAPP.coordinate = {
+        'left' : null,
+        'right' : null
+    }
+    MYAPP.calculator.left = 10;
+    MYAPP.calculator.right = 20;
+    function sum(){
+        return MYAPP.calculator.left + MYAPP.calculator.right;
+    }
+    document.write(sum());
+}())
+
+//javascript 에서 로직을 모듈화 하는 일반적인 방법이다.
+```
+
+## 유효범위의 대상 (function)
+
+> `javascript` 에서 function _  () {} : 중괄호 안에서 선언한 변수만이 지역변수이고 지역범위를 갖는다.
+
+```javascript
+for(var i = 0; i < 1; i++){
+    var name = 'coding everybody';
+}
+alert(name); //coding everybody
+```
+
+## 정적 유효범위
+
+> `javascript` 는 함수가 선언된 시점에서의 유효범위를 갖는다. 이러한 유효범위의 방식을 정적 유효범위(static scoping), 혹은 렉시컬(lexical scoping)이라고 한다. 
+
+```javascript
+var i = 5; //전역변수
+function a() {
+	var i = 10; //지역변수
+	b(); //b 라는 함수를 호출
+} // 
+
+function b() {
+	document.write(i);
+} // '사용 될 때'가 아닌 '정의 될 때'의 전역변수가 사용되게 된다. 
+// 이러한 현상을 정적 유효범위라고 한다.
+// 정의된 시점에서 사용될 변수가 정해져 있기 때문에 '정적 유효범위'라고 부른다.
+
+a();
+```
+

@@ -1504,3 +1504,39 @@ alert(matrix.get_title()); //Matrix
 
 ---
 
+## 주의사항 
+
+```javascript
+var arr = []
+for(var i = 0; i < 5; i++){
+    arr[i] = function(){
+        return i;
+    }
+}
+for(var index in arr) {
+    console.log(arr[index]());
+}
+//5:5
+```
+
+
+
+```javascript
+var arr = []
+for(var i = 0; i < 5; i++){
+    arr[i] = function(j) {
+        return function(){
+            return j;
+        }
+    }(i);
+}
+for(var index in arr) {
+    console.log(arr[index]());
+}
+//0
+//1
+//2
+//3
+//4
+```
+

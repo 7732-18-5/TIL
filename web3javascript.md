@@ -1256,3 +1256,34 @@ function b() {
 a();
 ```
 
+# 15. 값으로서의 함수와 콜백
+
+Javascript 에서는 함수도 객체이다. 다시 말해서 함수는 일종의 값이라고 할 수 있다.
+
+```javascript
+var a = 'value' 
+// 변수(variable) 'a' 에 'value'를 담을 수 있다. 
+// 그 이유는 'value'라는 문자열이 값(value) 이기 때문이다.
+```
+
+```javascript
+function a () {}
+// 위의 함수는 'a' 라는 변수(variable)에 담겨있는 값(value)이라는 의미이다.
+
+var a = function() {}
+// 동일한 의미를 다르게 정의한 것이다.
+```
+
+```javascript
+a = {
+  b:function(){ //key:velue(){} 
+//객체 안에서 'b'라는 것은 값을 저장하고 있는 그릇의 역할을 하고 있다. 변수의 역할을 하고 있다고 할 수 있다. 객체 안에서 변수의 역할을 하는 것을 우리는 속성(property) 라고 부른다. 그리고 그 속성(property)에 저장된 값이 함수 일 때, 메소드(method) 라고 부른다.
+  }
+}
+```
+
+> `a` 라는 변수에 담겨있는 객체 안에는 `b`라고 하는 속성있다. 
+> 그 속성(property)의 값(value)이 함수이다. 
+> 이 함수를 `메소드(method)`라고 부른다. 
+
+> 객체 안에 정의된 함수를 `메소드(method)`라고 부른다.

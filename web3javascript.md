@@ -1287,3 +1287,58 @@ a = {
 > 이 함수를 `메소드(method)`라고 부른다. 
 
 > 객체 안에 정의된 함수를 `메소드(method)`라고 부른다.
+
+```javascript
+function cal(func, num){ //첫번째 인자로 전달된 func를 호출하고, 두번째 인자로 전달된 값을 첫번째 인자로 전달한다.
+    return func(num)
+}
+function increase(num){
+    return num+1
+}
+function decrease(num){
+    return num-1
+}
+alert(cal(increase, 1));
+alert(cal(decrease, 1));
+```
+
+> 함수는 값이기 때문에 다른 함수의 인자로도 전달 될 수 있다.
+
+## 함수의 용도
+
+함수는 변수에 저장 될 수 있다.
+
+그렇기 때문에 객체에 저장 될 수 있는데 이러한 함수를 **메소드(method)** 라고 부른다.
+
+```javascript
+function cal(mode){
+    var funcs = {
+        'plus' : function(left, right){return left + right},
+        'minus' : function(left, right){return left - right}
+    }
+    return funcs[mode];
+}
+alert(cal('plus')(2,1)); // 3
+alert(cal('minus')(2,1)); // 1
+
+//함수는 인자로도 전달 될 수 있고 리턴값으로도 사용 될 수도 있다.
+```
+
+```javascript
+var process = [
+    function(input){ return input + 10;},
+    function(input){ return input * input;},
+    function(input){ return input / 2;}
+];
+var input = 1;
+for(var i = 0; i < process.length; i++){
+    input = process[i](input); //11 > 121 >60.5
+}
+alert(input);
+
+//함수는 값이기 때문에 배열에도 저장 할 수 있다.
+```
+
+> 함수는 변수 매개변수 리턴값에 사용될 수 있다. 
+>
+> 이러한 용도로 사용될 수 있는 것을 일급객체(first-class-citizen first-class-object first-class-entity) 이라고 한다.

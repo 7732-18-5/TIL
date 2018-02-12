@@ -1120,3 +1120,33 @@ alert (vscope); // global
 > ! 변수를 선언할 때는 var을 붙이도록하자.
 >
 > !전역변수를 사용해야 하는 경우라면 그것을 사용하는 이유가 명확할 때만 사용한다.
+
+---
+
+```javascript
+function a () {
+  	var i = 0;
+}
+for(var i = 0; i < 5; i++){
+	a();
+  	document.write(i);
+}
+// 01234
+```
+
+
+
+```javascript
+function a (){
+    i = 0;
+}
+for(i = 0; i < 5; i++){
+    a();
+    document.write(i);
+} //무한반복
+```
+
+`Global variable` 는 `Global scope` 를 갖는다.
+
+`Local variable` 는 `Local scope(function-level scope)` 를 갖는다.
+

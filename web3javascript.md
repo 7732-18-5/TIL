@@ -1342,3 +1342,54 @@ alert(input);
 > 함수는 변수 매개변수 리턴값에 사용될 수 있다. 
 >
 > 이러한 용도로 사용될 수 있는 것을 일급객체(first-class-citizen first-class-object first-class-entity) 이라고 한다.
+
+## 콜백
+
+값으로 사용될 수 있는 (함수의)특성을 이용하면 (함수의)인자로 함수를 전달할 수 있다. 값으로 전달된 함수는 호출될 수 있기 때문에 이를 이용하면 함수의 동작을 완전히 바꿀 수 있다.
+
+
+
+콜백은 어떠한 함수가 수신하는 인자가 함수인 경우를 일컫는다.
+
+```javascript
+function sortNumber(a,b){
+    // 위의 예제와 비교해서 a와 b의 순서를 바꾸면 정렬순서가 반대가 된다.
+    return b-a;
+}
+var numbers = [20, 10, 9,8,7,6,5,4,3,2,1];
+alert(numbers.sort(sortNumber)); // array, [20,10,9,8,7,6,5,4,3,2,1]
+```
+
+```javascript 
+var numbers = [20, 10, 9,8,7,6,5,4,3,2,1];
+var sortfunc = function(a, b){
+  	return a - b;
+}
+console.log(numbers.sort(sortfunc)); 
+//[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20]
+
+// 2번
+//  if(a > b) {
+// 		return 1;
+//	} else if(a > b) {
+//		return -1;
+//	} else {
+//		return 0;
+//  }
+//}
+//console.log(numbers.sort(sortfunc)); 
+
+// [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20]
+
+// 1번
+// console.log(numbers.sort()); 
+
+// [1, 10, 2, 20, 3, 4, 5, 6, 7, 8, 9,]
+
+//.앞에 위치한 'numbers'는 객체이다. 
+//.sort는 메소드(method)이다. (객체에 속해 있기 때문에 메소드라고 부른다.)
+// 내장객체 내장메소드 빌트인객체 빌트인메소드라고 부른다.
+
+사용자정의객체 사용자 정의 함수
+```
+

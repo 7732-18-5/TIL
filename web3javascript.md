@@ -1404,3 +1404,44 @@ Ajax(asynchronous javascript and xml)
 
 > 이해하지 못했다.
 
+# 15. 클로저(Closure)
+
+> 클로저(closure)는 `내부함수` 가 `외부함수`의 `맥락(context)`에 접근 할 수 있는 것을 의미한다.
+
+> 외부함수
+
+>내부함수
+
+```javascript
+function outter() { //외부함수
+	function inner() { //내부함수
+  		var title = 'coding everybody';
+  		alert(title);
+	}
+  	inner();
+}
+outter(); //'coding everybody'
+```
+
+```javascript
+function outter(){
+    var title = 'coding everybody';  
+    function inner(){        
+        alert(title);
+    }
+    inner();
+}
+outter(); //'coding everybody'
+```
+
+```javascript
+function outter(){
+    var title = 'coding everybody';  
+    return function(){        
+        alert(title);
+    }
+}
+inner = outter();
+inner(); //'coding everybody'
+```
+

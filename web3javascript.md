@@ -1058,3 +1058,65 @@ console.log(result);
 - [정규표현식 빌더](http://www.regexr.com/)
 
 # 14. 함수(function)
+
+## 유효범위(Scope)
+
+변수의 수명을 의미한다.
+
+```javascript
+var vscope = 'global';
+function fscope(){
+	var vscope = 'local'// 2. 코드작성 
+  	alert(vscope); 3
+}
+fscope(); // 1. global 3. local 
+```
+
+> Global scope 전역변수의 : 유효범위는 어플리케이션 전역이다.
+
+> local scope 지역변수 :  유효범위는 선언 된 함수 내부이다. 
+
+``` javascript
+var vscope = 'global'
+function fscope(){
+	var vscope = 'local';
+}
+fcope();
+alert (vscope); // global  
+
+var vscope = 'global'
+function fscope(){
+	vscope = 'local';
+}
+fcope();
+alert (vscope); // local
+
+var vscope = 'global'
+function fscope(){
+	var vscope = 'local';
+	vscope = 'local';
+}
+fcope();
+alert (vscope); // global 
+```
+
+> ```javascript
+> var sample = 'global';
+> function _ () {
+> 	var sample = 'local';
+> }	
+> // 그 외에 var을 사용하면 전역변수가 된다.
+> //'함수 내부에서 var 을 사용하면 지역변수가 된다.'
+> ```
+
+> 전역변수는 최대한 사용하지 않는 것이 좋다.
+>
+> 여러가지 이유로 그 값이 변경 될 수 있기 때문이다.
+>
+> 함수의 핵심은 로직의 재활용인데, 전역변수의 값이 달라지게 되면 
+>
+> 버그의 원인이 될 수도 있다.
+
+> ! 변수를 선언할 때는 var을 붙이도록하자.
+>
+> !전역변수를 사용해야 하는 경우라면 그것을 사용하는 이유가 명확할 때만 사용한다.

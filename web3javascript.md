@@ -1443,5 +1443,64 @@ function outter(){
 }
 inner = outter();
 inner(); //'coding everybody'
+
+함수 outter가 선언되고 구문으로 변수가 선언된다. 
+리턴값으로 함수가 선언되었다. 
+7행에서 함수 outter를 호출한다. 
+그 결과 변수 inner의 값이 outter이 되고 이를 익명함수라고 한다.  
+8행이 되면 outter 함수는 이미 종료되었기 때문에 
+지역변수 또한 소멸 되는 것이 당연하다.
+그러나 inner();의 결과 'coding everybody' 가 출력된다.
+이것은 외부함수의 지역변수(title)의 값이 소멸되지 않았다는 것을 의미한다.
+클로저란 내부함수가 외부함수의 지역변수에 접근 할 수 있고, 
+외부함수의 지역변수를 사용하는 내부함수가 소멸될 때 까지 외부함수가 소멸되지 않는 것을 의미한다. 이러한 특징은 scope에서 '접근성' 과 '생존기간(life-cycle)' 의 특징의 예외적인 상황이라고 할 수 있기 때문에 중요하다.
 ```
+
+## Private variable
+
+```javascript
+function factory_movie(title) { //title : 매개변수(parameter)
+	return {
+    	get_title : function() { //property : method
+				return title; // 인자
+    	},
+    	set_title : function(_title){ //property : method
+        	    //title = _title
+          		if(typeof _title === 'String'){
+					title = _title
+        		} else {
+        			alert('title 은 문자열이어야 합니다.')
+        		}
+    	}
+	}
+}
+ghost = factory_movie('Ghost in the shell');
+matrix = factory_movie('Matrix');
+ 
+alert(ghost.get_title()); //Ghost in the shell
+alert(matrix.get_title()); //Matrix
+ 
+ghost.set_title('공각기동대');
+ 
+alert(ghost.get_title()); //공각기동대
+alert(matrix.get_title()); //Matrix
+  }
+}
+```
+
+---
+
+> 1. 클로저는 객체의 메소드에서도 사용할 수 있다. 위의 예제는 함수의 리턴값으로 객체를 반환하고 있다. 이 객체는 메소드 get_title과 set_title을 가지고 있다. 이 메소드들은 외부함수인 factory_movie의 인자값으로 전달된 지역변수 title을 사용하고 있다.
+
+> 2. 동일한 외부함수 안에서 만들어진 내부함수나 메소드는 외부함수의 지역변수를 공유한다. 17행에서 실행된 set_title은 외부함수 factory_movie의 지역변수 title의 값을 '공각기동대'로 변경했다. 19행에서 ghost.get_title();의 값이 '공각기동대'인 것은 set_title와 get_title 함수가 title의 값을 공유하고 있다는 의미다.
+
+> 3. 그런데 똑같은 외부함수 factory_movie를 공유하고 있는 ghost와 matrix의 get_title의 결과는 서로 각각 다르다. 그것은 외부함수가 실행될 때마다 새로운 지역변수를 포함하는 클로저가 생성되기 때문에 ghost와 matrix는 서로 완전히 독립된 객체가 된다.
+
+> 4. factory_movie의 지역변수 title은 2행에서 정의된 객체의 메소드에서만 접근 할 수 있는 값이다. 이 말은 title의 값을 읽고 수정 할 수 있는 것은 factory_movie 메소드를 통해서 만들어진 객체 뿐이라는 의미다. JavaScript는 기본적으로 Private한 속성을 지원하지 않는데, 클로저의 이러한 특성을 이용해서 Private한 속성을 사용할 수 있게된다.
+
+> Private property 는 객체의 외부에서는 접근 할 수 없는 외부에 감춰진 속성이나 메소드를 의미한다. 이를 통해서 객체의 내부에서만 사용해야 하는 값이 노출됨으로서 생길 수 있는 오류를 줄일 수 있다. 
+
+>`java` 와 같은 언어에서는 이러한 특성을 언어의 문법 차원에서 지원하고 있다.
+
+---
 

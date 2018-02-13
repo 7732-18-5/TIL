@@ -1651,7 +1651,44 @@ alert(sum.apply(null, [4,2])) //6
 
 ---
 
+```javascript
+o1 = {val1:1, val2:2, val3:3} //sum 6
+o2 = {v1:10, v2:50, v3:100, v4:25} //sum 185
+function sum(){ //sum 함수가 정의되어 있다.
+    var _sum = 0; 
+  // var this = o1; 이라는 코드가 암시적으로 들어간다고 생각하면 된다.
+    for(name in this){
+        _sum += this[name];
+    }
+    return _sum;
+}
+alert(sum.apply(o1)) // 6 
+alert(sum.apply(o2)) // 185
+// apply는 호출할 때 사용한다.
+// sum() sum.apply(null) 로 호출 할 수 있다.
 
+
+o1 = {val1:1, val2:2, val3:3, sum:sum} 
+o2 = {v1:10, v2:50, v3:100, v4:25, sum:sum} 
+
+alert(o1.sum());
+//6function sum(){
+//	var _sum = 0; 
+//	for(name in this){
+//      _sum += this[name];
+//  }
+//  return _sum;
+//}
+
+alert(o2.sum());
+//185function sum(){
+//	var _sum = 0; 
+//	for(name in this){
+//      _sum += this[name];
+//  }
+//  return _sum;
+//}
+```
 
 _.apply(null, [a, b ...]) 
 

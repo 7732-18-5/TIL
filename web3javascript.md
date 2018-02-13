@@ -1540,7 +1540,7 @@ for(var index in arr) {
 //4
 ```
 
-# 16.Arguments
+# 16. Arguments
 
 arguments의 객체는 인스턴스다.
 
@@ -1602,3 +1602,59 @@ two('val1');  // two.length 2 arguments 1
 ```
 
 > 인자와 인수의 차이는 무엇인가?
+
+#17. 함수호출
+
+기존의 함수 호출 방식 외에 , _.apply(), _call()을 사용해 함수를 호출 할 수 있다.
+
+```javascript
+function func(){ 
+}
+func();
+```
+
+> Javascript에서 함수는 객체이다. 
+>
+> 객체는 속성을 가지고 있다.
+>
+> 그 속성에 값이 저장되어 있다면 속성(property) 라고 부른다. 
+>
+> 그 속성의 값에 함수가 들어있다면 메소드(method) 라고 부른다.
+
+ ```javascript
+function sum(arg1, arg2){
+    return arg1+arg2;
+}
+
+sum(1,2); //3 (case1)
+
+sum(4,2); //6
+
+sum.apply //function apply() {[native code]}
+
+//apply는 함수이다. 
+//apply는 sum 이라는 function(object)|함수객체에 담겨있는 메소드(method) 라는 뜻이다. 
+//[native code]는 브라우져에서 사용자에게 제공하는 내장된 코드라는 의미이다. [native code]의 상세 코드내용은 공개되지 않는다.
+
+sum.apply(null, [1,2]) //3 (case2)
+sum.apply(null, [4,2]) //6
+
+alert(sum.apply(null, [1,2])) //3
+alert(sum.apply(null, [4,2])) //6
+
+//case 1, case 2 함수를 호출하는 두 방법의 차이는 무엇인가?
+ ```
+
+> .apply
+
+> .call 
+
+---
+
+
+
+_.apply(null, [a, b ...]) 
+
+- [a,b …] 에 함수에 인자의 값이 들어간다.
+- null 에 객체가 들어가는데 apply()를 쓰는 상황은 this를 사용하는 독립적인 함수가 있을 때, apply 를 사용해서 매번 다른 객체를 넣어주면 함수가 그 객체의 메소드 처럼 된다. 여러 객체에서 쓸 수 있는 공용함수 쓰기 위해서 만들어진 기법인 듯하다.
+

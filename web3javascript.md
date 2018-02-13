@@ -1540,3 +1540,65 @@ for(var index in arr) {
 //4
 ```
 
+# 16.Arguments
+
+arguments의 객체는 인스턴스다.
+
+
+
+```javascript
+function sum(//parameter) {
+	var i, _sum = 0;
+  	for(i = 0; i < arguments.length; i++) { //
+    	document.write(i + ':' + arguments[i] + '<br />');
+     	_sum += arguments[i];
+  }   
+  return _sum;
+}
+document.write('result : ' + sum(1,2,3,4));
+
+//매개변수를 정의하지 않고, 인자를 정의해도 에러가 발생하지 않는다.
+
+```
+
+> 매개변수와 인자의 차이는 무엇인가?
+
+```javascript
+function a(arg) { // arg : parameter 
+
+}
+a[i] // i : arguments
+```
+
+> Parameter
+
+- 함수명.length  : 함수 내에서 정의하고 있는 매개변수의 갯수를 의미한다.
+- arguments.length : 함수가 호출될 때 전송되는 인수의 갯수를 알려준다.
+
+> 예시
+
+```javascript
+function zero(){
+    console.log(
+        'zero.length', zero.length,
+        'arguments', arguments.length
+    );
+}
+function one(arg1){
+    console.log(
+        'one.length', one.length,
+        'arguments', arguments.length
+    );
+}
+function two(arg1, arg2){
+    console.log(
+        'two.length', two.length,
+        'arguments', arguments.length
+    );
+}
+zero(); // zero.length 0 arguments 0 
+one('val1', 'val2');  // one.length 1 arguments 2 
+two('val1');  // two.length 2 arguments 1
+```
+
+> 인자와 인수의 차이는 무엇인가?

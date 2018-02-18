@@ -18,7 +18,7 @@
 function toWeirdCase(s) {
 
     var split = s.split('');
-    for(var i = 0; i < split.length; i++)
+    for(var i = 0; i < split.length; i++) {
 
         if(i % 2 == 0){
             split.toLowerCase();
@@ -27,11 +27,35 @@ function toWeirdCase(s) {
             split.toUpperCase();
         }
         return split;
+    }
 }
 
 console.log(toWeirdCase('hello world'));
 console.log(toWeirdCase('my name is lee'));
 
+//
+
+function toWeirdCase(str) {
+    var wordArr = str.split(' ');
+    // console.log(wordArr); // [ 'hello', 'world' ]
+
+    for (var i = 0; i < wordArr.length; i++) {
+        wordArr[i] = toUpperLower(wordArr[i].trim());
+    }
+    return wordArr.join(' ');
+}
+
+function toUpperLower(str) {
+    var res = '';
+    for (var i = 0; i < str.length; i++) {
+        res += i % 2 ? str[i].toLowerCase() : str[i].toUpperCase();
+    }
+    return res;
+}
+
+console.log(toWeirdCase('hello world'));    // 'HeLlO WoRlD'
+console.log(toWeirdCase('hello    world')); // 'HeLlO WoRlD'
+console.log(toWeirdCase('my name is lee')); // 'My NaMe Is LeE'
 
 
 

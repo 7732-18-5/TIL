@@ -20,3 +20,19 @@ function hideNumbers(str) {
 //console.log(hideNumbers('123'));
 console.log(hideNumbers('01033334444')); // *******4444
 console.log(hideNumbers('027778888'));   // *****8888
+
+//
+
+function hideNumbers(str) {
+    var star = '';
+    for (var i = 0; i < str.length - 4; i++) {
+        star += '*';
+    }
+
+    // console.log(str.substring(str.length - 4));
+
+    return star + str.substring(str.length - 4);
+}
+
+console.log(hideNumbers('01033334444')); // *******4444
+console.log(hideNumbers('027778888'));   // *****8888

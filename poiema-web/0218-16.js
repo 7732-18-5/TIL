@@ -6,7 +6,22 @@
 // 예를들어 x가 3, y가 5이면 12를 리턴한다.
 
 function adder(x, y) {
+    var sum = 0;
+    var array = [];
 
+    if (x > y) {
+        array.push(y, x);
+    } else if (x < y) {
+        array.push(x, y);
+    } else {
+        return x;
+    }
+
+    for (var i = array[0]; i <= array[1]; i++) {
+        sum += i;
+    }
+
+    return sum;
 }
 
 console.log(adder(3, 5)); // 12

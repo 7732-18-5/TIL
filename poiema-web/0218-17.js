@@ -3,7 +3,11 @@
 
 function generateRange(from, to) {
     const res = [];
-
+    let i = from;
+    while (i < to + 1) {
+        res.push(i);
+        i++;
+    }
     return res;
 }
 

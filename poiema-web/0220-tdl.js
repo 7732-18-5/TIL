@@ -9,7 +9,7 @@ var todos = [
 // 1. todos의 각 요소 중, id 프로퍼티의 값만을 추출한 배열을 생성하는 함수를 작성하라.
 // => [3, 2, 1]
 
-//filter (실패)
+//filter
 
 // todos.filter(function (element) {
 //     console.log(element);
@@ -28,17 +28,15 @@ var todos = [
 // });
 // console.log(toDo);
 
-
 //map ()
 
-// function getIds() {
-//     return todos.map(function (todo) {
-//         console.log(todo);
-//         return todo.id;
-//     });
-// }
-// var Ids = getIds();
-// console.log(id)
+function getIds() {
+    var ids = todos.map(function (todo) {
+        return todo.id;
+    });
+    return ids;
+}
+console.log(getIds());
 
 //[{ id: 3, content: 'HTML', completed: false } ]
 //[{ id: 2, content: 'CSS', completed: true }]
@@ -46,6 +44,12 @@ var todos = [
 
 // 2. 1에서 생성한 배열의 최대값을 구하는 함수를 작성하라.
 // => 3
+
+// function getMaxValue () {
+//     var arrNumMax = Math.max.apply(null, getIds());
+//     return arrNumMax;
+// }
+// console.log(getMaxValue());
 
 // var arrNumMax = Math.max.apply(null, toDo);
 // console.log(toDo);
@@ -55,10 +59,10 @@ var todos = [
 // console.log(arrMax);
 
 //Max
-// function getMax() {
-//     return Math.max.apply(null, ids);
-// }
-// console.log(getMax());
+function getMax() {
+    return Math.max.apply(null, getIds());
+}
+console.log(getMax());
 
 // //Min
 // function getMin() {
@@ -75,13 +79,17 @@ var todos = [
 //   { id: 1, content: 'Javascript', completed: false }
 // ];
 
-//unshift
-//splice ()
-
 //todos.unshift({ id: 4, content: 'Test', completed: false });
 
 // [{ id: 4, content: 'Test', completed: false }].concat(todos);
 // console.log(todos);
+
+function addTodos() {
+    var addTodo = [{ id: 4, content: 'Test', completed: false }].concat(todos);
+    return addTodo;
+}
+console.log(addTodos());
+console.log('');
 
 // function addTodo(newTodo) {
 //     todos = [newTodo].concat(todos);
@@ -93,6 +101,14 @@ var todos = [
 
 // 4. todos에서 id가 4인 요소를 삭제하는 함수를 작성하라
 
+function delTodos() {
+    var delTodo = addTodos().filter(function(element) {
+        return element.id !== 4
+    })
+    return delTodo;
+}
+console.log(delTodos());
+console.log('');
 //filter
 
 // var arrDel = todos.filter(function (element) {
@@ -113,13 +129,13 @@ var todos = [
 // })
 // console.log(todos);
 
-function removeTodoById(id) {
-    todos.filter(function (todo) {
-        return todo.id != id;
-    });
-}
-removeTodoById(4);
-console.log(todos);
+// function removeTodoById(id) {
+//     todos.filter(function (todo) {
+//         return todo.id != id;
+//     });
+// }
+// removeTodoById(4);
+// console.log(todos);
 
 // 5. todos에서 id가 3인 요소의 completed 프로퍼티 값을 반전하는 함수를 작성하라
 // todos = [
@@ -128,52 +144,89 @@ console.log(todos);
 //   { id: 1, content: 'Javascript', completed: false }
 // ];
 
-todos = todos.map(function (todo) {
-//    if (todo.id === 3) {
-//        Object.assign({}, todo, {completed: !todo/completed});
-//    } else {
-//        return todo
-//    }
+// function revTodos() {
+//     var revTodo = delTodos().map(function(element) {
+//         if(element.id === 3) {
+//            return Object.assign({}, element, {completed: !element.completed});
+//         } else {
+//             return element;
+//         }
+//     })
+//     return revTodo;
+// }
+// console.log(revTodos());
 
-    return todo.id === 3 ? Object.assign({}, todo, { completed: !todo / completed }) : todo;
-});
+function revTodos() {
+    var revTodo = delTodos().map(function(element) {
+        return element.id === 3 ? Object.assign({}, element, {completed: !element.completed}) : element;
+    })
+    return revTodo;
+}
+console.log(revTodos());
+console.log('');
+// todos = todos.map(function (todo) {
+// //    if (todo.id === 3) {
+// //        Object.assign({}, todo, {completed: !todo});
+// //    } else {
+// //        return todo
+// //    }
 
-//reverse
-var rev = todos.filter(function (todo) {
-    return todo.id == 3
-})
-console.log(rev); //[ { id: 3, content: 'HTML', completed: false } ]
+//     return todo.id === 3 ? Object.assign({}, todo, { completed: !todo / completed }) : todo;
+// });
 
-// rev = todos.reverse();
-console.log(rev); //[ { id: 1, content: 'Javascript', completed: false },{ id: 2, content: 'CSS', completed: true },
-//{ id: 3, content: 'HTML', completed: false } ]
-
-
-// 6. todos에서 모든 요소의 completed 프로퍼티 값을 true로 설정하는 함수를 작성하라
-// todos = [
-//   { id: 3, content: 'HTML', completed: true },
-//   { id: 2, content: 'CSS', completed: true },
-//   { id: 1, content: 'Javascript', completed: true }
-// ];
-//filter
-
-// todos = todos.filter(function (todo) {
-//     return todo.completed == true
+// //reverse
+// var rev = todos.filter(function (todo) {
+//     return todo.id == 3
 // })
-// console.log(naemless);
+// console.log(rev); //[ { id: 3, content: 'HTML', completed: false } ]
 
-todos = todos.map(function (todo) {
-    return Object.assign({}, todo, { completed: true });
+// // rev = todos.reverse();
+// console.log(rev); //[ { id: 1, content: 'Javascript', completed: false },{ id: 2, content: 'CSS', completed: true },
+// //{ id: 3, content: 'HTML', completed: false } ]
+
+
+// // 6. todos에서 모든 요소의 completed 프로퍼티 값을 true로 설정하는 함수를 작성하라
+// // todos = [
+// //   { id: 3, content: 'HTML', completed: true },
+// //   { id: 2, content: 'CSS', completed: true },
+// //   { id: 1, content: 'Javascript', completed: true }
+// // ];
+
+function allTodos() {
+var allTodo = delTodos().map(function (element) {
+    return Object.assign({}, element, {completed: true});
 })
+return allTodo;
+}
+console.log(allTodos());
+console.log('');
 
-// 7. todos에서 완료(completed: true)한 할일의 갯수를 구하는 함수를 작성하라
-//forEach > .count
+// //filter
 
-todos.forEach(function (todo, index, array) {
-    console.log(todo);
-    total += todo;
-    count ++;
-});
+// // todos = todos.filter(function (todo) {
+// //     return todo.completed == true
+// // })
+// // console.log(naemless);
 
-console.log(total); // 25
-console.log(todos.count)
+// todos = todos.map(function (todo) {
+//     return Object.assign({}, todo, { completed: true });
+// })
+
+// // 7. todos에서 완료(completed: true)한 할일의 갯수를 구하는 함수를 작성하라
+// //forEach > .count
+
+function cntTodos() {
+    var cnt = 0;
+    var cntTodo = todos.map(function(element) {
+        if(element.completed === true) {
+            cnt++;
+        }
+        return;
+    })
+    return cnt;
+}
+
+console.log(cntTodos());
+
+// console.log(total); // 25
+// console.log(todos.count)

@@ -1698,7 +1698,49 @@ _.apply(null, [a, b ...])
 
 #18. 객체지향 프로그래밍
 
-객체지향 프로그래밍(Object-Oriented Programming)은 좀 더 나은 프로그램을 만들기 위한 프로그래밍 패러다임으로 로직을 상태(state)와 행위(behave)로 이루어진 객체로 만드는 것이다. 이 객체들을 마치 'Lego' 처럼 조립해서 하나의 프로그램을 만드는 것이 객체지향 프로그래밍이라고 할 수 있다. 다시 말해서 객체지향 프로그래밍은 객체를 만드는 것이다. 따라서 객체지향 프로그래밍의 시작은 객체란 무엇인가를 이해하는 것이다
+객체지향 프로그래밍(Object-Oriented Programming)은 좀 더 나은 프로그램을 만들기 위한 프로그래밍 패러다임으로 로직을 상태(state)와 행위(behave)로 이루어진 객체로 만드는 것이다. 
 
 > 객체는 변수와 메소드를 그룹핑한 것이다.
 
+객체지향프로그래밍(OOP) : 로직을 상태와 행동(변수와 메소드)로 나누고 연관된 것들끼리 그룹핑한 것을 객체라 하고 이를 조립해 프로그래밍을 하는 것.
+
+- 설계와 추상화 (문법)
+
+> 객체지향의 특징 : 객체 지향은 코드의 재활용성을 높인다.
+
+- 부품화 : 프로그램의 로직들을 기능별로 나눠 부품화하는 것
+- 은닉화, 캡슐화 : 로직을 온전히 부품화하기 위해 내부동작법은 숨기고 사용법만 노출하는 것
+- 인터페이스 : 부품들간의 접점에서의 규칙, 약속
+
+
+
+#19. 생성자와 new 
+
+>Prototype-based-programming
+
+객체란 서로 연관된 변수와 함수를 그룹핑한 그릇이라고 할 수 있다. 객체 내의 변수를 프로퍼티(property) 함수를 메소드(method)라고 부른다. 
+
+```javascript
+var person = {}
+person.name = 'egoing';
+person.introduce = function() {
+	return 'My name is' + this.naem;
+}
+document.write(person.introduce());
+```
+
+```javascript
+var person = {
+  'name' : 'egoing'
+  'introduce' :  function() {
+  	return 'My name is' + this.naem;
+  }
+}
+document.write(person.introduce());
+```
+
+
+
+>2.
+
+>3.

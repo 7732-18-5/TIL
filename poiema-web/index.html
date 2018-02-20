@@ -5,25 +5,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Hello World</title>
-    <style>
-        button {
-            color: red;
-        }
-    </style>
+    <title>Todos V0</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <h1 id="heading"></h1>
-    <button id="my-btn">click me!</button>
-
+    <input id="input-todo" placeholder="What needs to be done?" autofocus>
+    <ul id="todo-list"></ul>
     <script>
-        var heading = document.getElementById('heading');
-        var myButton = document.getElementById('my-btn');
+        (function () {
+            var inputTodo = document.getElementById('input-todo');
+            var todoList = document.getElementById('todo-list');
+            var removeTodo = document.getElementById('')
 
-        myButton.addEventListener('click', function () {
-            heading.innerHTML = 'Hello World!';
-        });
+            inputTodo.addEventListener('keyup', function (e) {
+                if (e.keyCode !== 13) return;
+                if (this.value) {
+                    todoList.innerHTML += '<li>' + this.value + '</li>';
+                    this.value = '';
+                }
+            });
+            todoList.addEventListener('click', function (e) {
+                if (e.click == true)
+            }());
+        }());
+
+        // (function hide(e) {
+        //     e.target.style.visibility = 'hidden'
+        //     this.style.visibility = 'hidden'
+        //     add.addEventListener('click, hide');
+        // }());
+
     </script>
 </body>
 

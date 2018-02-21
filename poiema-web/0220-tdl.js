@@ -9,24 +9,13 @@ var todos = [
 // 1. todos의 각 요소 중, id 프로퍼티의 값만을 추출한 배열을 생성하는 함수를 작성하라.
 // => [3, 2, 1]
 
-//filter
-
-// todos.filter(function (element) {
-//     console.log(element);
-//     return todos.id
-// });
-
-//[{ id: 3, content: 'HTML', completed: false } ]
-//[{ id: 2, content: 'CSS', completed: true }]
-//[{ id: 1, content: 'Javascript', completed: false }]
-
 //map ()
 
-// var toDo = todos.map(function (element) {
+// var todo = todos.map(function (element) {
 //     // console.log(element);
 //     return element.id
 // });
-// console.log(toDo);
+// console.log(todo);
 
 //map ()
 

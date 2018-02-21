@@ -16,7 +16,6 @@
         (function () {
             var inputTodo = document.getElementById('input-todo');
             var todoList = document.getElementById('todo-list');
-            var removeTodo = document.getElementById('')
 
             inputTodo.addEventListener('keyup', function (e) {
                 if (e.keyCode !== 13) return;
@@ -26,15 +25,16 @@
                 }
             });
             todoList.addEventListener('click', function (e) {
-                if (e.click == true)
-            }());
-        }());
+                todoList.removeChild(e.target)
+            });
 
-        // (function hide(e) {
-        //     e.target.style.visibility = 'hidden'
-        //     this.style.visibility = 'hidden'
-        //     add.addEventListener('click, hide');
-        // }());
+            // todoList.addEventListener('click', function (e) {
+            //     console.log(e.target);//li
+            // })
+
+            //target removechild click
+            // e.currentTarget 과 e.target 의 차이는?
+        }());
 
     </script>
 </body>

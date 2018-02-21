@@ -206,7 +206,7 @@ console.log('');
 
 function cntTodos() {
     var cnt = 0;
-    var cntTodo = todos.map(function(element) {
+    var cntTodo = allTodos().map(function(element) {
         if(element.completed === true) {
             cnt++;
         }

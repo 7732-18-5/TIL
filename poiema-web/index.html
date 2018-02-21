@@ -13,27 +13,49 @@
     <input id="input-todo" placeholder="What needs to be done?" autofocus>
     <ul id="todo-list"></ul>
     <script>
-        (function () {
+        (function() {
             var inputTodo = document.getElementById('input-todo');
             var todoList = document.getElementById('todo-list');
+            var todos = [
+                { id: 1, content: 'HTML', completed: false },
+                { id: 2, content: 'CSS', completed: true },
+                { id: 3, content: 'Javascript', completed: false }
+            ];
 
             inputTodo.addEventListener('keyup', function (e) {
                 if (e.keyCode !== 13) return;
                 if (this.value) {
                     todoList.innerHTML += '<li>' + this.value + '</li>';
+                    // todos = todos.concat({content: this.value});
+                    var tdl = todos[todos.length-1].id + 1;
+                    todos = todos.concat({ id: tdl, content: this.value, completed: false });
+
+
                     this.value = '';
                 }
+                console.log(todos);
             });
+
             todoList.addEventListener('click', function (e) {
                 todoList.removeChild(e.target)
             });
+            //target removechild click
+            // e.currentTarget 과 e.target 의 차이는?
+
+            window.addEventListener('load', function() {
+                todos.map(function(nameless) {
+                    console.log(nameless.content);
+                    return todoList.innerHTML += '<li>' + nameless.content + '</li>';
+                });
+            });
+
+
+
 
             // todoList.addEventListener('click', function (e) {
             //     console.log(e.target);//li
             // })
 
-            //target removechild click
-            // e.currentTarget 과 e.target 의 차이는?
         }());
 
     </script>

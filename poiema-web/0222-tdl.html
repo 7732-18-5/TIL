@@ -41,7 +41,68 @@
 <body>
     <input id="input-todo" placeholder="What needs to be done?" autofocus>
     <ul id="todo-list"></ul>
+    <!-- <script>
+        (function () {
+            var inputTodo = document.getElementById('input-todo');
+            var todoList = document.getElementById('todo-list');
+            var todos = [];
+            function renderHTML() {
+                // todos 배열을 HTML로 변환
+                var html = '';
+                todos.forEach(function (todo) {
+                    var checked = todo.completed ? 'checked' : '';
+                    html += '<li id="' + todo.id + '"><input type="checkbox"' + checked + '>'
+                    html += todo.content
+                    html += ' <button>X</button>'
+                    html += '</li>';
+                    todoList.innerHTML = html;
+                })
+            }
 
+            function generateId() {
+                return todos.length === 0 ? 1 : Math.max.apply(null, todos.map(function (todo) {
+                    return todo.id;
+                })) + 1;
+            }
+
+            function addTodo(content) {
+                todos = todos.concat({ id: generateId(), content: content, completed: true });
+            }
+            function removeTodo(id) {
+                todos = todos.filter(function (todo) {
+                    return todo.id !== +id;
+                })
+                renderHTML()
+            }
+
+            inputTodo.addEventListener('keyup', function (e) {
+                var content = this.value;
+
+                if (e.keyCode !== 13 || !content) return;
+                addTodo(content);
+                renderHTML();
+                this.value = '';
+            })
+
+            todoList.addEventListener('click', function (e) {
+                if (e.target.nodeName === 'BUTTON') {
+                    removeTodo(e.target.parentNode.id);
+                }
+            })
+
+            window.addEventListener('load', function () {
+                // 서버접속 todos 배열 취득
+                todos = [
+                    { id: 1, content: 'HTML5', completed: true },
+                    { id: 2, content: 'CSS', completed: false },
+                    { id: 3, content: 'javascript', completed: true }
+                ];
+                renderHTML();
+            });
+
+        }())
+
+    </script> -->
     <script>
         var todos = [];
         var inputTodo = document.getElementById('input-todo');
@@ -51,9 +112,9 @@
             // console.dir(todolist);
 
         function generateId() {
-                return todos.lenth ? Math.max.apply(null, todos.map(function (todo) {
-                    return todo.id;
-                })) + 1 : 1;
+            return todos.lenth ? Math.max.apply(null, todos.map(function (todo) {
+                return todo.id;
+            })) + 1 : 1;
         }
 
         function addTodo(content) {
@@ -67,7 +128,18 @@
             });
         }
 
-        function render() {
+        function toggleCompletedById(id) {
+            todos = todos.map(function (todo) {
+                return todo.id === 1 * e.target.id ? Object.assign({}, todo, { completed: !todo.completed }) : r
+            });
+        }
+
+        function renderTodos() {
+            if (!todos.length) {
+                todoList.innerHTML = '';
+                return;
+            }
+
             var html = '';
 
             todos.forEach(function (todo) {
@@ -78,7 +150,6 @@
                     html += todo.content;
                     html += ' &nbsp <button>X</button>';
                     html += '</li>';
-
             });
             todoList.innerHTML = html;
         }
@@ -91,7 +162,7 @@
                 {id: 3, content: 'Javascript', completed: false}
             ];
             renderTodos();
-        });
+        })
 
         inputTodo.addEventListener('keyup', function (e) {
             if (e.keyCode !== 13 || !this.value) return;
@@ -104,23 +175,20 @@
 
         todoList.addEventListener('click', function (e) {
             //
-            if (e.target && e.target.nodeName === 'button') {
-                console.log(e.target.parentNode.id);
-
-                todos = todos.filter(function () {
-                    return todo.id !== 1*e.target.parentNode.id;
+            if (e.target && e.target.nodeName === 'BUTTON') {
+                removeTodo(e.target.parentNode.id);
+            } else if ((e.target && e.target.nodeName === 'LI') {
+                console.log('[TEST]', e.target);
+                todos.map(function(todo){
+                    return todo.id === 1*e.target.id ? Object.assign ({}, todo, {completed: !todo.completed}) : return
                 });
-
-                console.log('[REMOVE TODO]', todos);
-
-                renderTodos();
+                toggleCompletedById(e.toggleCompletedById);
             }
-
+            renderTodos();
         });
         //todos 배열을 HTML로 변환
-    });
-    </script>
 
+    </script>
 </body>
 
 </html>

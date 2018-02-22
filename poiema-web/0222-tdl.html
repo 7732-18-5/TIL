@@ -47,31 +47,78 @@
         var inputTodo = document.getElementById('input-todo');
         var todolist = document.getElementById('todo-list');
 
-        console.dir(inputTodo);
-        console.dir(todolist);
+            // console.dir(inputTodo);
+            // console.dir(todolist);
 
-        window.addeventListener('load', function() {
+        function generateId() {
+                return todos.lenth ? Math.max.apply(null, todos.map(function (todo) {
+                    return todo.id;
+                })) + 1 : 1;
+        }
+
+        function addTodo(content) {
+            todos = todos.concat({ id: generateId(), content: content, completed: false });
+            console.log('[ADD TODO]', todos);
+        }
+
+        function removeTodo (id) {
+            todos = todos.filter(function () {
+                return todo.id !== 1 * e.target.parentNode.id;
+            });
+        }
+
+        function render() {
+            var html = '';
+
+            todos.forEach(function (todo) {
+                var checked = todo.completed ? 'checked' : '';
+
+                    html += '<li id="' + todo.id + '">';
+                    html += '<input type="checkbox"' + checked + '>'
+                    html += todo.content;
+                    html += ' &nbsp <button>X</button>';
+                    html += '</li>';
+
+            });
+            todoList.innerHTML = html;
+        }
+
+        window.addEventListener('load', function() {
             //  서버에 접속하여 todos 배열을 취득한다.
             todos = [
                 {id: 1, content: 'HTML5', completed: true},
                 {id: 2, content: 'CSS3', completed: true },
                 {id: 3, content: 'Javascript', completed: false}
             ];
+            renderTodos();
+        });
 
+        inputTodo.addEventListener('keyup', function (e) {
+            if (e.keyCode !== 13 || !this.value) return;
 
-            function render() {
-            var html = '';
+            addTodo(this.value)
+            console.log(todos);
+            this.value = '';
+            renderTodos();
+        });
 
-                todos.forEach(function (todo) {
-                    var checked = todo.completed ? 'checked' : '';
+        todoList.addEventListener('click', function (e) {
+            //
+            if (e.target && e.target.nodeName === 'button') {
+                console.log(e.target.parentNode.id);
 
-                    html += '<li><input type="checkbox" checked>' + todo.content + '</li>'
+                todos = todos.filter(function () {
+                    return todo.id !== 1*e.target.parentNode.id;
                 });
 
-                todoList.innerHTML = html;
+                console.log('[REMOVE TODO]', todos);
+
+                renderTodos();
             }
-            //todos 배열을 HTML로 변환
+
         });
+        //todos 배열을 HTML로 변환
+    });
     </script>
 
 </body>

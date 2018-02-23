@@ -1,4 +1,4 @@
-var xhr = new XMLHttp Request();
+var xhr = new XMLHttpRequest();
 xhr.open ('GET', '/users');
 xhr.send();
 

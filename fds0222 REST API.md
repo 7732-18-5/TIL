@@ -1,4 +1,4 @@
-# 1. REST API
+# 0. REST API란 무엇인가?
 
 | RESTAPI |                |
 | ------- | -------------- |
@@ -17,9 +17,12 @@
 - 중간적 구성요소를 이용해 응답 지연 감소, 보안을 강화, 레거시 시스템을 인캡슐레이션 (Intermediary components to reduce latency, enforce security and encapsulate legacy systems)
   - **레거시 시스템**(legacy system)은 낡은 기술이나 방법론, 컴퓨터시스템, 소프트 등을 말한다. 이는 현대까지도 남아 쓰이는 기술을 의미하지만, 더이상 쓰이지 않더라도 현대의 기술에 영향을 주는 경우도 포함한다. 
 
-# 1. REST API 중심 규칙
+# 1. REST API 중심 규칙 (원칙)
 
 REST에서 가장 중요한 기본적인 규칙은 두 가지이다. URI는 자원을 표현하는 데에 집중하고 행위에 대한 정의는 HTTP Method를 통해 하는 것이 REST한 API를 설계하는 중심 규칙이다.
+
+- 열(column) - idea
+- 행(row) - entity
 
 **1. URI는 정보의 자원을 표현해야 한다.**
 
@@ -27,12 +30,18 @@ REST에서 가장 중요한 기본적인 규칙은 두 가지이다. URI는 자�
 
 ```
 # bad
-GET /getBooks/1
-GET /books/show/1
+GET /getBooks/1 //get이 사용되었다.
+GET /books/show/1 //show이 사용되었다.
+
+조회
+- Index : 전체를 가지고 오는 것
+- retrieve : 특정한 값을 가지고 오는 것
+
 
 # good
 GET /books/1
 
+parameter(URI) ~/ ?key=value&
 ```
 
 **2. 자원에 대한 행위는 HTTP Method(GET, POST, PUT, DELETE 등)으로 표현한다.**
@@ -50,21 +59,21 @@ DELETE /books/1
 
 4가지의 Method(GET, POST, PUT, DELETE)를 사용하여 CRUD를 구현한다.
 
-| Method | Action         | 역할                    |
-| ------ | -------------- | ----------------------- |
+| Method | Action         | 역할            |
+| ------ | -------------- | ------------- |
 | GET    | index/retrieve | 모든/특정 리소스를 조회 |
-| POST   | create         | 리소스를 생성           |
-| PUT    | update         | 리소스를 갱신           |
-| DELETE | delete         | 리소스를 삭제           |
+| POST   | create         | 리소스를 생성       |
+| PUT    | update         | 리소스를 갱신       |
+| DELETE | delete         | 리소스를 삭제       |
 
 # 3. REST API의 구성
 
 REST API는 자원(Resource), 행위(Verb), 표현(Representations)의 3가지 요소로 구성된다. REST는 자체 표현 구조(Self-descriptiveness)로 구성되어 REST API만으로 요청을 이해할 수 있다.
 
-| 구성 요소       | 내용                    | 표현 방법             |
-| --------------- | ----------------------- | --------------------- |
-| Resource        | 자원                    | HTTP URI              |
-| Verb            | 자원에 대한 행위        | HTTP Method           |
+| 구성 요소           | 내용            | 표현 방법                 |
+| --------------- | ------------- | --------------------- |
+| Resource        | 자원            | HTTP URI              |
+| Verb            | 자원에 대한 행위     | HTTP Method           |
 | Representations | 자원에 대한 행위의 내용 | HTTP Message Pay Load |
 
 # 4. REST API의 Example

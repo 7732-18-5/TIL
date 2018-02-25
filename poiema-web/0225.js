@@ -167,7 +167,8 @@ console.log('n이 4인 경우: ' + waterMelon(4));
 // nextSqaure함수는 정수 n을 매개변수로 받는다.n이 임의의 정수 x의 제곱이라면 x + 1의 제곱을 리턴하고, n이 임의의 정수 x의 제곱이 아니라면 'no'을 리턴하는 함수를 작성하라.예를들어 n이 121이라면 이는 정수 11의 제곱이므로(11 + 1)의 제곱인 144를 리턴하고, 3이라면 'no'을 리턴한다.
 
 function nextSqaure(n) {
-
+    var root = Math.sqrt(n);
+    return Number.isInteger(root) ? Math.pow((root + 1), 2) : 'no';
 }
 
 console.log(nextSqaure());    // no
@@ -183,7 +184,7 @@ console.log(nextSqaure(400)); // 441
 // palindrome(팰린드롬 / 회문)은 왼쪽에서 오른쪽으로 읽은 다음, 오른쪽부터 왼쪽으로 다시 읽어도 똑같은 형태와 의미를 유지하는 문장이나 단어를 지칭한다.인자로 전달한 문자열이 palindrome인지 검사하여 Boolean값을 반환하는 함수를 완성하라.단, 반드시 1자 이상의 문자열을 인자로 전달한다.
 
 function checkPalindrom(str) {
-
+    return str === str.split('').reverse().join('');
 }
 
 console.log(checkPalindrom('dad')); // true
@@ -195,12 +196,12 @@ console.log(checkPalindrom('s')); // false
 // 배열의 요소 중 최대값 / 최소값을 반환하는 함수를 완성하라.
 
 function getMaxValueFromArray(array) {
-
+    return Math.max.apply(null, array);
 }
 console.log(getMaxValueFromArray([3, 6, -2, -5, 7, 3])); // 7
 
 function getMinValueFromArray(array) {
-
+    return Math.min.apply(null, array);
 }
 console.log(getMinValueFromArray([3, 6, -2, -5, 7, 3])); // -5
 
@@ -209,11 +210,28 @@ console.log(getMinValueFromArray([3, 6, -2, -5, 7, 3])); // -5
 
 //     약수(約數, divisor)는 어떤 수를 나누었을 때 나머지가 0인 수를 말하며, 배수 관계와 서로 반대되는 개념이다
 
-function sumDivisor(num) {
+function getDivisorArray(num) {
+    var divisors = [];
 
+    for (var i = 1; i <= num; i++) {
+        if (num % i === 0) {
+            divisors.push(i);
+        }
+    }
+    return divisors;
 }
+console.log(getDivisorArray(12));
 
-console.log(sumDivisor(12)); // 28
+// 약수의 배열 요소를 모두 합한 값을 구한다.
+function sumDivisor(num) {
+    var result = 0;
+    var arr = getDivisorArray(num);
+    for (var i = 0; i < arr.length; i++) {
+        result += arr[i];
+    }
+    return result;
+}
+console.log(sumDivisor(12));
 
 // 13. 소수 찾기
 // numberOfPrime 메소드는 정수 n을 매개변수로 입력받는다. 1부터 입력받은 숫자 n 사이에 있는 소수의 개수를 반환하도록 numberOfPrime 함수를 완성하라.
@@ -224,10 +242,25 @@ console.log(sumDivisor(12)); // 28
 
 // 예를 들어 10을 입력받았다면, 1부터 10 사이의 소수는[2, 3, 5, 7] 4개가 존재하므로 4를 반환한다.
 
-function numberOfPrime(n) {
+function isPrime(n) {
+    if (n <= 1) return false;
 
+    var cnt = 0;
+
+    for (var i = 1; i <= n; i++) {
+        if (n % i === 0) cnt++;
+    }
+
+    return cnt < 3;
 }
 
+function numberOfPrime(n) {
+    var cnt = 0;
+    for (var i = 1; i <= n; i++) {
+        if (isPrime(i)) cnt++;
+    }
+    return cnt;
+}
 console.log(numberOfPrime(10)); // 4
 
 // 14. 피보나치 수
@@ -236,7 +269,8 @@ console.log(numberOfPrime(10)); // 4
 // 2 이상의 n이 입력되었을 때, fibonacci 함수를 작성하여 n번째 피보나치 수를 반환하라.예를 들어 n = 3이라면 2를 반환한다.
 
 function fibonacci(n) {
-
+    if (n <= 2) return 1;
+    return fibonacci(n - 1) + fibonacci(n - 2);
 }
 
 console.log(fibonacci(2)); // 1
@@ -257,7 +291,14 @@ console.log(fibonacci(6)); // 8
 // 예를들어 n이 10, 12, 18이면 True를 리턴 11, 13이면 False를 리턴한다.
 
 function isHarshad(n) {
+    const str = n + '';
+    let sum = 0;
 
+    for (const digit of str) {
+        sum += parseInt(digit);
+    }
+
+    return !(n % sum);
 }
 
 console.log(isHarshad(10)); // true
@@ -274,7 +315,22 @@ console.log(isHarshad(13)); // false
 // 예를들어 x가 3, y가 5이면 12를 리턴한다.
 
 function adder(x, y) {
+    var sum = 0;
+    var array = [];
 
+    if (x > y) {
+        array.push(y, x);
+    } else if (x < y) {
+        array.push(x, y);
+    } else { //=
+        return x;
+    }
+
+    for (var i = array[0]; i <= array[1]; i++) {
+        sum += i;
+    }
+
+    return sum;
 }
 
 console.log(adder(3, 5)); // 12
@@ -284,7 +340,11 @@ console.log(adder(3, 5)); // 12
 
 function generateRange(from, to) {
     const res = [];
-
+    let i = from;
+    while (i < to + 1) {
+        res.push(i);
+        i++;
+    }
     return res;
 }
 
@@ -294,7 +354,14 @@ console.log(generateRange(10, 15)); // [ 10, 11, 12, 13, 14, 15 ]
 // 정수의 배열에서 인접한 요소의 곱이 가장 큰 값을 반환하는 함수를 완성하라.예를 들어 인수가[3, 6, -2, -5, 7, 3]인 경우, 21을 반환한다.
 
 function adjacentElementsProduct(arr) {
+    const buf = [];
 
+    arr.reduce((pre, cur) => {
+        buf.push(pre * cur);
+        return cur;
+    });
+
+    return Math.max(...buf);
 }
 
 console.log(adjacentElementsProduct([3, 6, -2, -5, 7, 3])); // 21

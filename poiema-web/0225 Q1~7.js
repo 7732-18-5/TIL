@@ -31,8 +31,7 @@ console.log(getMin());
 // 3. todos에 선두에 새로운 요소로서 객체 { id: 4, content: 'Test', completed: false }를 추가하는 함수를 작성하라
 
 function addTodo() {
-    var addTodo = [{id : 4, content: 'Test', completed: false}]
-    .concat(todos);
+    var addTodo = [{id : 4, content: 'Test', completed: false}].concat(todos);
     return addTodo;
 }
 

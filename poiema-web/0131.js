@@ -18,9 +18,9 @@ var res = '';
 for (var i = 0; i < 10; i++ ) {
     if (i % 2) {
         // console.log(i);
-        res += i 
+        res += i
         // i + '' .toString , string(i);
-        // NaN 
+        // NaN
     }
 }
 console.log(res)

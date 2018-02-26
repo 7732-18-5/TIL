@@ -1,0 +1,19 @@
+{
+  "name": "poiema-web",
+  "version": "1.0.0",
+  "main": "0131-6.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^4.18.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-html": "^4.0.2",
+    "eslint-plugin-import": "^2.9.0"
+  },
+  "dependencies": {},
+  "description": ""
+}

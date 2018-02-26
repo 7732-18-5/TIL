@@ -10,6 +10,7 @@ function alphaString46(s) {
     }
         return false;
 }
+
 console.log(alphaString46('과제_4'))
 console.log(alphaString46('1234'))
 console.log(alphaString46('9014'))

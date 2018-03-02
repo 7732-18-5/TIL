@@ -206,4 +206,43 @@ header, section, nav, article, footer {
 >     - 동일한 폴더에 위치할 때 `"sample.png"`
 >     - 하위 폴더 "image" 에 위치할 때 `"/image/sample.png"`
 >   - `Inline level tag`  
+> - &lt;figure&gt;
+>   - 캡션 대상지정하기
+> - &lt;figcaption&gt; 
+>   - 캡션 설명 붙이기
+>   - <figure> 태그에 <figcaption> 태그를 반드시 사용해야 하는 것은 아닙니다. 캡션을 표시하지 않더라도 <figure> 태그를 사용하는 것은 그 부분에 이미지, 다이어그램, 비디오 같은 것들이 있다는 사실을 브라우져에게 알리기 위한 것이다. 단지 이미지를 묶어서 표시하고 싶다면 <div>를 사용하면 된다.
 
+> 멀티미디어 재생
+>
+> - <embed src="경로" [width="" height=""]> 
+>   - html4
+>
+>
+> - <object [width="" height=""]> 
+>
+>   - <param name="패러미터 이름" value ="값" > 
+>   - html4
+>
+> -  &lt;video src="경로" &lsqb;속성&rsqb;[속성="속성값"]&gt;
+>
+>   - html5
+>   - <video scr="" width="" height="" controls>
+>
+> - &lt;audio  src="경로" &lsqb;속성&rsqb;&lsqb;속성="속성값"&rsqb;&gt; 
+>
+>   - controls	 재생을 제어하는 속성
+>
+>     ​
+>
+>   - preload (속성) 재생하기 전 오디오파일을 모두 다운로드할 것인지 일부 정보만 다운로드 할 것인지 여부를 묻는다.
+>
+>     - preload="none" 재생버튼을 눌르면 다운로드
+>     - preload="metadata" 메타 정보만 다운로드
+>     - preload="auto" 페이지가 열리면 즉시 다운로드한다.
+>     - preload="autoplay" 자동실행
+>       - 모바일 기기에서는 자동 실행되지 않는다.
+>       - HTML5에서는 자동 재생을 사용하지 않기를 권장한다.
+>     - Loop 
+>       - 미디어 파일 재생이 끝났을 때, 처음부터 다시 재생한다.
+>
+> - <source src="경로" type="파일의 형식" 

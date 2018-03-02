@@ -198,3 +198,12 @@ header, section, nav, article, footer {
 > dl dt dd 을 구분하고 설명하라
 
 > tr td th 을 구분하고 설명하라
+
+---
+
+> - &lt;img src="경로" alt="설명" title="툴팁" usemap="">
+>   - 경로는 웹 페이지 문서파일을 기준으로 결정된다.
+>     - 동일한 폴더에 위치할 때 `"sample.png"`
+>     - 하위 폴더 "image" 에 위치할 때 `"/image/sample.png"`
+>   - `Inline level tag`  
+

@@ -246,3 +246,23 @@ header, section, nav, article, footer {
 >       - 미디어 파일 재생이 끝났을 때, 처음부터 다시 재생한다.
 >
 > - <source src="경로" type="파일의 형식" 
+
+---
+
+>- &lt;form&gt;
+>  - 폼 전체를 감싸는 태그
+>- &lt;fieldset&gt; &lt;legend&gt;
+>  - 폼 요소를 그룹으로 묶고 제목을 붙이는 태그
+>- &lt;label&gt;
+>  - 폼 요소에 캡션을 붙이는 태그
+>- &lt;input&gt;
+>  - 사용자가 입력할 수 있도록 여러 요소를 삽입하는 태그
+>- &lt;select&gt; &lt;option&gt;
+>  - 드롭다운 목록을 넣는 태그
+>- &lt;textarea&gt;
+>  - 여러줄의 텍스트를 입력하는 텍스트 영역을 넣는 태그
+>- &lt;button&gt;
+>  - 버튼을 넣는 태그
+
+
+

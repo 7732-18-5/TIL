@@ -439,6 +439,36 @@ header, section, nav, article, footer {
 >
 >- &lt;button&gt;
 >  - 버튼을 넣는 태그
+>  - type="submit/reset/button"
+>    - submit 폼을 제출한다. 
+>    - reset 폼의 내용을 리셋한다.
+>    - button 버튼의 형태를 생성한다.
+>
+>- <input type="submit" value="전송하기">
+>
+>- <button type="submit">전송하기</button>
+>
+>  - Input 태그를 이용한 버튼과 달리, button 태그는 콘텐츠를 포함 할 수 있기 때문에 CSS를 사용해 버튼을 스타일링 할 수 있다.
+>
+>- &lt;output&gt; 결과출력
+>
+>- &lt;progress&gt; 진행상태 표시
+>
+>  - Value 작업이 진행된 정도를 (부동소수점으로) 표시
+>    - 0 =< value =< max(default : 1.0)
+>  - Max 작업이 완료되려면 수행해야 하는 작업을 부동 소수점으로 표현한다.
+>
+>- &lt;meter&gt; 값이 차지하는 크기 표시하기
+>
+>  - 외관상 <progress> 와 <meter> 는 동일하다. 따라서 혼동하기 쉽다. <meter>은 진행의 의미보다, 지정된 범위 내에서 해당 값이 어느정도의 비율을 차지하고 있는지를 표시하기 위해 사용한다.
+>  - min, max (default 0,1) 범위의 최소값 최대값
+>  - value 범위 안에서 차지하는 값
+>  - low high 하한값, 상한값의 기준을 범위에 지정한다.
+>  - optimum 최적값의 기준을 범위에 지정한다.
+
+
+
+
 
 
 

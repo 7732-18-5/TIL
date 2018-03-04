@@ -362,10 +362,80 @@ header, section, nav, article, footer {
 >    - 필수 필드로 지정| 폼에 내용을 입력 후 서버로 전송하게 되면, 필수 필드에 필요한 내용이 모두 채워졌는지 검사를 한다. html5 이전에는 자바스크립트를 통해서 처리했었다.
 >
 >- &lt;select&gt; &lt;option&gt;
->  - 드롭다운 목록을 넣는 태그
+>  - 여러 데이터를 나열해서 보ㅕ주고 사용자가 선택할 수 있게 해주는 폼 요소들이 있다. (드롭다운 목록을 넣는 태그)
+>
+>  - ```html 
+>    <select id="class">
+>      <option value=""></option>
+>      <option value=""></option>
+>      <option value=""></option>
+>      <option value=""></option>
+>    </selct>
+>    ```
+>
+>  - <select size=""> 한 화면에 표시 될 드롭박스의 크기를 지정한다.
+>
+>  - <select multiple> 
+>
+>    - default : 1 , 숫자를 지정하면 여러개의 옵션을 선택 할 수 있다.
+>
+>  - <option>
+>
+>    - value 서버로 전송될 값을 지정한다.
+>    - selected 화면에 표시 될 때 기본으로 선택될 옵션을 지정한다.
+>
+>  - <optgroup>
+>
+>  - ```html
+>    <select id="class">
+>      <optgroup label="공과대학">
+>        <option value="archi">건축공학과</option>
+>        <option value="mechanic">기계공학과</option>
+>        <option value="indust">산업공학과</option>
+>        <option value="elec">전기전자공학과</option>
+>        <option value="computer">컴퓨터공학과</option>
+>        <option value="chemical">화학공학과</option>
+>      </optgroup>
+>    </selct>
+>    ```
+>
+>- &lt;datalist&gt;
+>
+>  - 사용자가 텍스트 필드에 직접 값을 입력하는 것이 아니라, 제시한 값중에서 선택하면 그 값이 자동으로 입력된다.
+>
+>  - 텍스트 필드와 함께 사용하기 때문에 <input> 태그를 같이 사용한다.
+>
+>  - <input list="_"> <detalist id="_">
+>
+>    - "_" 를 일치시켜서 연결시킨다. 
+>
+>  - ```HTML
+>    <input list="mobileOS"> // list 속성 - datalist id
+>    <datalist id="mobileOS"> // id 속성 - input list 
+>    	<option value="IOS"></option>
+>      	<option value="Android"></option>
+>      	<option value="Windows10"></option>
+>    </datalist>
+>    ```
+>
+>- &lt;option&gt; 
+>
+>  - value 서버에 넘겨질 값을 지정한다.
+>  - label 사용자를 위해 브라우저에 표시할 라벨
 >
 >- &lt;textarea&gt;
+>
 >  - 여러줄의 텍스트를 입력하는 텍스트 영역을 넣는 태그
+>
+>  - ```html
+>    <textarea cols="50" rows="5"></textarea>
+>    ```
+>
+>  - name
+>
+>  - cols 가로 너비를 문자 단위로 지정한다. 
+>
+>  - rows 세로 길이를 줄 단위로 지정한다. (지정한 줄단위 초과시:스크롤 생성)
 >
 >- &lt;button&gt;
 >  - 버튼을 넣는 태그

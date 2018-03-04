@@ -78,3 +78,89 @@ tag [attribute*=value] {
 }
 ```
 
+```css
+tag:link{
+  
+}
+tag:visited{
+  
+}
+tag:hover{
+  
+}
+tag:focus{
+  
+}
+```
+
+```css
+:root
+tag :nth-child(n){
+  //n번째 자식 요소에 스타일을 적용한다.
+}
+
+tag :nth-last-child(n){
+  //역순으로 n번째 자식 요소에 스타일을 적용한다.
+}
+
+:nth-of-type(n){
+  //앞에서 세어 몇번째 요소
+}
+
+:nth-last-of-type(n){
+  //뒤에서 세어 몇번째 요소
+}
+:first-child{
+  //첫번째 자식요소
+}
+:last-child{
+  //마지막 자식요소
+}
+:first-of-child{
+  //형제 관계에 있는 요소 중 첫번째 요소 
+}
+:last-of-child{
+  //형제 관계에 있는 요소 중 마지막 요소
+}
+:only-child{
+  //부모 요소 안의 자식 요소가 유일하게 하나일 때
+}
+:last-of-type{
+  //해당 요소가 유일한 요소일 때 
+}
+
+:target{
+  //
+}
+:enabled{
+  //enabled 일 때
+}
+:disabled{
+  //disabled 일 때
+}
+:checked{
+  //체크되었을 때
+}
+::before{
+  //특정 요소 뒤
+}
+::after{
+  //특정 요소 앞
+}
+::selection{
+  //마우스 커서로 드래그해서 선택된 영역
+}
+:not(tag){
+  //(tag)를 제외한 외의 것들
+}
+```
+
+---
+
+> prefix
+
+- -webkit- 사파리 크롬
+- -moz- 모질라 파이어폭스 
+- -o- 오페라
+- -ms- 인터넷 익스플로러
+

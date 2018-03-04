@@ -249,12 +249,29 @@ header, section, nav, article, footer {
 
 ---
 
->- &lt;form&gt;
+>- &lt;form&gt; 여러 폼 요소 &lt;/form&gt;
 >  - 폼 전체를 감싸는 태그
->- &lt;fieldset&gt; &lt;legend&gt;
+>  - `<form action=`"폼을 전송할 서버 스크립트 지정" `name=`"한 문서에 여럿의 폼이 있을 경우를 대비하여, 폼을 식별하기 위한 이름" `method=`"폼을 전송할 방식을 선택하는 속성으로 get과 post가 있다. " `taget:`"action 에서 지정한 스크립트 파일이 현재의 창이 아닌 다른 위치에서 열리도록 지정"
+>- &lt;fieldset&gt; &lt;legend&gt; 필드세트제목 &lt;/legend&gt; &lt;/fieldset&gt; 
 >  - 폼 요소를 그룹으로 묶고 제목을 붙이는 태그
 >- &lt;label&gt;
->  - 폼 요소에 캡션을 붙이는 태그
+>  - 폼 요소에 캡션을 붙이는 태그, 폼 요소와 캡션으로 사용하는 텍스트가 짝을 이루고 있다. 따라서 폼 요소의 위치가 바뀌더라도 캡션이 항상 따라다니게 된다.
+>
+>  - Ex1)<label>아이디(6자 이상)<input type="text" id="id"></label>
+>
+>  - Ex2)<label for="user_id">아이디(6자 이상)</label>
+>
+>    <input="text" id="user_id">
+>
+>    - label과 form 요소를 따로 사용하더라도 for와 id로 연결 할 수 있다.
+>
+>  - Ex3)<label><input type="radio" name="spk" id="spk value="low" checked>영어회화(초급)</label>
+>
+>    - 텍스트를 눌러도 버튼이 선택된다.
+>
+>  - Ex4)<input type="checkbox" name="pre" id="pre"  value="grammar">문법
+>
+>    - <label> 태그를 사용하지 않아, 텍스트를 눌러도 버튼이 선택되지 않는다.
 >- &lt;input&gt;
 >  - 사용자가 입력할 수 있도록 여러 요소를 삽입하는 태그
 >- &lt;select&gt; &lt;option&gt;

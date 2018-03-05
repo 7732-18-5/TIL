@@ -354,3 +354,109 @@ tag(list-style-image:url();)
 
 
 > list-style-position
+
+---
+
+# Color
+
+> 16진수 표기법 (1~f)
+
+```css
+tag{ color: #ffffff; } // r g b
+```
+
+> rgb 표기법 / rgba (css3+)
+
+```css
+tag{ background-color:rgb(255 255 255); } // r g b
+
+tag{ background-color:rgba(255 255 255 투명도); }
+//alpha(투명도) : 0~1
+```
+
+> hsl표기법 / hsla (css3+)
+
+ ```css
+tag{ background:hsl(색상 채도 밝기); } 
+// 색상: 0~360도 채도: 0~100% 밝기: 0~100%
+//360도 red
+//240도 blue
+//120도 green
+
+tag{ background:hsla(색상 채도 밝기 투명도); }
+//alpha(투명도) : 0~1
+ ```
+
+#background-color
+
+> background-color
+
+```css
+tag{
+  background-color:#ffffff;
+  background-color:rgba(255, 255, 255, 0.5);
+  background-color:green;
+}
+```
+
+> background-image
+
+```scss
+tag{ background-image:url(파일경로); }
+// '', "" 생략가능하다.
+```
+> background-repeat
+
+```css
+tag{ background-repeat:property value; }
+```
+
+- repeat 너비x높이에 가로 세로반복
+- repeat-x 너비에 가로반복
+- repeat-y 높이에 세로반복
+- no-repeat 한번만 표시한다.
+
+> background-position
+
+```css
+tag{ background-position: % % } // (x축 y축)
+tag{ background-position: px px } // (x축 y축)
+tag{ background-position: keyword }
+
+// x축 left center right 
+// y축 top bottom center
+```
+
+> background-attachement
+
+```css
+tag{ background-attachement: fix|scroll; }
+```
+
+> background
+
+```css
+tag{ background: image repeat position attachment;}
+```
+
+> background-size
+
+- auto
+- 크기값
+- 백분율
+- cover 너비와 높이중 큰 값을 배경이미지가 삽입되는 요소에 맞춘다.
+- contain 너비와 높이중 작은 값을 배경이미지가 삽입되는 요소에 맞춘다.
+
+> background-clip
+
+- Border-box
+- Padding-box
+- Content-box
+
+> background-origin
+
+- `background-origin` 은 `background-position` 속성을 이용해 배경 이미지를 원하는곳에 배치하려고 할 때 어디를 기준으로 할 것인지 지정하는 것이다. 
+- Border-box
+- Padding-box
+- Content-box
+

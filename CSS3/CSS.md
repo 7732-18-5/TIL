@@ -460,3 +460,37 @@ tag{ background: image repeat position attachment;}
 - Padding-box
 - Content-box
 
+#gradient
+
+> linear-gradient (각도 또는 위치, color-start, color-stop)
+
+- to top 아래에서 위로
+- to left 오른쪽에서 왼쪽으로
+- to right 왼쪽에서 오른쪽으로
+- To bottom 위에서 아래로
+
+> radial-gradient (위치, 모양(및 크기), color-start, color-stop)
+
+- circle, ellipse
+- closest
+  - closest-side
+  - closest-corner
+- farthest
+  - farthest-side
+  - farthest-corner
+
+```css
+tag { background: radial-gradient(30% 40%, circle farthest-corner, white, green 20%, yellow); }
+
+//시작위치의 20% 에서 green 색상이 적용된다.
+```
+
+#Quiz
+
+> 선형 (linear) deg
+
+> to
+
+> 원형 (radial) 
+
+>ellipse

@@ -164,3 +164,20 @@ tag :nth-last-child(n){
 - -o- 오페라
 - -ms- 인터넷 익스플로러
 
+
+---
+
+> Font-family
+
+- font-size
+  - 글자 크기를 지정
+- font-wieght
+  - 글자 굵기를 지정
+- text-align
+  - 텍스트 정렬방법을 지정
+- text-shadow
+  - 택스트 그림자를 지정
+- line-hight
+  - 단락 안에서 줄 간격을 조절
+- list-style
+  - 불릿 유형과 위치를 조절하는 속성(이미지를 사용 할 수 있다.)

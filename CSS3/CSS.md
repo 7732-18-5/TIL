@@ -1,4 +1,4 @@
->CSS(Cascading Style Sheet)
+>`CSS`(Cascading Style Sheet)
 
 >`Inherit & Cascading`
 >
@@ -494,3 +494,136 @@ tag { background: radial-gradient(30% 40%, circle farthest-corner, white, green 
 > 원형 (radial) 
 
 >ellipse
+
+---
+
+#boxmodel
+
+<p> 태그를 사용한 텍스트는 단락형태를 가진다. 즉 텍스트 단락 앞뒤에 빈 줄이 생기고 텍스트 단락이 하나의 박스 형태를 가진다. 스타일시트에서는 이렇게 박스 형태를 가지는 요소를 '박스 모델 요소' 라고 한다.
+
+박스모델은 텍스트나 이미지 등이 표시되는, 실제 콘텐츠 영역 박스와 콘텐츠 영역 사이의 여백인 `패딩(padding)`, 박스의 `테두리(border)` 그리고 여러 박스 모델간의 여백인 `마진(margin)` 등의 요소로 구성되어있다.
+
+
+
+> `width` `height` 박스 모델 크기 지정
+
+- 크기값 px, cm (브라우저 창의 너비를 조절해도 너비가 변하지 않는다.)
+- % 박스 모델을 포함하고 있는 부모 요소를 기준으로 너비와 높이 값을 %로 지정한다.
+- auto 박스 모델의 너비와 높이 값이 콘텐츠 양에 따라 자동으로 결정된다 (default)
+
+
+
+> `margin`
+
+- 입력값 4개 일 때 { margin: top right bottom left ; } 
+- 입력값 3개 일 때 { margin: top right-left bottom; }
+- 입력값 2개 일 때 { margin: top-bottom right-left ; } 
+- top > right > bottom > left
+- 크기값
+- %
+- auto
+
+> `padding`
+
+> `border`
+
+- border-width
+  - 크기값
+  - Keyword : thin medium(default) thick
+- border-color 
+  - top > right > bottom > left
+  - 색상 값
+  - Transparent (default) : 투명하게 나타낸다.
+- border-style 
+  - `none` 과 `hidden` 의 차이는 무엇인가?
+  - dotted
+  - dashed
+  - soild
+  - double
+  - groove 음각
+  - ridge 양각
+  - inset ?
+  - outset ?
+
+`border-collapse:seperate` 은 무엇인가?
+
+`border-collapse:collapse` 은 무엇인가?
+
+- border
+
+  - Top > right > bottom > left
+
+  - ```css
+     { Border: width color style; }
+    ```
+
+- border-radius
+
+  - 크기값 px em
+  - % 반지름의 크기
+  - top-left > top-right > bottom-left > bottom-right
+
+- border-(top|bottom)-(left|right)-radius
+
+- `border-radius: 가로값/세로값` '/'로 가로값, 세로값을 구분한다.
+
+> box-shadow: 수평거리 값|수직거리 값|blur|확장거리|그림자색상|inset
+
+- 수평거리 값, 수직거리 값 : 필수값
+- blur (default: 0)
+  - '0' 진한 그림자를 표시한다.  
+  - 값이 클수록 커질수록 부드러운 그림자을 표시한다.
+- 확장거리 (default 0)
+  - 그림자가 얼마나 번지는 지를 나타낸다.
+  - '+' 는 그림자가 확대되고 '-' 는 그림자가 축소된다.
+- color (default:black)
+  - rgb, hex-color
+- inset
+  - 'inset' 사용시 박스 안쪽에 그림자를 표시한다.
+
+---
+
+#block-level-element
+
+혼자서 한 줄을 차지하는 요소이다. 따라서 해당 요소의 왼쪽이나 오른쪽에 다른 요소가 올 수 없다.
+
+- Ex)<div><p><ul><ol><h$><blockquote><from><hr><table><fieldset><address>
+
+<blockquote> 는 감싸진 텍스트가 긴 인용문임을 가리킨다. 일반적으로 이것은 들여쓰기로 렌더링 된다.
+
+#inline-level-element
+
+반면 , 줄을 차지않는 요소이다. 즉 화면에 표시되는 콘텐츠만큼만 영역을 차지하고, 그 외의 공간에는 다른 요소가 와도 상관없다.
+
+- Ex)<img> <strong> <br><object> <sub> <sup> <span> <input> <textarea> <label> <button>
+
+> display: 해당 요소가 화면에 어떻게 보여질 것인지 지정하는 것이다.
+
+- block
+- inline
+- Inline-block 블록레벨 박스지만, 인라인 레벨 박스처럼 배치한다.
+- none 박스를 만들지 않으며 시각적으로 표시하지 않는다.
+- inherit 상위 요소의 `display` 속성을 상속한다.
+- table 블록 레벨의 표로 만든다.
+- inline-table 인라인 레벨의 표를 만든다.
+
+
+
+- table-row
+- table-row-group
+- table-header-group
+- table-footer-group
+- table-columm
+- table-columm-group
+- table-cell
+- table-caption
+
+
+- list-item 목록의 항목을 표시할 수 있도록 기본적인 블록 박스와 표시자 박스를 만든다. (html li에 해당한다.)
+
+> Position 웹 문서 안의 요소들을 자유자재로 배치해 주는 속성이기 때문이다.
+
+- static 요소를 문서의 흐름에 맞춰 배치한다.
+- relative 이전 요소에 자연스럽게 연결해서 배치한다.
+- absolute 원하는 위치를 지정하여 배치한다.
+- fixed 지정한 위치에 고정해서 배치한다. 요소가 화면에서 잘릴 수도 있다

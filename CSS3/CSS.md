@@ -555,6 +555,9 @@ tag { background: radial-gradient(30% 40%, circle farthest-corner, white, green 
 
   - ```css
      { Border: width color style; }
+     ```
+    ```
+
     ```
 
 - border-radius
@@ -626,4 +629,41 @@ tag { background: radial-gradient(30% 40%, circle farthest-corner, white, green 
 - static 요소를 문서의 흐름에 맞춰 배치한다.
 - relative 이전 요소에 자연스럽게 연결해서 배치한다.
 - absolute 원하는 위치를 지정하여 배치한다.
+  - 부모 요소를 기준으로 위치를 지정하여 배치한다.
+  - 부모 요소가 없을 때, 브라우저의 왼쪽 최상단을 기준으로 위치를 지정하여 배치한다.
 - fixed 지정한 위치에 고정해서 배치한다. 요소가 화면에서 잘릴 수도 있다
+  - 'absolute'의 위치에 고정된다.
+
+> Z-index 
+
+- 생성시 값은 `z-index: 1` 이고, 그 이후에 삽입하는 요소들은 값이 점점 증가한다.
+- 값이 작을 수록 z축 상에서 뒤에 값이 클수록 z 축 상 앞에 위치한다.
+
+> float
+
+- `float` 는 문서의 레이아웃을 조절하려고 할 때 많이 사용한다. 이때 요소가 떠 있으려면 위치가 고정되면 안되기 때문에 position: absolute 를 사용하면 안된다.
+
+- left
+- right
+- none (default)
+
+> Clear 
+
+- left
+- right
+
+
+- both left right 양쪽에 떠 있지 않도록 한다.
+- none (default)
+
+> Visibility
+
+- visible (default) 요소를 화면에 표시한다.
+
+- hidden 요소가 화면에서 감춰진다. 하지만 크기는 유지되기 때문에 배치에 영향을 준다
+
+- collapse 표의 행이나 열, 행 그룹, 열 그룹 등에서 지정하면 서로 겹치도록 조절한다.
+
+- inherit
+
+  ​

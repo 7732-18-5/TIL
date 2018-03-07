@@ -659,11 +659,72 @@ tag { background: radial-gradient(30% 40%, circle farthest-corner, white, green 
 > Visibility
 
 - visible (default) 요소를 화면에 표시한다.
-
 - hidden 요소가 화면에서 감춰진다. 하지만 크기는 유지되기 때문에 배치에 영향을 준다
-
 - collapse 표의 행이나 열, 행 그룹, 열 그룹 등에서 지정하면 서로 겹치도록 조절한다.
-
 - inherit
 
-  ​
+---
+
+> Cloumn-width 단의 너비 지정하기
+
+- 한 화면을 여러개의 단(column)으로 구성할 때, 단의 너비를 고정해 놓고 화면을 분할할 수 있습니다. 화면 크기에 따라 단의 개수가 유동적이다.
+- 값 : 단 너비를 직접 지정한다. 
+- auto : 단의 개수를 column-count 같은 속성을 이용해 단의 너비를 결정한다.
+
+> Column-count
+
+- 화면에, 단의 개수를 정해놓고 화면을 분할한다. 단의 개수가 고정적적이다.
+
+
+- 개수 0보다 큰 값으로, 단의 개수를 지정한다.
+- auto 단의 너비같은 다른 속성으로 단의 개수를 정한다.
+
+```css
+tag{
+  column: auto 3
+}
+//column-width : auto, column-count : 3
+```
+
+> Column-gap 단과 단 사이 여백 지정하기
+
+- 값 단과 단 사이의 여백을 숫자로 표시한다.
+- normal  자동으로 여백을 지정한다. (W3C 권장은 1em)
+
+> Column-rule {width style color}
+
+- Column-rule-width
+- Column-rule-style
+  - thin
+  - medium
+  - thick
+  - 크기값 (px em )
+- Column-rule-color 
+  - none
+  - hidden
+  - dotted
+  - dashed
+  - solid
+  - double
+  - groove
+  - ridge
+  - inset
+  - outset
+
+> 다단(Column) 위치 지정하기
+
+웹 문서의 경우 문서 전체에서 내비게이션이나 사이드바, 푸터 등의 영역은 제외하고 대부분 실제 콘텐츠 부분만 다단으로 구성한다.
+
+- Break-before : column 특정 요소 앞부분에서 단을 나눌 때
+  - Break-before : avoid-column 특정 요소 앞부분에서 단을 나눌 때
+- Break-after : column 특정 요소 뒷부분에서 단을 나눌 때
+  - Break-before : avoid-column 특정 요소 뒷부분에서 단을 나눌 때
+- Break-inside : avoid-column 해당 요소 안에서 강제로 단을 나누지 않도록 할 때
+- Break-inside : column 해당 요소 안에서 강제를 나누도록 할 때
+
+> Column-span 여러 단을 하나로 합치기
+
+- 여러 개로 나누어진 단의 흐름을 따라서 단을 합쳐서 내용을 표시해야 할 때
+- 1 : 하나로 합치는 것으로, 합치지 않는 다는 의미이다. (default)
+- all : 전체 단을 하나로 합쳐서 표현한다. (단의 일부만 합칠 수 없다.)
+

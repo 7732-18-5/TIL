@@ -728,3 +728,68 @@ tag{
 - 1 : 하나로 합치는 것으로, 합치지 않는 다는 의미이다. (default)
 - all : 전체 단을 하나로 합쳐서 표현한다. (단의 일부만 합칠 수 없다.)
 
+---
+
+> Table-layout 
+
+- fixed 셀 너비를 고정한다.
+- auto (default) 셀 내부의 콘텐츠의 길이에 따라 너비가 달라진다. 
+- inherit 
+
+> Word-break : break-all
+
+> Text-align
+
+- left
+- right
+- center (<th> 태그를 사용한 제목셀은 'text-align:center' 가 'default' 이다.)
+- justify
+
+> Vertical-align
+
+- baseline
+  - 셀 박스의 baseline이 첫 번째 행을 확장한 baseline과 같은 높이로 배치된다.
+- top
+  - top 셀 박스의 top 부분이 첫 번째 행을 확장한 top에 맞춰 배치된다.
+- bottom 
+  - 셀 박스의 bottom 부분이 마지막 행을 확장한 bottom에 맞춰 정렬된다.
+- middle
+  - 셀의 center 부분이 확장한 핻을의 중앙에 맞춰 정렬된다.
+- Sub,super, text-top, text-bottom, 길이값, % 
+  - 이 값들은 셀에 적용되지 않는다. 셀에서 이 값들은 baseline로 대체된다.
+
+> Border-collapse 속성
+
+- 표에 테두리를 그리기 위해 <table> 태그와 <td> 태그에서 border 속성을 사용하면 표 전체의 바깥 테두리와 각 셀의 테두리가 모두 화면에 표시되어 두 줄의 테두리가 그려진 것 처럼 보인다. 
+
+- collapse
+
+  - 테두리가 통합된다.
+
+- separate (default)
+
+  - 테두리가 분리된다 
+
+    > Border-spacing
+
+    - border-collapse를 사용하여 셀들을 분리했을 때 인접한 셀 테두리 사이의 거리를 지정한다.
+    - 크기값
+    - inherit
+    - Border-spacing: (1) (2); 
+      - 값 하나를 지정하면 수평거리와 수직거리를 한번에 지정한 것이다.
+      - 값 두개를 지정하면 첫번째 값은 수평거리 두번째 값은 수직거리이다.
+
+    > Empty-cells 빈셀의 표시 여부 지정하기
+
+    - show (defaut) 빈 셀을 표시한다.
+    - hide  빈 셀의 테두리를 그리지 않는다.
+    - inherit
+
+- inherit
+
+> caption-side 
+
+- top
+  - 캡션을 표의 윗부분에 표시한다.
+- bottom
+  - 캡션을 표의 아랫부분에 표시한다.

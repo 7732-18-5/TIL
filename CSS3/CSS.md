@@ -793,3 +793,174 @@ tag{
   - 캡션을 표의 윗부분에 표시한다.
 - bottom
   - 캡션을 표의 아랫부분에 표시한다.
+
+> transform
+
+- translate(tx ty)
+- translate3d(tx ty tz)
+  - 지정한 크기 만큼 수평 수직 (앞뒤)로 이동한다.
+- scale(sx sy)
+- scale 3d(sx sy sz)
+  - 지정한 크기만큼 수평 수직 앞뒤로 확대 및 축소한다.
+- rotate(rx ry deg)
+  - 주어진 각도 만큼 2차원 회전을 한다.
+- rotate3d(rx ry rz deg)
+  - 지정한 각도만큼 수평 수직 앞뒤로 회전한다.
+  - 방향 벡터와 방향이 같은 직선을 기준으로 주어진 각도만큼 회전한다.
+- skew(x deg, y deg)
+  - 지정한 각도만큼 수평 수직으로 왜곡한다.
+  - x : 우상단 -deg ,좌하단 +deg
+  - y: 우상단 -deg, 좌하단 +deg
+  - z: 좌상단 z축 왜곡, 우하단 z축 왜곡
+
+
+
+> 벡터란 무엇인가?
+>
+> 벤터란 크기와 방향을 나타낼 수 있는 물리량을 말한다. 예를 들어 '가속도'는 크기와 방향을 모두 가지고 있는 벡터입니다. 벡터중에서 방향을 가리키는 벡터를 '방향벡터'라고 합니다.
+
+---
+
+> Transform-origin 변형 원점설정
+
+- x축 
+  - 길이값
+  - %
+  - left
+  - center
+  - right
+- y축
+  - 크기값
+  - %
+  - top
+  - center
+  - bottom
+- z축
+  - 크기값
+
+```css
+tag {transform-origin: x축 y축 z축;}
+```
+
+> perspective 원근감 표현하기
+
+- 크기 px
+- none (default) perspective를 지정하지 않는다. 
+
+> perspective-origin
+
+- x축 
+  - 길이값
+  - %
+  - left
+  - right
+  - center
+  - top
+  - bottom
+- y축
+  - 크기값
+  - %
+  - top
+  - center
+  - bottom
+
+> transform-style
+
+- flat 하위 요소를 평면으로 처리한다.
+- perspective-3d 하위 요소들에 3d 효과를 적용한다.
+
+> backface-visibility 요소의 뒷면 표시하기
+
+- visible 뒷면을 표시한다.
+
+
+- hidden 뒷면을 표시하지 않는다.
+
+> 접두사(prefix)
+
+---
+
+> Transition 
+
+- {transition: property | duration | timing-function | delay }
+  - property 트랜지션이 적용될 css 속성의 이름
+  - duration 트랜지션 실행시간
+  - timing-function 트랜지션 효과의 곡선형태
+  - delay 트랜지션 지연시간 
+
+
+- 한 스타일에서 다른 스타일로 바뀌는 것을 의미한다.
+- 바뀌는 시간을 조절함으로써 애니메이션 효과를 낼 수 있다.
+
+> Transition-property 적용할 트랜지션 지정하기
+
+- none 트렌지션 동안 아무 속성되 바뀌지 않는다.
+
+
+- all (default) 요소의 모든 속성이 트랜지션의 대상이 된다. 
+
+
+- property name 트렌지션 효과를 적용할 속성 이름을 지정한다.
+
+> transition-duration 트랜지션 진행시간 지정하기
+
+- Transition-duration: 0s(default)
+- 시간 단위는 초(seconds) 또는 밀리초(milliseconds)이다.
+
+> Transition-timing-function 트랜지션 형태 선택하기
+
+- 트랜지션 효과의 시작과 중간, 그리고 끝에서의 속도 곡선을 선택한다.
+- linear 시작에서 끝까지 똑같은 속도로 트랜지션을 진행한다.
+- ease (default) 처음에는 천천히 시작해서 점차 빨라지다가 마지막엔 천천히 종료된다.
+- ease-in 트랜지션 시작을 느리게 한다.
+- ease-out 트랜지션을 느리게 종료한다.
+- ease-in-out 느리게 시작하고 느리게 종료한다.
+- cubic-bezrier(n, n, n, n, n) 직접 베지에 함수를 정의해서 사용한다. 
+  - n에 사용 할수 있는 값은 0~1 사이 값입니다.
+
+> transition-delay 지연시간 설정하기
+
+- Transition-delay: 0s(default)
+- 시간 단위는 초(seconds) 또는 밀리초(milliseconds)이다.
+
+---
+
+> animation
+
+- {animation: name | duration | timing-function | delay | iteration-count | direction}
+- ​
+
+> animation-duration (default: 0s)
+
+- 애니메이션을 얼마 동안 재생할 것인지를 설정한다. 필수값으로 설정하지 않으면 기본값이 0s로 애니메이션 효과를 볼 수 없다.
+- 초(s) 밀리초(ms)
+
+> animation-name
+
+> @keyframes란 무엇인가?
+
+- @keyframes을 이용해 애니메이션을 정의 할 때, 시작과 끝을 설정해야 한다.
+
+- ```
+  @keyframes case1{
+    0%{ left:10px; }
+    100%{ right:500px; } 
+  }
+
+  @keyframes case2{
+    from{ left:10px; }
+    to{ right:500px; } 
+  }
+  ```
+
+> animation-iteration-count 반복횟수 지정하기
+
+- Ex)animation-iteration-count:infinite; 
+  - 반복횟수 무제한
+- 숫자나 'infinite keyword' 를 사용한다.
+
+> animation-direction 애니메이션 실행방향을 지정한다.
+
+- 애니메이션 반대 방향으로 실행
+- normal (default)
+- alternate 역방향으로 실행

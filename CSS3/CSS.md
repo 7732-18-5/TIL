@@ -969,7 +969,7 @@ tag {transform-origin: x축 y축 z축;}
 
 > @media 
 
-- 미디어 쿼리 구문은 대 소문자를 구분하지 않는다.
+- `Media query` 구문은 대 소문자를 구분하지 않는다.
 
 
 - 기본으로 미디어 유형이 지정되어야 하고 필요한 경우 and 연산자로 조건을 적용한다.
@@ -982,7 +982,7 @@ media screen and (min-width: 200px) and (max-width: 360px) {
 
 > 미디어 유형의 종류
 
-- 미디어 쿼리는 미디어별로 적용할 css를 따로 작성하는 것이기 때문에
+- `Media query`는 미디어별로 적용할 css를 따로 작성하는 것이기 때문에
   - @media 속성 다음에 미디어 유형을 지정해야 한다.
 
 
@@ -997,7 +997,7 @@ media screen and (min-width: 200px) and (max-width: 360px) {
 - tty 디스플레이 기능이 제한된 장치(px 단위를 사용 할 수 없다.)
 - embossed 점자 프린트
 
-> 미디어 쿼리에서 사용하는 조건 
+> `Media query`에서 사용하는 조건 
 > viewport 너비와 높이
 
 - 웹 문서 내용이 화면에 보여지는 영역을 'viewport' 라고 하는데, 뷰포트의 너비와 높이를 조건으로 미디어 쿼리를 지정 할 수 있다.
@@ -1015,7 +1015,7 @@ media screen and (min-width: 200px) and (max-width: 360px) {
 } //viewport 너비 600이상 높이 959 이하에서 실행된다.
 ```
 
-> 미디어 쿼리에서 사용하는 조건 
+> `Media query`에서 사용하는 조건 
 > 단말기의 너비와 높이
 
 - device-width device-height
@@ -1050,4 +1050,64 @@ media screen and (min-width: 200px) and (max-width: 360px) {
 - color
 - Min-color
 - Max-color
+
+---
+
+```css
+<link herf="css 파일 경로" rel="stylesheet" type="text/css" media="미디어 쿼리조건">
+
+각 조건별로 스타일시트 파일을 따로 저장하고, <link> 태그나 @import 문을 사용해서 미디어 유형에 따라 css 파일을 가져와 연결한다.
+  
+  
+@import url(css파일 경로) 미디어 쿼리조건
+@import url("css/tablet.css") screen and (min-width:321px) and (max-width:768px);
+```
+
+```css
+<meta name="viewport" content="width=device-width">
+//뷰포트의 너비를 디바이스 너비로 지정하기
+```
+
+> viewport
+
+- width device-height 뷰포트의 너비지정
+- height device-height 뷰포트의 높이지정
+- initial-scale (default: 1) 초기 배율
+- User-scaleable (default: yes) 사용자가 페이지를 확대 및 축소 할 수 있는지를 결정 (User-scaleable: "yes" User-scaleable: "no")
+- Minimum-scale (default: 0.25) 사용자가 축소 할 수 있는 최소값
+- Maximum-scale (default: 5.0) 사용자가 확대 할 수 있는 최대값 
+
+---
+
+```css
+img {
+  max-width: 100%
+}
+```
+
+반응형웹
+
+Media query
+
+all print screen
+
+width height
+
+Device-width
+
+Device-height
+
+? landscape
+
+Viewport 뷰포트
+
+width device-width
+
+Initial-scale
+
+유동형 레이아웃
+
+100%
+
+---
 

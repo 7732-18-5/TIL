@@ -1,0 +1,79 @@
+#wrapper{
+  width: 96%;
+  margin: 0 auto;
+}
+header{
+  background-color: #069;
+  padding: 10px;
+  overflow: hidden;
+}
+header h1{
+  width: 40%;
+  float: left;
+  font-size: 2.5em;
+  font-family: "돋움" "굴림";
+  color: #fff;
+}
+header nav{
+  width: 60%;
+  float: right;
+}
+nav ul{
+  list-style-type: none;
+  margin-top: 20px;
+}
+nav ul li{
+  display: inline;
+  float: left;
+  margin-top: 10px;
+  margin-right: 20px;
+}
+nav ul li a, nav ul li a:visited{
+  font-family: "돋움" "굴림";
+  font-size: 1em;
+  color: whitesmoke;
+  text-decoration: none;
+}
+section{
+  border: 5px solid #333;
+  overflow: hidden;
+}
+article{
+  width: 29.17%;
+  height: auto;
+  float: left;
+  margin-right: 1.5625%;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  padding: 0.5%;
+  border: 1px dotted #333;
+  border-radius: 10px;
+}
+article:first-child{
+  margin-left: 2.083%
+}
+article h3{
+  background: url(note.png) no-repeat left center;
+  padding-left: 30px
+}
+dl{
+  margin: 10px;
+}
+dt{
+  font-weight: bold;
+}
+aside{
+  clear: both;
+  width: 93.75%;
+  margin: 10px auto;
+  padding: 10px;
+  background-color: #99cc33;
+  border: 1px solid #333;
+  border-radius: 15px;
+}
+footer{
+  padding: 10px;
+  background: #333;
+  color: whitesmoke;
+  text-align: center;
+}

@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>향기나는 꽃집</title>
+    <meta name="viewport" content="width=divice-width, initial-scale=1">
+    <style>
+      /* 초기화 */
+      body{
+        margin: 0;
+        padding: 0;
+        font-family: "돋움";
+        font-size: 1em;
+      }
+      a:link{
+        text-decoration: none;
+      }
+      a img{
+        border: 0;
+      }
+
+      /* 화면 중앙에 내용 표시하기 */
+      body{
+        background: url(background.png) no-repeat left top fixed;
+        background-size: cover;
+      }
+      #wrapper{
+        margin: 0 auto;
+        width: 90%;
+        background: white;
+        border: 1px solid #ccc;
+      }
+      /* 스마트폰 */
+      #topbanner {
+        width: 100%;
+        height: 155px;
+        background: url(topbg1.png) no-repeat left top;
+        background-color: #eee0bb;
+        margin-bottom:0;
+      }
+      nav{
+        width: 100%;
+        height: 50px;
+        background-color: #c51a3a;
+        margin: 0;
+        padding-top: 1px;
+      }
+      nav ul{
+        list-style-type: none;
+        text-align: center;
+      }
+      nav ul li{
+        float: left;
+      }
+      nav ul li a, nav ul li a:visited{
+        padding: 15px 10px;
+        font-weight: 600;
+        color: white;
+        text-shadow: 0 0.5px 0.5px red;
+      }
+      nav li a:hover{
+        color: red;
+        background-color: white;
+        text-shadow: 0 0.5px 1px white;
+        border-radius: 10px 10px 0 0;
+      }
+      #shop{
+        text-align: center;
+        width: 100%;
+      }
+      #shop img{
+        width: 100%;
+      }
+      #intro{
+        width: 95%;
+        padding: 2%;
+      }
+      #intro h3{
+        font-weight: 600;
+        margin: 15px 0;
+      }
+      #intoro p{
+        font-size: 1.2em;
+        font-weight: 600;
+        font-family: "바탕";
+        color: #f30;
+      }
+      hr{
+        clear:both;
+        visibility: hidden;
+      }
+      #customer {
+        width:90%;
+        margin-left:2%;
+        margin-bottom:15px;
+      }
+      #customer h3{
+    	  padding: 10px;
+	      background-color: #E66C6D;
+	      color: #fff;
+      }
+      #customer ul{
+	      list-style:square;
+      }
+      #customer ul li{
+	      font-size:0.9em;
+	      line-height:25px;
+      }
+      .sub{
+        width:90%;
+        height:200px;
+        border:1px dotted #2a2399;
+        border-radius:10px;
+        margin-left:2%;
+        margin-bottom:15px;
+      }
+      #choice1 {
+        background:url(bg1.png) no-repeat left bottom;
+        background-size:contain;
+      }
+      #choice2 {
+	      background:url(bg2.png) no-repeat left bottom;
+	      background-size:contain;
+      }
+      #choice3 {
+	      background:url(bg3.png) no-repeat left bottom;
+	      background-size:contain;
+      }
+      .sub  hgroup {
+	      width:95%;
+	      background-color:rgba(255,255,255,.6);
+	      margin-top:120px;
+	      text-align:right;
+      }
+      .sub hgroup h3{
+	      color: #936;
+	      font-weight: 600;
+	      font-family: "바탕";
+	      font-size: 1.5em;
+      }
+      .sub hgroup h4{
+	      color: #06F;
+	      font-weight: 600;
+	      font-family: "바탕";
+	      font-size: 1em;
+      }
+      footer {
+	      width: 100%;
+	      height: 50px;
+        border-top: 1px solid #ccc;
+      }
+      footer ul {
+	      list-style:none;
+	      margin:0;
+      }
+      footer ul li a{
+	      float:left;
+	      font-size:0.8em;
+	      padding:15px 5px;
+	      color:#222;
+      }
+      footer p{
+	      float:right;
+	      text-align:left;
+	      font-size:0.8em;
+	      padding-right:5px;
+      }
+
+      @media all and (min-width: 768px) and (max-width: 1024px) {
+        #topbanner {
+          width: 100%;
+          height: 195px;
+          background: url(topbg2.png) no-repeat left top;
+          background-size: auto;
+          background-color: #eee0bb;
+        }
+        #customer {
+          width: 45%;
+          margin-left: 2%;
+          float: left;
+        }
+
+        #choice1 {
+          width: 45%;
+          margin-left: 2%;
+          float: left;
+        }
+        #choice2 {
+          width: 45%;
+          margin-left: 2%;
+          float: left;
+        }
+
+        #choice3 {
+          width: 45%;
+          margin-left: 2%;
+          float: left;
+        }
+      }
+      @media all and (min-width: 1025px) {
+        #topbanner {
+          width: 100%;
+          height: 195px;
+          background: url(topbg3.png) no-repeat left top;
+          background-size: auto;
+          background-color: #eee0bb;
+        }
+        #shop{
+          clear: both;
+          width: 40%;
+          margin: 1.5%;
+          float: left;
+        }
+        #intro{
+          float: left;
+          margin-top: 25px;
+          width: 50%;
+          padding: 10px;
+        }
+        #intro > h3{
+          font-weight: 600;
+          margin: 15px 0;
+        }
+        #intoro > p{
+          font-size: 1.2em;
+          font-weight: 600;
+          font-family: "바탕";
+          color: #f30;
+        }
+        #customer {
+	        width: 23%;
+	        margin-left: 1.7%;
+          float:left;
+        }
+        #choice1 {
+	        width: 23%;
+	        margin-left: 1.7%;
+          float:left;
+        }
+        #choice2 {
+	        width: 23%;
+	        margin-left: 1.7%;
+          float:left;
+        }
+        #choice3 {
+	        width: 22%;
+	        margin-left: 1.7%;
+          float:left;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wapper">
+      <header id="topbanner">
+
+      </header>
+      <nav>
+        <ul>
+          <li><a href="#">꽃다발</a></li>
+          <li><a href="#">꽃바구니</a></li>
+          <li><a href="#">화환</a></li>
+          <li><a href="#">화분</a></li>
+        </ul>
+      </nav>
+      <div id="shop">
+        <img src="shop.png" alt="꽃집 전경">
+      </div>
+      <div id="intro">
+        <h3>향기나는 꽃집입니다.</h3>
+        <p>
+          향기나는 꽃집은 식물과 함께하는 건강한 삶,꽃으로 전하는 사랑이야기, 그리고 꽃으로 힐링하는 치유의 삶의 메신저가 되겠습니다.
+        </p>
+      </div>
+      <hr>
+        <div id="customer">
+          <h3> 고객 상담 안내</h3>
+          <ul id="contact">
+            <li><b>전화</b>031-123-1234</li>
+            <li><b>팩스</b>031-123-1234</li>
+            <li><b>운영시간</b>오전 9시 ~ 오후 6시 점심시간 12시 ~ 1시</li>
+          </ul>
+        </div>
+        <div id="choice1" class="sub">
+          <hgroup>
+            <h3>꽃다발</h3>
+            <h4>말괄량이</h4>
+          </hgroup>
+        </div>
+        <div id="choice2" class="sub">
+          <hgroup>
+            <h3>꽃바구니</h3>
+            <h4>장미 100송이</h4>
+          </hgroup>
+        </div>
+        <div id="choice3" class="sub">
+          <hgroup>
+            <h3>화환</h3>
+            <h4>근조 화환</h4>
+          </hgroup>
+        </div>
+      <hr>
+      <footer>
+        <ul>
+          <li><a href="#">홈</a></li>
+          <li><a href="#">회사소개</a></li>
+          <li><a href="#">이용약관</a></li>
+          <li><a href="#">개인정보취급방침</a></li>
+        </ul>
+        <p>Copyright 2013</p>
+      </footer>
+    </div>
+  </body>
+</html>

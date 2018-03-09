@@ -1,0 +1,114 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>드롭다운 메뉴</title>
+<style>
+</style>
+</head>
+  <style>
+    #nav{
+      list-style-type: none;
+      height: 45px;
+      padding: 6px 7px;
+      margin: 0;
+      background-color: #7d7d7d;
+      border-radius: 1.5em;
+    }
+    #nav li{
+      float: left;
+      position: relative;
+      margin: 5px 10px;
+      padding: 0;
+    }
+    #nav li a{
+      display: block;
+      margin: 0;
+      padding: 10px 20px;
+      border-radius: 1.4em;
+      font-family:'Segoe UI', Tahoma, Verdana, sans-serif;
+      font-weight: 600;
+      font-size: 1em;
+      color: #e7e5e5;
+      text-decoration: none;
+      text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3)
+    }
+    #nav li:hover a{
+      background: #ebebeb;
+      color: #444;
+      text-shadow: 0 1px 1px rgba(255, 255, 255, 1);
+      border-radius: 1.4em;
+    }
+    #nav ul{
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+      position: absolute;
+      left: 0;
+      top: 45px;
+      width: 150px;
+      background: #ddd;
+      border: 1px solid #b4b4b4;
+      border-radius:8px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, .3);
+      opacity: 0;
+    }
+    #nav li:hover ul{
+      opacity: 1;
+    }
+    #nav ul li{
+      float: none;
+      margin: 0;
+      padding: 0;
+    }
+    #nav ul a{
+      font-weight: normal;
+      text-shadow: 0 1px 0 #fff;
+      color: #333;
+    }
+    #nav ul li:hover a{
+      background: #0078ff;
+      color: #fff;
+      text-shadow: 0 1px rgba(0, 0, 0, .1);
+      border-radius: 0;
+    }
+    #nav ul li:first-child > a{
+    -webkit-border-top-left-radius:9px;
+    -moz-border-radius-topleft:9x;
+    -webkit-border-top-right-radius:9px;
+    -moz-border-radius-topright:9x;
+    }
+    #nav ul li:last-child > a {
+    -webkit-border-bottom-left-radius:9px;
+    -moz-border-radius-bottomleft:9x;
+    -webkit-border-bottom-right-radius:9px;
+    -moz-border-radius-bottomright:9x;
+    }
+  </style>
+<body>
+<ul id="nav">
+	<li><a href="#"> 처음으로 </a></li>
+  <li><a href="#"> 요안도라 안내 </a>
+    <ul>
+      <li><a href="#">소개합니다.</a></li>
+      <li><a href="#">오시는 길</a></li>
+    </ul>
+  </li>
+	<li><a href="#"> 이용 방법</a>
+    <ul>
+      <li><a href="#"> 객실 둘러보기</a></li>
+      <li><a href="#"> 요금 안내 </a></li>
+      <li><a href="#"> 예약 방법 </a></li>
+      <li><a href="#"> 예약 게시판</a></li>
+    </ul>
+  </li>
+	<li><a href="#"> 게시판 </a>
+    <ul>
+      <li><a href="#"> 공지사항 </a></li>
+      <li><a href="#"> 묻고 답하고</a></li>
+    </ul>
+  </li>
+	<li><a href="#"> 프로필</a></li>
+</ul>
+</body>
+</html>

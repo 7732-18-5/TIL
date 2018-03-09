@@ -964,3 +964,90 @@ tag {transform-origin: x축 y축 z축;}
 - 애니메이션 반대 방향으로 실행
 - normal (default)
 - alternate 역방향으로 실행
+
+---
+
+> @media 
+
+- 미디어 쿼리 구문은 대 소문자를 구분하지 않는다.
+
+
+- 기본으로 미디어 유형이 지정되어야 하고 필요한 경우 and 연산자로 조건을 적용한다.
+
+```css
+media screen and (min-width: 200px) and (max-width: 360px) {
+  
+}
+```
+
+> 미디어 유형의 종류
+
+- 미디어 쿼리는 미디어별로 적용할 css를 따로 작성하는 것이기 때문에
+  - @media 속성 다음에 미디어 유형을 지정해야 한다.
+
+
+- all 모든 미디어 유형
+- print 인쇄 장치
+- screen 컴퓨터 스크린
+- tv 음성과 영상이 동시에 출력되는 tv
+- aural 음성합성 장치
+- braille 점자 표시 장치
+- handheld 패드처럼 손에 들고 다니는 장치
+- projection 프로젝터
+- tty 디스플레이 기능이 제한된 장치(px 단위를 사용 할 수 없다.)
+- embossed 점자 프린트
+
+> 미디어 쿼리에서 사용하는 조건 
+> viewport 너비와 높이
+
+- 웹 문서 내용이 화면에 보여지는 영역을 'viewport' 라고 하는데, 뷰포트의 너비와 높이를 조건으로 미디어 쿼리를 지정 할 수 있다.
+
+
+- width height
+- min-width 최소 너비
+- max-width 최대 너비
+- min-height 최소 높이
+- max-height 최대 높이
+
+```css
+@midea all (min-width:600px) and (max-width:959px) {
+...
+} //viewport 너비 600이상 높이 959 이하에서 실행된다.
+```
+
+> 미디어 쿼리에서 사용하는 조건 
+> 단말기의 너비와 높이
+
+- device-width device-height
+- device-min-width 단말기 최소 너비
+- device-max-width 단말기 최대 너비
+- device-min-height 단말기 최소 높이
+- device-max-height 단말기 최대 높이
+
+> 화면 회전속성
+
+- orientation
+  - landscape (default) (풍경화; 세로보다 가로가 넓다)
+  - portrait (초상화; 가로보다 세로가 넓다) 
+
+> 화면비율
+
+- 브라우져 화면 너비값을 높이 값으로 나눈 것으로 숫자값을 사용하거나, 계산식을 사용 할 수 있다.
+
+
+- aspect-ratio 화면 비율(width/height)
+- min-aspect-ratio 최소 화면 비율
+- max-aspect-ratio 최대 화면 비율
+
+> 단말기의 물리적 화면 비율
+
+- device-aspect-ratio
+- min-device-aspect-ratio
+- max-device-aspect-ratio
+
+> 색상당 비트수 
+
+- color
+- Min-color
+- Max-color
+

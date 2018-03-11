@@ -1,0 +1,87 @@
+/* 웹페이지 전체에 적용할 스타일을 선언합니다 */
+html, body {
+  margin: 0;
+  padding: 0;
+  /* 1. 글씨체를 나눔 고딕('Nanum Gothic'), sans-serif로 설정하세요 */
+	font-family: 'Nanum Gothic', sans-serif;
+
+}
+
+/* 메뉴바 요소를 한 줄 정렬합니다 */
+nav {
+  display: flex;
+  align-items: center;
+}
+
+/* 로고 이미지의 좌우 공간을 설정합니다 */
+img {
+  padding-right: 16px;
+  padding-left: 16px;
+}
+
+/* 2. <header> 태그 속 <li> 태그를 선택하세요 */
+header li{
+	display:inline;
+  /* 3. display 속성의 속성값을 inline으로 설정하세요 */
+
+}
+
+/* <header> 태그 속 <li>, <a> 태그를 선택합니다 */
+header li a {
+  padding: 12px;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+	color: black;
+  /* 4. 글자 색상을 검은색으로 변경하세요 */
+
+}
+
+/* 링크에 마우스를 올려 놓을 때 설정을 변경합니다 */
+header li a:hover {
+  background-color: #eeeeee;
+  color: #524fa1;
+}
+
+/* 하단 영역에 적용할 스타일을 선언합니다 */
+footer {
+	background color: #333333;
+  padding: 16px 32px 48px 32px;
+  color: #9a9a9a;
+  /* 5. 배경 색상을 #333333로 설정하세요 */
+
+}
+
+footer ul {
+  padding: 0;
+}
+
+footer li {
+  display: inline;
+}
+
+footer li a {
+  color: #9a9a9a;
+  text-decoration: none;
+}
+
+footer p, footer ul {
+  margin-top: 4px;
+  margin-bottom: 4px;
+	font-size: 12px;
+  /* 6. 글씨 크기를 12px로 변경하세요 */
+
+}
+
+footer div {
+  margin-top: 24px;
+}
+
+footer ul li:after {
+  content: " \00b7 ";
+  padding-left: 6px;
+  padding-right: 6px;
+}
+footer ul li:last-child:after {
+  content: "";
+}

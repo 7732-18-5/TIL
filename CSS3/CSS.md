@@ -217,7 +217,7 @@ tag :nth-last-child(n){
 - normal 일반
 - Small-caps 작은 대문자로 표시
 
-> font-wieght 글자 굵기를 지정
+> font-weight 글자 굵기를 지정
 
 - normal 일반
 - bold 볼드체

@@ -59,7 +59,7 @@
   - 실제 콘텐츠 내용은 <article> 태그를 이용해서 표시한다.
 - &lt;article&gt; 
   - <section> 와 <article>을 혼동해서 사용하는데, 독립적으로 배포하거나 재사용하더라도 완전히 하나의 콘텐츠가 된다면 <article> 태그를 사용하면 된다.
-- &lt;aside&gt;
+- &lt;asidef&gt;
   - 본문 내용 외에 주변에 표시되는 기타 내용들을 표시한다.
 - &lt;footer&gt;
   - <footer> 태그 안에 <header> 태그를 비롯하여 <section> , <article> 등 다양한 레이아웃 태그들을 모두 사용할 수 있다.
@@ -307,7 +307,7 @@ header, section, nav, article, footer {
 >    - html5 이전에는 아이디 이름 전화번호 이메일 등은 모두 텍스트 필드를 이용해서 입력했지만, html5 부터는 각 정보에 맞게 텍스트 필드 요소가 분화되었다.
 >  - email 이메일 입력 필드
 >    - html5 이전에는 텍스트 필드를 사용해 사용자가 입력하면 자바스크립트를 이용해 @ 라는 문자가 들어가 있는지 확인했다.
->    -  하지만 html5에서는 <input type="email">을 사용하면, 사용자가 입력한 내용이 이메일 주소 형식에 맞는지 자동으로 체크한다.
+>    - 하지만 html5에서는 <input type="email">을 사용하면, 사용자가 입력한 내용이 이메일 주소 형식에 맞는지 자동으로 체크한다.
 >  - number 숫자를 조절 할 수 있는 화살표
 >    - min 최소값 
 >    - max 최대값
@@ -466,9 +466,13 @@ header, section, nav, article, footer {
 >  - low high 하한값, 상한값의 기준을 범위에 지정한다.
 >  - optimum 최적값의 기준을 범위에 지정한다.
 
+---
 
+`<br>` 은 `a forced line-break` 의 줄임말이다.
 
+외관상 줄간격은 '&lt;br&gt;&lt;br&gt; = &lt;p&gt;' 이다.
 
+`<p>` 는 `paragraph` 의 줄임말이다.
 
-
+`<alt>` `alternative text` 의 줄임말이다.
 

@@ -1,67 +1,66 @@
-
-    html,body,div,span,applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
-        margin: 0;
-        padding: 0;
-        border: 0;
-        font-size: 100%;
-        font: inherit;
-        vertical-align: baseline;
-    }
+html,body,div,span,applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
 
 /* HTML5 display-role reset for older browsers */
 article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
-  display: block; 
+  display: block;
 }
 
 body {
-  line-height: 1; 
+  line-height: 1;
 }
 
 ol, ul {
-  list-style: none; 
+  list-style: none;
 }
 
 blockquote, q {
-  quotes: none; 
+  quotes: none;
 }
 
 blockquote:before, blockquote:after {
   content: '';
-  content: none; 
+  content: none;
 }
 
 q:before, q:after {
   content: '';
-  content: none; 
+  content: none;
 }
 
 table {
   border-collapse: collapse;
-  border-spacing: 0; 
+  border-spacing: 0;
 }
 
 a {
   text-decoration: none;
-  color: inherit; 
+  color: inherit;
 }
 
 
 /*  reset */
 .wrap {
-  width: 100%; 
+  width: 100%;
 }
 
 .container {
   margin: 0 auto;
-  width: 940px; 
+  width: 940px;
 }
 
 .header,.article, .slide_layer01, footer {
-  box-sizing: border-box; 
+  box-sizing: border-box;
 }
 
 .f_nanumgothic {
-  font-family: "nanumGothic"; 
+  font-family: "nanumGothic";
 }
 
 /* skip */
@@ -71,60 +70,60 @@ a {
 .header {
   height: 120px;
   padding-top: 55px;
-  background-color: #515151; 
+  background-color: #515151;
 }
   .header #logo {
     display: inline-block;
     width: 110px;
     height: 36px;
-    background: url("img/polygon-1.svg") no-repeat; 
+    background: url("img/polygon-1.svg") no-repeat;
   }
-    .header #logo a {
-      display: block;
-      padding-left: 30px;
-      color: #959595;
-      font-family: NanumMyeongjo;
-      font-size: 24px;
-      text-decoration: none; 
-    }
+  .header #logo a {
+    display: block;
+    padding-left: 30px;
+    color: #959595;
+    font-family: NanumMyeongjo;
+    font-size: 24px;
+    text-decoration: none;
+  }
   .header .menu {
     display: block;
     float: right;
     width: 550px;
     height: 18px;
-    margin-left: 150px; 
+    margin-left: 150px;
   }
     .header .menu ul {
-      clear: both; 
+      clear: both;
     }
     .header .menu .menu_ls {
       float: left;
-      margin-left: 65px; 
+      margin-left: 65px;
     }
-      .header .menu .menu_ls:first-child {
-        margin-left: 0; 
-      }
-      .header .menu .menu_ls a {
-        color: #fff;
-        text-decoration: none;
-        line-height: 1.13;
-        letter-spacing: 1.6px; 
-      }
-        .header .menu .menu_ls a:hover {
-          color: #c2c2c2; 
-        }
+    .header .menu .menu_ls:first-child {
+      margin-left: 0;
+    }
+    .header .menu .menu_ls a {
+      color: #fff;
+      text-decoration: none;
+      line-height: 1.13;
+      letter-spacing: 1.6px;
+    }
+    .header .menu .menu_ls a:hover {
+      color: #c2c2c2;
+    }
 /* main slider */
 .main_slide_area {
   height: 400px;
-  background-color: #b5b5b5; 
+  background-color: #b5b5b5;
 }
   .main_slide_area .main_slider {
     position: relative;
-    height: 400px; 
+    height: 400px;
   }
   .main_slide_area .slide_layer01 {
     position: relative;
-    height: 400px; 
+    height: 400px;
   }
     .main_slide_area .slide_layer01 p {
       padding-top: 141px;
@@ -132,7 +131,7 @@ a {
       font-family: NanumMyeongjo;
       font-size: 30px;
       color: #fff;
-      line-height: 40px; 
+      line-height: 40px;
     }
   .main_slide_area a {
     position: absolute;
@@ -141,13 +140,13 @@ a {
     width: 25px;
     height: 38px;
     margin-top: -24px;
-    top: 50%; 
+    top: 50%;
   }
     .main_slide_area a.btn_slide-left {
-      left: 0px; 
+      left: 0px;
     }
     .main_slide_area a.btn_slide-right {
-      right: 0px; 
+      right: 0px;
     }
   .main_slide_area .btn_more {
     position: absolute;
@@ -161,7 +160,7 @@ a {
     color: #fff;
     border-radius: 3px;
     text-align: center;
-    line-height: 40px; 
+    line-height: 40px;
   }
 
 .slide_navigator {
@@ -171,35 +170,35 @@ a {
   margin-left: 50%;
   width: 160px;
   display: flex;
-  justify-content: space-between; 
+  justify-content: space-between;
 }
   .slide_navigator li {
-    width: 15px; 
+    width: 15px;
   }
     .slide_navigator li .btn_slide_nav {
       display: block;
       background-color: #828282;
       border-radius: 8px;
       width: 15px;
-      height: 15px; 
+      height: 15px;
     }
       .slide_navigator li .btn_slide_nav.on, .slide_navigator li .btn_slide_nav:hover {
-        background-color: #fff; 
+        background-color: #fff;
       }
 
 .previews {
   margin-top: 37px;
   height: 356px;
   display: flex;
-  justify-content: space-between; 
+  justify-content: space-between;
 }
   .previews .preview_list {
-    width: 300px; 
+    width: 300px;
   }
     .previews .preview_list .article_title {
       padding-top: 26px;
       font-size: 1.5rem;
-      font-weight: 600; 
+      font-weight: 600;
     }
     .article_title{
       padding-bottom: 10px;
@@ -210,7 +209,7 @@ a {
       overflow: hidden;
       font-size: 16px;
       color: #171717;
-      text-align: left; 
+      text-align: left;
     }
 
 .sub_slide {
@@ -218,21 +217,21 @@ a {
   margin-top: 54px;
   width: 940px;
   height: 408px;
-  background: #959595; 
+  background: #959595;
 }
   .sub_slide .slide_layer01 {
     height: 408px;
     width: 940px;
-    color: #5a5e65; 
+    color: #5a5e65;
   }
     .sub_slide .slide_layer01 p {
       padding-top: 152px;
       text-align: center;
       font-family: nanumMyeongjo;
-      font-size: 30px; 
+      font-size: 30px;
     }
       .sub_slide .slide_layer01 p span {
-        font-size: 16px; 
+        font-size: 16px;
       }
   .sub_slide > a {
     position: absolute;
@@ -242,10 +241,10 @@ a {
     margin-top: -53px;
     top: 50%; }
     .sub_slide > a.btn_slide-left {
-      left: 20px; 
+      left: 20px;
     }
     .sub_slide > a.btn_slide-right {
-      right: 20px; 
+      right: 20px;
     }
 
 .writer_title {
@@ -254,7 +253,7 @@ a {
   margin: 70px auto 75px auto;
   font-size: 36px;
   font-weight: bold;
-  color: #171717; 
+  color: #171717;
 }
   .writer_title::before, .writer_title::after {
     content: "";
@@ -263,13 +262,13 @@ a {
     width: 110px;
     height: 1px;
     top: 50%;
-    background: #000; 
+    background: #000;
   }
   .writer_title::before {
-    left: -140px; 
+    left: -140px;
   }
   .writer_title::after {
-    right: -140px; 
+    right: -140px;
   }
 
 .writers .writer_lists {
@@ -278,46 +277,46 @@ a {
   overflow: hidden;
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-between; 
+  justify-content: space-between;
 }
   .writers .writer_lists li {
     width: 254px;
     height: 65px;
-    float: left; 
+    float: left;
   }
     .writers .writer_lists li .img {
       display: inline-block;
       width: 50px;
       height: 50px;
       border-radius: 25px;
-      background: #f1f1f1; 
+      background: #f1f1f1;
     }
     .writers .writer_lists li .writers {
       float: right;
-      width: 180px; 
+      width: 180px;
     }
     .writers .writer_lists li .writer_name {
       display: block;
       padding-bottom: 10px;
       font-size: 20px;
-      font-weight: bold; 
+      font-weight: bold;
     }
     .writers .writer_lists li .writer_info {
       width: 220px;
       font-size: 16px;
-      line-height: 1.3em; 
-    } 
+      line-height: 1.3em;
+    }
 /* map */
 .map {
   height: 360px;
-  background: #ddd; 
+  background: #ddd;
 }
 /* Inquire */
 .inquire .inquire_title {
   position: relative;
   width: 165px;
   margin: 60px auto 35px auto;
-  font-size: 25px; 
+  font-size: 25px;
 }
   .inquire .inquire_title::before, .inquire .inquire_title::after {
     content: "";
@@ -326,13 +325,13 @@ a {
     width: 320px;
     height: 1px;
     top: 50%;
-    background: #ddd; 
+    background: #ddd;
   }
   .inquire .inquire_title::before {
-    left: -386px; 
+    left: -386px;
   }
   .inquire .inquire_title::after {
-    right: -386px; 
+    right: -386px;
   }
 
 .inquire input, .inquire .message {
@@ -346,17 +345,17 @@ a {
 
 .inquire input.name, .inquire input.email {
   width: 460px;
-  height: 48px; 
+  height: 48px;
 }
 
 .inquire input.name {
-  margin-right: 20px; 
+  margin-right: 20px;
 }
 
 .inquire .message {
   margin-top: 24px;
   height: 240px;
-  width: 100%; 
+  width: 100%;
 }
 
 .inquire .message-send {
@@ -372,7 +371,7 @@ a {
   font-size: 20px;
   color: #fff;
   border: 0;
-  outline: none; 
+  outline: none;
 }
 /* footer */
 footer {
@@ -382,5 +381,5 @@ footer {
   font-size: 16px;
   text-align: center;
   vertical-align: middle;
-  color: #4d4b4a; 
+  color: #4d4b4a;
 }

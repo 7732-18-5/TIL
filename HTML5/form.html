@@ -4,11 +4,21 @@
   </head>
   <body>
     <form action="http://localhost/login.php">
-      <p>id:<input type="text" name="id" value="default value"></p>
-      <p>password:<input type="password" name="pwd" value="default value"></p>
-      <p>주소:<input type="text" name="address" value="default value"></p>
-      <p>textarea:<textarea name="text" id="" cols="50" rows="2">default value</textarea></p>
-      <input type="submit">
+      <p><label for="id_sample">id</label>:
+        <input id="id_sample" type="text" name="id" value="default value"></p>
+      <p><label for="pwd_sample">password</label>:
+        <input id="pwd_sample" type="password" name="pwd" value="default value"></p>
+      <p><label for="addr_sample">주소</label>:
+        <input id="addr_sample" type="text" name="address" value="default value"></p>
+      <p><label for="text_sample">textarea</label>:
+        <textarea name="text" id="text_sample" cols="50" rows="2">default value</textarea></p>
+      <!-- <input type="submit"> -->
+      <label>
+        <input type="checkbox" name="color" value="red"> 붉은색
+      </label>
+      <label for="color_blue">
+        <input type="checkbox" name="color" value="blue">파란색
+      </label>
     </form>
   </body>
 </html>

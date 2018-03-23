@@ -476,3 +476,21 @@ header, section, nav, article, footer {
 
 `<alt>` `alternative text` 의 줄임말이다.
 
+
+
+> Method
+
+- `form` 사용자가 입력한 정보를 브라우져를 통해서 서버로 전송하는 것이다.
+- 데이터를 전송하는 방법은 여러가지가 있다.
+- get/post
+
+```html
+<form action="http://localhost/login.php" method="post">
+```
+
+```c
+int main() {}  
+
+int var = 0;  
+```
+

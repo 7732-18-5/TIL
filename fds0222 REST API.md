@@ -1,4 +1,6 @@
-# 0. REST API란 무엇인가?
+#fds022 REST API
+
+##0. REST API란 무엇인가?
 
 | RESTAPI |                |
 | ------- | -------------- |
@@ -17,7 +19,7 @@
 - 중간적 구성요소를 이용해 응답 지연 감소, 보안을 강화, 레거시 시스템을 인캡슐레이션 (Intermediary components to reduce latency, enforce security and encapsulate legacy systems)
   - **레거시 시스템**(legacy system)은 낡은 기술이나 방법론, 컴퓨터시스템, 소프트 등을 말한다. 이는 현대까지도 남아 쓰이는 기술을 의미하지만, 더이상 쓰이지 않더라도 현대의 기술에 영향을 주는 경우도 포함한다. 
 
-# 1. REST API 중심 규칙 (원칙)
+##1. REST API 중심 규칙 (원칙)
 
 REST에서 가장 중요한 기본적인 규칙은 두 가지이다. URI는 자원을 표현하는 데에 집중하고 행위에 대한 정의는 HTTP Method를 통해 하는 것이 REST한 API를 설계하는 중심 규칙이다.
 
@@ -55,7 +57,7 @@ DELETE /books/1
 
 ```
 
-# 2. HTTP Method
+##2. HTTP Method
 
 4가지의 Method(GET, POST, PUT, DELETE)를 사용하여 CRUD를 구현한다.
 
@@ -66,7 +68,7 @@ DELETE /books/1
 | PUT    | update         | 리소스를 갱신       |
 | DELETE | delete         | 리소스를 삭제       |
 
-# 3. REST API의 구성
+##3. REST API의 구성
 
 REST API는 자원(Resource), 행위(Verb), 표현(Representations)의 3가지 요소로 구성된다. REST는 자체 표현 구조(Self-descriptiveness)로 구성되어 REST API만으로 요청을 이해할 수 있다.
 
@@ -76,9 +78,9 @@ REST API는 자원(Resource), 행위(Verb), 표현(Representations)의 3가지 �
 | Verb            | 자원에 대한 행위     | HTTP Method           |
 | Representations | 자원에 대한 행위의 내용 | HTTP Message Pay Load |
 
-# 4. REST API의 Example
+##4. REST API의 Example
 
-## 4.1 json-server
+> 4.1 json-server
 
 [json-server](http://poiemaweb.com/json-server)를 사용하여 REST API를 사용하여 보자.
 
@@ -126,7 +128,7 @@ $ npm run serve
 
 ```
 
-## 4.2 GET
+> 4.2 GET
 
 books 리소스에서 모든 책을 조회(index)한다.
 
@@ -204,7 +206,7 @@ req.onreadystatechange = function (e) {<font></font>
 
 ```
 
-## 4.3 POST
+> 4.3 POST
 
 books 리소스에 책을 생성한다.
 
@@ -241,7 +243,7 @@ req.onreadystatechange = function (e) {<font></font>
 
 ```
 
-## 4.4 PUT
+> 4.4 PUT
 
 books 리소스의 책의 타이틀을 “ES6”에서 “ECMAScript6”로 갱신한다.
 
@@ -278,7 +280,7 @@ req.onreadystatechange = function (e) {<font></font>
 
 ```
 
-## 4.5 DELETE
+> 4.5 DELETE
 
 books 리소스에서 책을 삭제한다.
 

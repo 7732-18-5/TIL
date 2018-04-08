@@ -518,3 +518,8 @@ HTML5 + CSS3 + jQuery
 
 ---
 
+```sequence
+Client OS -> Host Web Browser : Request
+Host Web Browser -> Client OS : Response
+```
+

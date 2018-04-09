@@ -519,7 +519,10 @@ HTML5 + CSS3 + jQuery
 ---
 
 ```sequence
-Client OS -> Host Web Browser : Request
-Host Web Browser -> Client OS : Response
+[Client] OS -> [Host] Web Browser : Request
+[Host] Web Browser -> [Client] OS : Response
+
+Note right of [Client] OS: OS란 무엇인가? 사용자에게 인터페이스를 제공하는 프로그램의 집합이다.
+
 ```
 

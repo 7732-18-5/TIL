@@ -24,3 +24,18 @@ EPUB(electronic publication)은 국제 디지털 출판 포럼(IDPF, Internation
 >
 > OCF 역시 뷰어나 저작 도구를 개발할 때 참고하는 항목으로 EPUB 저작 도구는 이 규칙을 기준으로 해서 편집자가 편집한 콘텐츠를 ‘.epub’을 확장자로 갖는 하나의 파일로 저장합니다. OCF 역시 OPF처럼 기본 개념만 알고 있어도 EPUB을 만드는데 문제가 되지 않습니다. 하지만 EPUB의 기본 구조를 알아두면 EPUB을 제작시 유용하게 활용할 수 있습니다.
 
+
+
+> sample.epub
+
+- Mimetype
+- [META-INF}
+  - container.xml	
+- [OEBPS]
+  - content.opf
+  - toc.ncx
+  - [text]
+  - [img]
+  - [fonts]
+  - [css]
+

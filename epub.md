@@ -29,6 +29,7 @@ EPUB(electronic publication)은 국제 디지털 출판 포럼(IDPF, Internation
 > sample.epub
 
 - Mimetype
+  - minetype file 내부엔 'application/epub+zip' 이런 형식의 정보가 담겨 있어 EPUB 파일이라는 사실을 알리는 역할을 한다. EPUB2.0에서는 위의 텍스트가 필수적이고 공백 등 다른 문자를 허용하지 않는다. 또한 이 파일은 압축을 하면 안되도록 규정되어 있습니다. EPUB3.0에서는 이런 제한이 없다.
 - [META-INF}
   - container.xml
     - sample.epub의  `root folder` 위치를 알려주고, content.opf 파일의 위치를 지정한다. 

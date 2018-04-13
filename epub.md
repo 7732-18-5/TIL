@@ -30,10 +30,12 @@ EPUB(electronic publication)은 국제 디지털 출판 포럼(IDPF, Internation
 
 - Mimetype
 - [META-INF}
-  - container.xml	
-- [OEBPS]
-  - content.opf
-  - toc.ncx
+  - container.xml
+    - sample.epub의  `root folder` 위치를 알려주고, content.opf 파일의 위치를 지정한다. 
+    - container.xml에서 지정된 내용에 따라서 [OEBPS] 폴더 명이 달라질 수 있다. 또한 container.xml에 적혀있는 파일명과 위치에 정확히 content.opf 파일이 존재해야한다. 즉 content.opf 파일명은 container.xml파일의 정보에 따라 변경 될 수 있다. 
+- [OEBPS] ePub 의 `root folder` 역할을 하한다. 실제 콘텐츠가 위치하는 폴더이다.
+  - content.opf 모든 파일의 위치와 콘텐츠에 대한 정보를 담고있다. 뷰어가 제일먼저 확인하는 파일로서 저작도구가 자동생성한다.
+  - toc.ncx 책의 목차 정보를 담고있다. 저작도구가 자동생성한다.
   - [text]
   - [img]
   - [fonts]

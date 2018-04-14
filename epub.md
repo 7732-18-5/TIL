@@ -29,11 +29,24 @@ EPUB(electronic publication)은 국제 디지털 출판 포럼(IDPF, Internation
 > sample.epub
 
 - Mimetype
+
   - minetype file 내부엔 'application/epub+zip' 이런 형식의 정보가 담겨 있어 EPUB 파일이라는 사실을 알리는 역할을 한다. EPUB2.0에서는 위의 텍스트가 필수적이고 공백 등 다른 문자를 허용하지 않는다. 또한 이 파일은 압축을 하면 안되도록 규정되어 있습니다. EPUB3.0에서는 이런 제한이 없다.
+
 - [META-INF}
+
   - container.xml
     - sample.epub의  `root folder` 위치를 알려주고, content.opf 파일의 위치를 지정한다. 
     - container.xml에서 지정된 내용에 따라서 [OEBPS] 폴더 명이 달라질 수 있다. 또한 container.xml에 적혀있는 파일명과 위치에 정확히 content.opf 파일이 존재해야한다. 즉 content.opf 파일명은 container.xml파일의 정보에 따라 변경 될 수 있다. 
+
+  ```
+    <?xml version="1.0" encoding="UTF-8" ?> 
+  - <container version="1.0" xmlns="urn:oasis:names:tc:opendocument:xmlns:container">
+  - <rootfiles>
+    <rootfile full-path="OEBPS/content.opf" media-type="application/oebps-package+xml" /> 
+    </rootfiles>
+    </container>
+  ```
+
 - [OEBPS] ePub 의 `root folder` 역할을 하한다. 실제 콘텐츠가 위치하는 폴더이다.
   - content.opf 모든 파일의 위치와 콘텐츠에 대한 정보를 담고있다. 뷰어가 제일먼저 확인하는 파일로서 저작도구가 자동생성한다.
   - toc.ncx 책의 목차 정보를 담고있다. 저작도구가 자동생성한다.
@@ -41,4 +54,85 @@ EPUB(electronic publication)은 국제 디지털 출판 포럼(IDPF, Internation
   - [img]
   - [fonts]
   - [css]
+
+
+> Sigil
+
+- 표지 스타일 지정
+
+```css
+.img_cover {
+
+text-indent : 0; /*div 태그를 쓸 경우 없어도 됨*/
+
+text-align : center;
+
+tidth : 100%;
+
+teight : 100%
+
+}
+```
+
+```html
+<p class="img_cover"><img src="../Images/cover.jpg" alt="cover" /></p>
+```
+
+```css
+.cover {
+
+width: 100%;
+
+height : 100%;
+
+text-indent : 0;
+
+text-align : center;
+
+ 
+
+display: box;
+
+box-orient: horizontal;
+
+box-pack: center;
+
+box-align: center;
+
+ 
+
+display: -webkit-box;
+
+-webkit-box-orient: horizontal;
+
+-webkit-box-pack: center;
+
+-webkit-box-align: center;
+
+ 
+
+display: -moz-box;
+
+-moz-box-orient: horizontal;
+
+-moz-box-pack: center;
+
+-moz-box-align: center;
+
+}
+
+ 
+
+img.cover {
+
+width : 100%;
+
+height : auto;
+
+}
+```
+
+```html
+<div class="cover"><img alt="표지 이미지" class="cover" src="../Images/cover.jpg"/></div>
+```
 

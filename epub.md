@@ -136,3 +136,161 @@ height : auto;
 <div class="cover"><img alt="표지 이미지" class="cover" src="../Images/cover.jpg"/></div>
 ```
 
+```html
+<h1>Alice’s Adventures in Wonderland</h1>
+```
+
+```css
+{
+
+text-indent:0 !important;
+
+text-align:center;
+
+ 
+
+font-size:3em;
+
+font-family: "Times New Roman", Times, serif;
+
+ 
+
+display : table;  /* 제목 밑줄*/
+
+border-bottom : solid 1px #000000;
+
+margin : 20% auto 10px auto;
+
+padding-bottom : 10px;
+
+}
+```
+
+```html
+<h2>이상한 나라의 앨리스</h2>
+```
+
+```Css
+h2 {
+
+text-indent : 0 !important;
+
+text-align:center;
+
+font-size:1.6em;
+
+font-family:"강조글꼴";
+
+margin : 0 0 15% 0;
+
+}
+```
+
+```html
+<p class="sub_author">루이스 캐럴</p>
+<p class="sub_translator">최지원 옮김</p>
+```
+
+```css
+.sub_author {
+
+text-align : center;
+
+text-indent : 0 !important;
+
+font-size:1.2em;
+
+font-family:"기본글꼴";
+
+}
+
+ 
+
+.sub_translator {
+
+text-align : center;
+
+text-indent : 0 !important;
+
+font-size:0.8em;
+
+font-family:"기본글꼴";
+
+}
+```
+
+```html
+<p class="logo"><img alt="logo" class="logo" src="../Images/logo.png" /></p>
+```
+
+```css
+.logo {
+
+text-align : center;
+
+text-indent : 0 !important;
+
+}
+
+ 
+
+img.logo {
+
+margin-top : 10%;
+
+width : 20%;
+
+max-width : 100%;
+
+}
+```
+
+>
+
+```css
+text-align : center;
+
+text-indent : 0 !important;
+
+font-family:"기본글꼴";
+
+
+h2 .sub_author .sub_translator {
+
+text-align : center;
+
+text-indent : 0 !important;
+
+font-family:"기본글꼴";
+
+ 
+
+}
+
+ 
+
+h2 {
+
+font-size:1.6em;
+
+margin : 0 0 15% 0;
+
+}
+
+ 
+
+.sub_author {
+
+font-size:1.2em;
+
+}
+
+ 
+
+.sub_translator {
+
+font-size:0.8em;
+
+}
+```
+

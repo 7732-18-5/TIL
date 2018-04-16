@@ -1,4 +1,4 @@
->`CSS`(Cascading Style Sheet)
+#CSS (Cascading Style Sheet)
 
 >`Inherit & Cascading`
 >

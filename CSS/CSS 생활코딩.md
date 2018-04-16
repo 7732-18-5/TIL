@@ -2,8 +2,14 @@
 
 HTML의 본질은 '정보', CSS의 본질은 '디자인' 이다.
 
+HTML은 정보를 생산, 보관, 전송을 위해 전자출판을 하기 위한 언어라고 할 수 있다.
+
+HTML은 정보를 어떻게 잘 표현하는가가 중요하다.
+
+
+
 ## 선택자와 선언
-![CSS](https://github.com/7732-18-5/TIL/commit/56240ca758f29d0572a9c90b1da606db02c78998#diff-1cafefa867f7dfac0cc731aa7b21c7e8)
+![CSS](CSS.png)
 
 ## 선택자의 종류
 
@@ -42,12 +48,6 @@ http://flukeout.github.io/
 
 http://flukeout.github.io/
 ![CSS cheatsheet selector](./CSS_Diner.png)
-
----
-
-# 'CSS Property'를 공부하는 방법 
-
-![CSS Property](https://files.slack.com/files-tmb/T8NQQ8N22-F8W03BM6G-b50f2e7f8a/property_1024.png)
 
 ---
 
@@ -182,7 +182,7 @@ div+p+bq
 - 마진겹침 현상
 - 포지션
 - float
- 
+
 ---
 ## block level element (block level tag)
 
@@ -269,8 +269,8 @@ left > right (left와 right 중 right가 우선순위이다.)
 ---
 ## absolute,fixed
 >- absolute, fixed 를 설정하면 부피(면적), 위치관계 등 시각적인 정보가 'parents element'로 부터 독립된다.
-html tag markup 에서 설정한 'parents-child'등을 포함하는 구조적관계가 파괴되고 재정의 되는 것은 아니다.
-따라서 상속을 포함한 html의 모든 문법은 그대로 적용된다.
+>  html tag markup 에서 설정한 'parents-child'등을 포함하는 구조적관계가 파괴되고 재정의 되는 것은 아니다.
+>  따라서 상속을 포함한 html의 모든 문법은 그대로 적용된다.
 
 
 >- html(Tag markup) , 구조적인 관계에서 'parents-child'관계에 영향을 미치지 않는다.. CSS (style sheet) , 시각적인 정보에서 'parents-child'관계가 독립된다. 

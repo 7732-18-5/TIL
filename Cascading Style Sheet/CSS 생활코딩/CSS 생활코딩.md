@@ -8,7 +8,8 @@ HTML은 정보를 어떻게 잘 표현하는가가 중요하다.
 
 
 
-## 선택자와 선언
+## 선택자(selector)와 선언(declaration)
+
 ![CSS](CSS.png)
 
 ## 선택자의 종류

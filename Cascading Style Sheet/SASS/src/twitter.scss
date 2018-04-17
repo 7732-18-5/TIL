@@ -1,0 +1,64 @@
+@mixin block($size){
+  margin: $size * 15px 0; 
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: $size * 1em;
+}
+body {
+  background-color: #ddd;
+  font-family: sans-serif;
+  margin: 100px;
+}
+.tweet-container {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 25px 50px;
+  border-radius: 5px;
+  width: 530px;
+  margin: 0 auto;
+  .name-lockup {
+    &::after{
+      content:'';
+      display: block;
+      clear: both;
+    }
+    .avatar {
+      border-radius: 5px;
+      float: left;
+    }
+    .name {
+      font-weight: bold;
+      padding-top: 20px;
+      span {
+        font-weight: normal;
+        color: main-font;
+        font-size: 0.7em;
+        display: block;
+      }
+    }
+  }
+}
+
+blockquote {
+    @include block(2);
+}
+
+.actions {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 20px;
+
+  [class*= "fa-"] {
+    color: main-font;
+    margin-right: 5px;
+    &.fa-star {
+      color: $main-color;
+    }
+    &.fa-star+span {
+      color: #ff9600;
+    }
+  }
+  span {
+    color: main-font;  
+    margin-right: 20px;    
+  }
+}

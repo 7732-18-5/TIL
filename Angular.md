@@ -86,3 +86,55 @@ Lazy Loading(지연 로딩)은 SPA의 태생적 단점을 극복하기 위한 �
 
 Angular 코드 자체도 지속적인 최적화가 수행되고 있어 45KB 정도의 크기로 축소되었다고 한다.(ng-conf 2016 기준) Angular는 Mobile First를 지향하는 고성능 프레임워크를 표방하고 있기 때문에 지속적인 코드 최적화가 진행될 것으로 예상된다.
 
+
+
+---
+
+# 1. 컴포넌트 소개
+
+컴포넌트는 Angular의 핵심 구성 요소로서 Angular 애플리케이션은 컴포넌트를 중심(CBD, Component Based Development)으로 구성된다. 컴포넌트의 역할은 애플리케이션의 화면을 구성하는 **뷰(View)**를 생성하고 관리하는 것이다.
+
+## 1.1 웹 컴포넌트
+
+웹 애플리케이션의 뷰는 내용(content)과 구조(structure)을 담당하는 HTML과 스타일(디자인, 레이아웃 등)을 담당하는 CSS의 조합으로 생성되며 DOM과 이벤트의 관리를 위해서 JavaScript가 필요하다.
+
+기존의 객체지향개발(Object Oriented Programming)의 경우 로직을 클래스 단위로 부품화할 수 있지만 뷰를 부품화는 것은 곤란하다. HTML의 경우는 어느 정도 템플릿화가 가능하지만 CSS의 경우 HTML 요소간 상속(Inheritance)과 캐스케이딩(Cascading)이 적용되어 HTML 요소가 배치되는 위치에 따라 스타일이 영향을 받기 때문이다.
+
+컴포넌트는 동작 가능한 하나의 부품이다. 부품화를 위해서는 다른 컴포넌트에 간섭을 받지 않도록 독립된 스코프를 가져야 한다. 다시 말해 컴포넌트 내에서만 유효한 상태 정보와 로직, 스타일을 소유한 완결된 뷰를 생성하기 위한 것이 바로 컴포넌트이다. **컴포넌트는 독립적이고 완결된 뷰를 생성하기 위하여 “HTML, CSS, JavaScript를 하나의 단위로 묶는 것”**으로 W3C 표준인 [웹 컴포넌트(Web Component)](https://www.webcomponents.org/introduction)를 기반으로 한다. Angular는 이러한 컴포넌트를 조립하여 하나의 완성된 애플리케이션을 작성한다.
+
+![web-component](http://poiemaweb.com/img/web-component.png)
+
+웹 컴포넌트(Web Component)
+
+웹 컴포넌트는 웹 애플리케이션에서 재사용이 가능하도록 캡슐화된 HTML 커스텀 요소(Custom element)를 생성하는 웹 플랫폼 API의 집합이다. 웹 컴포넌트가 제공하여야 하는 기능은 아래와 같다.
+
+1. 컴포넌트의 뷰를 생성할 수 있어야 하며(HTML Template)
+2. 외부로부터의 간섭을 제어하기 위해 스코프(scope)를 분리하여 DOM을 캡슐화(Encapsulation)할 수 있어야 하며(Shadow DOM)
+3. 외부에서 컴포넌트를 호출할 수 있어야 하고(HTML import)
+4. 컴포넌트를 명시적으로 호출하기 위한 명칭(alias)을 선언하여 마치 HTML 요소와 같이 사용할 수 있어야 한다(Custom Element).
+
+위에서 설명한 HTML Template, Shadow DOM, HTML import, Custom Element가 바로 웹 컴포넌트의 4대 기술 스펙이다.
+
+![web component browser support](http://poiemaweb.com/img/web-component-browser-support.png)
+
+[각 브라우저의 웹컴포넌트 지원 상황](https://www.webcomponents.org/)
+
+## 1.2 컴포넌트 트리
+
+어떠한 복잡한 화면이라도 컴포넌트 하나로 생성하고 관리할 수 있다. 하지만 재사용이 가능한 부분이 존재하기 마련이기 때문에 하나의 컴포넌트로 화면 전체를 구성하는 것은 컴포넌트를 사용하는 취지에 부합하지 않는다. 컴포넌트는 재사용이 용이한 구조로 분할하여 작성하며 이렇게 분할된 컴포넌트를 조립하여 중복없이 UI를 생성한다.
+
+대부분의 웹 애플리케이션은 아래와 같이 블록 구조(Block structure)를 갖는다. HTML5의 시멘틱 태그를 사용하면 의미론적으로 명확한 구조를 가질 수 있다.
+
+![HTML5 semantic elements](http://poiemaweb.com/img/building-structure.png)
+
+블록 구조(Block structure)
+
+위 블록 구조의 경우, 헤더(header), 사이드바(aside), 푸터(footer) 영역은 모든 화면에서 공통으로 사용되고 본문(section)만 변경될 가능성이 높다. 이러한 경우 컴포넌트를 분할하고 컴포넌트를 조립하여 화면을 구성하는 것은 재사용과 유지보수의 관점에서 매우 바람직하다.
+
+위의 블록 구조를 컴포넌트로 전환하면 아래와 같은 구조를 갖는다. 흡사 DOM 트리와 유사한 형태를 가지게 되는데 이를 **컴포넌트 트리**라고 한다.
+
+![component tree](http://poiemaweb.com/img/component-tree.png)
+
+컴포넌트 트리
+
+Angular 애플리케이션은 분할된 컴포넌트로 구성되기 때문에 컴포넌트 간에는 컴포넌트 트리로 표현되는 부모-자식 관계가 형성된다. 컴포넌트 간의 부모-자식 관계는 데이터와 이벤트가 왕래하는 정보 흐름의 통로가 되며 이를 통해 상태 공유가 이루어지기 때문에 컴포넌트 간의 부모-자식 관계는 Angular 애플리케이션에서 중요한 의미를 갖는다. 따라서 설계 시점부터 화면을 어떠한 컴포넌트 단위로 분할할 것인지에 대한 검토가 필요하다.

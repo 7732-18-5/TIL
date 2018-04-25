@@ -49,11 +49,17 @@ ul li{
 }
 ```
 
-
-
 > 무슨 차이인가?
 
-
+- pseudo class selector
+  - :link
+    - 방문한 적이 없는 링크
+  - :visited
+    - 방문한 적이 있는 링크
+  - :hover
+    - 마우스를 롤오버 했을 때
+  - :active
+    - 마우스를 클릭 했을 때
 
 ---
 ## 추천검색어 CSS Cheatsheet Selector

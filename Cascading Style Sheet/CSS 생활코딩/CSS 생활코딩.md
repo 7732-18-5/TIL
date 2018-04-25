@@ -12,13 +12,48 @@ HTML은 정보를 어떻게 잘 표현하는가가 중요하다.
 
 ![CSS](CSS.png)
 
+```css
+h1{color: red; font-size: 12px;}
+```
+
+```
+Property
+Value
+Valeue-property separator
+Declearation separator
+```
+
 ## 선택자의 종류
 
-- tag 선택자 
-- class 선택자
-- id 선택자 
-- *(전체) 선택자
-- Attribute 선택자
+- tag selector
+- class selector
+- id selector 
+- *(전체) selector
+- attribute selector
+
+```css
+ul li{
+  color: red;
+}
+ul>li{
+  color: blue;
+}
+```
+
+```css
+ul>li{
+  color: blue;
+}
+ul li{
+  color: red;
+}
+```
+
+
+
+> 무슨 차이인가?
+
+
 
 ---
 ## 추천검색어 CSS Cheatsheet Selector

@@ -1,10 +1,60 @@
-> EPUB란 무엇인가?
+> EPUB(electronic publication)란 무엇인가?
 
 ```
-EPUB(electronic publication)은 국제 디지털 출판 포럼(IDPF, International Digital Publishing Forum)에서 제정한 개방형 자유 전자서적 표준이다. EPUB은 자동공간조정(reflowable)(1)이 가능하게 디자인 되었다. 이는 EPUB으로 만들어진 내용을 볼 때 디스플레이하는 기계의 형식, 크기에 자동으로 최적화되어 보여줄 수 있다는 뜻이다. EPUB는 2007년 9월 이전에 있던 open eBook standard를 대체하기 위해 국제 디지털 출판 포럼에서 공식 표준으로 채택되었다. 
-
-출처 : http://ko.wikipedia.org/wiki/EPUB
+EPUB은 국제 디지털 출판 포럼(IDPF, International Digital Publishing Forum)에서 공동으로 제정한 전자서적표준규격이다. EPUB은 자동공간조정(reflowable)이 가능하게 디자인 되었다. 이는 EPUB으로 만들어진 내용을 볼 때 디스플레이하는 기계의 형식, 크기에 자동으로 최적화되어 보여줄 수 있다는 의미이다.
 ```
+
+> 주요기술
+
+- XHTML5
+- SVG1.1
+- CSS
+- Javascript
+- Ture Type
+- WOFF
+- SSML PLS CSS3 Speech
+- XML
+- SMIL3
+
+> 주요특징
+
+- 리플로우 레이아웃 (Reflow Layout)
+- 고정형 레이아웃 (Fixed Layout)
+
+> epub3 의 4가지 규격
+
+- epub publications 
+- epub content Documents 
+- epub open container format
+- epub media overlay
+
+> epub publications
+
+`제목과 같은 메타 데이터와 내부 콘텐츠의 구성 등을 정의하고, epub 에 포함된 파일들을 구성하기 위한 규격있다.`
+
+- 패키지 도큐먼트 (opf, 필수)
+- epub 네비게이션 도큐먼트 (사용자에게 제공되는 목차 xhtml 파일, 필수)
+- epub 콘텐츠 도큐먼트 (사용자가 일을 콘텐츠, 필수)
+- epub 스타일시트(css 2.1 + css3 일부, 선택)
+- 발음 사전 도큐먼트 (선택)
+
+> epub content Documents 
+
+`콘텐츠를 작성할 때 사용되는 리소스들을 정의하고 있다. epub에서 권장하는 데이터의 종류는 코어 미디어 타입이다.`
+
+> epub open container format
+
+`epub 를 하나의 도서 파일로 덩리하기 위한 패키징부분으로, 압축 시 규정이 설명되어 있다.`
+
+- Container.xml (epub 파일 중 가장 먼저 참조 되는 파일, 필수)
+- Signatures.xml (전자서명 관련 파일, 선택)
+- Encryption.xml (암호화에 관한 파일)
+- metadata.xml (메타 데이터, 선택)
+- rights.xml (DRM:디지털 저작권 관리 정보, 선택)
+
+> epub media overlay
+
+- `epub에 포함된 텍스트, 동영상, 음성을 동기화 시키는 방법을 규정하고 있다.`
 
 > 1. OPS (Open Publication Structure)
 >
@@ -24,30 +74,38 @@ EPUB(electronic publication)은 국제 디지털 출판 포럼(IDPF, Internation
 >
 > OCF 역시 뷰어나 저작 도구를 개발할 때 참고하는 항목으로 EPUB 저작 도구는 이 규칙을 기준으로 해서 편집자가 편집한 콘텐츠를 ‘.epub’을 확장자로 갖는 하나의 파일로 저장합니다. OCF 역시 OPF처럼 기본 개념만 알고 있어도 EPUB을 만드는데 문제가 되지 않습니다. 하지만 EPUB의 기본 구조를 알아두면 EPUB을 제작시 유용하게 활용할 수 있습니다.
 
-
-
-> sample.epub
+> epub publications 구성파일
 
 - Mimetype
 
-  - minetype file 내부엔 'application/epub+zip' 이런 형식의 정보가 담겨 있어 EPUB 파일이라는 사실을 알리는 역할을 한다. EPUB2.0에서는 위의 텍스트가 필수적이고 공백 등 다른 문자를 허용하지 않는다. 또한 이 파일은 압축을 하면 안되도록 규정되어 있습니다. EPUB3.0에서는 이런 제한이 없다.
+  ```/minetype file 의 내용
+  application/epub+zip
+  ```
+
+  - minetype 은 `epub` 라는 정보를 담고있는 메타데이터 이다. 
+  - (epub2 에서는 위의 text가 필수적으로 공백을 비롯한 다른 문자를 허용하지 않는다. 압축X, epub3에서는 제약이 없다.)
+  -  '' 이런 형식의 정보가 담겨 있어 EPUB 파일이라는 사실을 알리는 역할을 한다. EPUB2.0에서는 위의 텍스트가 필수적이고 공백 등 다른 문자를 허용하지 않는다. 또한 이 파일은 압축을 하면 안되도록 규정되어 있습니다. EPUB3.0에서는 이런 제한이 없다.
 
 - [META-INF}
 
   - container.xml
-    - sample.epub의  `root folder` 위치를 알려주고, content.opf 파일의 위치를 지정한다. 
+
+    `epub viewer 에게 epub publication의 위치를 알려주는 파일이다. contents rootfile 이라고 불린다.`
+
+    `samlple`.epub의  `root folder` 위치를 알려주고, content.opf 파일의 위치를 지정한다. 
+
     - container.xml에서 지정된 내용에 따라서 [OEBPS] 폴더 명이 달라질 수 있다. 또한 container.xml에 적혀있는 파일명과 위치에 정확히 content.opf 파일이 존재해야한다. 즉 content.opf 파일명은 container.xml파일의 정보에 따라 변경 될 수 있다. 
 
-  ```
-    <?xml version="1.0" encoding="UTF-8" ?> 
-  - <container version="1.0" xmlns="urn:oasis:names:tc:opendocument:xmlns:container">
-  - <rootfiles>
-    <rootfile full-path="OEBPS/content.opf" media-type="application/oebps-package+xml" /> 
-    </rootfiles>
-    </container>
+  ```html
+  <?xml version="1.0" encoding="UTF-8" ?> 
+  <container version="1.0" xmlns="urn:oasis:names:tc:opendocument:xmlns:container">
+  	<rootfiles>
+  		<rootfile full-path="OEBPS/content.opf" media-type="application/oebps-package+xml" /> 
+  	</rootfiles>
+  </container>
   ```
 
-- [OEBPS] ePub 의 `root folder` 역할을 하한다. 실제 콘텐츠가 위치하는 폴더이다.
+- [OEBPS] ePub 의 `root folder` 역할을 한다. 실제 콘텐츠가 위치하는 폴더이다.
   - content.opf 모든 파일의 위치와 콘텐츠에 대한 정보를 담고있다. 뷰어가 제일먼저 확인하는 파일로서 저작도구가 자동생성한다.
   - toc.ncx 책의 목차 정보를 담고있다. 저작도구가 자동생성한다.
   - [text]

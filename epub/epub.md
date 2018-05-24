@@ -114,6 +114,21 @@ EPUB은 국제 디지털 출판 포럼(IDPF, International Digital Publishing Fo
   - [css]
 
 
+```mermaid
+graph LR
+A(mimetype)
+
+B(META-INF)-->C(container.xml)
+
+a(OEBPS)-->b(Content.opf)
+    b --> c(toc.ncx)
+    c --> d[fonts]
+    c --> e[styles]
+    c --> f[image]
+    c --> g[text]
+    c -->|O| h[Misc/ect]
+```
+
 > Sigil
 
 - 표지 스타일 지정

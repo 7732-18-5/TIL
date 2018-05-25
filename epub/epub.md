@@ -129,6 +129,24 @@ a(OEBPS)-->b(Content.opf)
     c -->|O| h[Misc/ect]
 ```
 
+> opf 파일
+
+`unique-identifier` 은 opf 의 필수 입력 항목입니다.
+
+`unique-identifier` 는 GUID 나 ISBN을 사용하는 것을 권장합니다.
+
+`<dc:title>`을 사용해 책 제목을 입력합니다.
+
+`<dc:language>`로 책에 사용된 언어를 설정
+
+`Ko` 언어코드 
+
+`kr` 국가코드
+
+
+
+
+
 > Sigil
 
 - 표지 스타일 지정

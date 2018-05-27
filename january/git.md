@@ -29,3 +29,17 @@ vim fileName.txt : 'fileName.txt' 파일의 생성과 동시에 vim 에디터로
 cat fileName.txt : 'fileName.txt' 파일의 내용을 콘솔에 출력
 ```
 
+> Google search
+
+```
+a|b  
+a.b 
+intitle:a
+related:a
+a around() b
+a ~ b 
+a 1990...2000 기간 검색
+"sample" 전체문구 검색
+g**gle 기억나지 않는 단어 *
+interesting books-buy
+```

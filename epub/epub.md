@@ -485,5 +485,41 @@ html, body { height : 100%; margin : 0; padding : 0; }
 </html>
 ```
 
+```
+3.5.2.1 Container File (container.xml)
+The required container.xml file in the META-INF directory identifies the EPUB Packages in the OCF Abstract Container.
 
+The contents of this file must be valid to the schema in Schema for container.xml after removing all elements and attributes from other namespaces (including all attributes and contents of such elements).
 
+Each rootfile element must identify the location of a Package Document representing one Rendition of the EPUB Publication.
+
+An OCF Processor must consider the first rootfile element within the rootfiles element to represent the Default Rendition for the contained EPUB Publication. Reading Systems are required to present the Default Rendition, but may present other Renditions in the container.
+
+The following example shows a sample container.xml for an EPUB Publication with the root file EPUB/My Crazy Life.opf (the Package Document):
+
+<?xml version="1.0"?>
+<container version="1.0" xmlns="urn:oasis:names:tc:opendocument:xmlns:container">
+    <rootfiles>
+        <rootfile full-path="EPUB/My_Crazy_Life.opf"
+            media-type="application/oebps-package+xml" />
+    </rootfiles>
+</container>
+                    
+The following example shows SVG and XHTML Renditions bundled in the same container:
+
+<?xml version="1.0"?>
+<container version="1.0" xmlns="urn:oasis:names:tc:opendocument:xmlns:container">
+    <rootfiles>
+        <rootfile full-path="SVG/Sandman.opf"
+            media-type="application/oebps-package+xml" />
+        <rootfile full-path="XHTML/Sandman.opf"
+            media-type="application/oebps-package+xml" />
+    </rootfiles>
+</container>
+                    
+The optional links element identifies resources necessary for the processing of the OCF ZIP Container. Each of its child link elements must include an href attribute whose value identifies the location of a resource. Each link element also must include a rel attribute whose value identifies the relationship of the resource, and may include a media-type attribute whose value must be a media type [RFC2046] that specifies the type and format of the resource referenced by the link.
+
+The value of the rootfile element full-path attribute and the link element href attribute must contain a path component [RFC3986] which must take the form of a path-rootless [RFC3986] only. The path components are relative to the Root Directory.
+
+OCF Processors must ignore foreign elements and attributes within a container.xml file.
+```

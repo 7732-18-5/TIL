@@ -538,4 +538,3 @@ Note right of [Client] OS: OS란 무엇인가? 사용자에게 인터페이스�
 | [nav](https://opentutorials.org/module/552/4849) | 문서의 네비게이션 항목을 정의                         |
 | [section](https://opentutorials.org/module/552/4867) | 문서의 구획들을 정의 ([참고](https://developer.mozilla.org/ko/docs/Web/HTML/HTML5_%EB%AC%B8%EC%84%9C%EC%9D%98_%EC%84%B9%EC%85%98%EA%B3%BC_%EC%9C%A4%EA%B3%BD)) |
 | [time](https://opentutorials.org/module/552/4884) | 시간을 정의                                   |
-

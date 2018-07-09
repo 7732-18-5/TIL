@@ -577,3 +577,40 @@ OCF Processors must ignore foreign elements and attributes within a container.xm
 
 ```
 
+```
+.thumbnail_image {
+    position: relative;
+    width: 200px;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.thumbnail_image::before {
+    content: "";
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.2) 0px, transparent 5%, transparent 95%, rgba(0, 0, 0, 0.2) 100%);
+}
+
+.thumbnail {
+    width: 100%;
+    max-height: 313px;
+}
+
+.border {
+    box-sizing: border-box;
+    opacity: 0.2;
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 3;
+    border: 1px solid #000;
+}
+```

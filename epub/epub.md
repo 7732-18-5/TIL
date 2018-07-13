@@ -614,3 +614,332 @@ OCF Processors must ignore foreign elements and attributes within a container.xm
     border: 1px solid #000;
 }
 ```
+```기본템플릿
+폰트는 책에 따라 항상 바뀐다. 폰트가 더 추가될 수도 있고, 한 두 개의 폰트만 사용할 수도 있다. @font-face로 폰트를 지정할 때 font-family는 사용할 폰트의 목적에 맞게 지정해 주는게 좋다. 많은 편집자들이 font-family 이름을 폰트 파일 명으로 지정하는데 그러다보면 사용하지 않는 폰트가 추가되는 경우도 생기고 폰트가 어디에 사용됐는지 확인하기도 어렵다. 그리고 사용하지 않는 폰트는 CSS에서 삭제해 줘야하고, 시스템 폰트를 @font-face로 지정하려면 속성을 정확히 지정해 주는게 좋다. 아무런 속성 없이 시스템 폰트를 @font-face로 지정하는 편집자도 많은데 불필요한 쓰레기 데이터일 뿐이다. 
+
+/* 폰트 추가 */
+
+@font-face 
+
+	{
+
+		font-family: "본문";
+
+		src: url("../Fonts/UnBatang.ttf"); 
+
+	}
+
+
+
+@font-face 
+
+	{
+
+		font-family:"제목"; 
+
+		src: url("../Fonts/NanumGothicBold.ttf");
+
+	}
+
+
+
+* 속성은 body태그가 대신하기도 한다. HTML에서는 body 태그가 모든 다른 태그를 감싸고 있기 때문에 특정 스타일이 지정되지 않은 태그에 기본적으로 적용되는 태그이다. * 태그 역시 문서 전체에 영향을 주는 기본 스타일을 지정하는데 사용된다. 필자는 margin과 padding을 0으로 지정했지만 text-indent :1em; text-align :justify;등의 속성을 지정하기도 한다.
+
+*		
+
+	{  
+
+		padding:0;
+
+		margin: 0;
+
+	}
+
+
+
+많은 편집자들이 제목 스타일을 클래스로 지정한다. 필자는 이를 불필요한 코드와 편집 작업을 추가하는 일이라 생각한다. HTML에는 제목과 관련된 태그가 h1 ~ h6까지 6개가 있다. 지금까지 EPUB을 편집하면서 이 6개의 태그를 모두 사용해 본 적은 단 한번도 없다. 제목, 부 제목, 장 제목, 절 제목, 절 안에 있는 소제목 등 제목을 아무리 많이 넣는다 해도 4단계 이상인 책은 찾기 어렵다. 제목 태그에 스타일을 적용하면 각 제목을 테그로만 묶으면 된다. 다른 클래스를 추가할 필요가 없다. Sigil등 편집기는 제목태그로 목차를 자동 편집하기 때문에 목차를 생성하기도 쉬워진다. 그리고 문서 코드를 열어보면 제목과 본문을 확실히 구분할 수 있다.
+
+h1{
+
+/*책 제목 스타일*/
+
+font-family : "제목";
+
+font-size : 2em;
+
+text-align : center;
+
+margin : 20% 0 10% 0;
+
+text-indent : 0em;
+
+}
+
+
+
+대제목과 소제목, 본문 사이의 간격을 두는 방식은 편집자의 스타일에 따라 다르다. 이 탬플릿에서는 margin을 이용해 상하여백을 일정 비율(%)로 뒀다. 이런 방식은 디스플레이의 크기에 따라 자동으로 여백이 조절된다는 장점이 있다. 본문과 제목의 여백을 두려고 <br />을 사용하면 스마트폰에서는 여백이 넓고 태블릿에서는 여백이 좁게 보일 수 있다. %를 사용하면 텍스트가 많이 들어가지 못하는 스마트폰에서는 여백이 적어 본문이 많이 보이고, 태블릿에서는 본문과 제목 사이의 간격이 넓게 벌어져 자연스러운 편집 효과를 줄 수 있다.  
+
+h2{
+
+/*부 제목 스타일*/
+
+font-family : "제목";
+
+font-size : 1.8em;
+
+text-align : center;
+
+margin : 20% 0 10% 0;
+
+text-indent : 0em;
+
+}
+
+
+
+h3{
+
+/*장 제목 스타일*/
+
+font-family : "제목";
+
+font-size : 1.4em;
+
+text-align : left;
+
+margin : 10% 0 10% 0;
+
+text-indent : 0em;
+
+}
+
+
+
+제목에 테두리를 적용한 예를 보여주기 위해 border 관련 스타일을 몇개 추가했다. 제목 태그에도 테두리나 배경색 등 다양한 스타일 적용이 가능하다.
+
+h4{
+
+/*절 제목 스타일*/
+
+font-family : "제목";
+
+font-size : 1.2em;
+
+text-align : right;
+
+margin : 10% 0 5% 0;
+
+text-indent : 0em;
+
+/*테두리를 위해 추가한 스타일*/
+
+padding : 10px 40px;
+
+max-width : 300px;
+
+border : 2px solid yellow;
+
+border-radius : 25px;
+
+box-shadow : 10px 10px 5px grey;
+
+background-color : grey;
+
+}
+
+
+
+p태그는 본문에 사용한다. 그래서 p태그에 본문 스타일을 적용해 놓으면 편집의 90%는 끝난다. 다른 편집 없이 본문을 p태그로 묶기만 하면 편집이 끝이다. 그래서 소설처럼 편집이 많지 않은 책은 30분도 안걸려 편집을 끝낼 수 있다. 본문 스타일을 별도의 클래스로 만든다면 모든 본문에 클래스를 지정해야 하지만 p태그에 스타일을 지정하면 편집이 간단해진다. 
+
+p{
+
+font-family : "본문";
+
+font-size : 1.2em;
+
+line-height : 1.8em;
+
+text-indent : 1em;
+
+text-align : justify;
+
+}
+
+
+
+cite 태그는 짧은 인용이나 주석에 사용하는 HTML의 기본 태그다. 태그(tag)에서 (tag)처럼 단어에 간단한 설명이나 한자, 영문 표기를 하는 등에 사용할 수 있다. cite 대신 주석 클래스를 만들어서 표현할 수도 있지만 클래스 보다는 cite로 표현하는게 코딩이 훨씬 간단하다.
+
+클래스를 사용할 때 코드 : <span class="annot">(tag)</span>
+
+cite 태그를 사용할 때 코드 : <cite>(tag)</cite>
+
+cite 태그는 p 태그의 안에 주로 사용하기 때문에 글꼴, 줄간격, 정렬 등 기본 스타일은 p태그를 따른다. 
+
+cite{
+
+/*짧은 인용문이나 주석 스타일 p태그 안에서 사용*/
+
+font-size : 1em;
+
+color : red;
+
+}
+
+
+
+blockquote 태그는 문장단위 인용에 사용하는 태그다. 이 역시 클래스로 표현할 수 있지만 blockquote를 사용하면 코딩이 간단해진다. 아래 스타일에서는 margin과 padding을 다른 방식으로 사용했다. 문단 전체를 왼쪽으로 들여쓰기 하기 위해 margin을 5% 줬다. 간격을 px로 줄 수도 있지만 스마트폰에서 5px는 본문과 구분이 되지만 태블릿에서 5px는 거의 구분이 되지 않기 때문에 %를 사용했다. 반면 padding은 px를 썼다. 테두리와 텍스트 사이에 여백이 없으면 아래처럼 답답한 느낌이 든다. 약간의 여백만 있어도 이런 문제는 해결되기 때문에 고정형인 px를 사용해서 여백을 뒀다. 
+
+blockquote{
+
+/*문장 인용*/
+
+font-size : 1.2em;
+
+line-height : 1.8em;
+
+text-indent : 1em;
+
+text-align : justify;
+
+margin : 0 0 0 5%;
+
+padding : 5px;
+
+background-color : grey; 
+
+
+}
+
+
+
+strong 태그는 단어나 문장을 강조하기 위해 사용한다. 편집자가 원하는 스타일을 적용하면 되고 여기에서는 밑줄과 파란색 글자로 강조를 했다. 이 역시 p태그 안에서 주로 사용하기 때문에 p태그의 기본 스타일은 p태그의 스타일을 따른다. 역시 클래스를 이용해도 되지만 태그를 쓰면 코드가 간결해진다.  
+
+strong {
+
+/*단어나 문장의 강조
+
+p태그 안에서 사용*/
+
+text-decoration : underline;
+
+color : blue;
+
+}
+
+
+
+윗첨자와 아랫첨자는 sup와 sub 태그를 그대로 사용해도 되지만 스타일을 적용해 원하는 대로 표현할 수도 있다. 클래스로 사용이 가능하다. 
+
+sup{
+
+/*윗첨자
+
+p태그 안에서 사용*/
+
+vertical-align: super;
+
+font-size : 0.6em;
+
+}
+
+
+
+sub{
+
+/*아랫첨자
+
+vertical-align: sub;
+
+font-size : 0.6em;
+
+}
+
+
+
+편집을 하다 보면 왼쪽, 오른쪽, 가운데 정렬이 필요할 때가 있다. 문단 정렬 역시 스타일을 지정해 두면 편하다. 문단 정렬을 할 때 text-indent : 0; 속성을 부여하는게 좋다. 들여쓰기가 기본으로 지정되어 있을 경우 가운데 정렬을 하면 들여쓰기 만큼 왼쪽으로 치우치게 된다. text-indent:0;을 지정하면 이런 문제를 해결할 수 있다. 
+
+.txt_center {
+
+text-align:center;
+
+text-indent: 0px !important; /* 강제로 들여쓰기를 하지 않음 */
+
+}
+
+
+
+.txt_left {
+
+text-align:left;
+
+text-indent: 0px !important; /* 강제로 들여쓰기를 하지 않음 */}
+
+}
+
+
+
+.txt_right {
+
+text-align:right;
+
+text-indent: 0px !important; /* 강제로 들여쓰기를 하지 않음 */
+
+}
+
+
+
+이미지를 어울림 처리하기 위한 스타일이다. 이미지를 왼쪽이나 오른쪽에 배치하고 이미지 옆으로 텍스트가 나오게 하려면 float 속성을 적용해야 한다.
+
+.img_left {
+
+float : left; /* 이미지를 문단의 왼쪽에 배치 */
+
+text-align : center;
+
+}
+
+
+
+.img_right {
+
+float : right; /* 이미지를 문단의 오른쪽에 배치 */
+
+text-align : center;
+
+}
+
+
+
+표지이미지에 사용할 수 있는 스타일이다.많은 전자책 파일이 중앙정렬을 해도 오른쪽으로 약간 치우치거나 정렬을 하지 않아 왼쪽에 붙는 경우가 많다. 뷰어의 기본 여백으로 인해 화면에 가득 차지 않는 경우도 있다. 이런 부분들을 고려해서  표지이미지가 화면의 중앙에 가득 차도록 보여주는 스타일이다.
+
+
+
+p.cover { /* p 태그 대신 div 태그를 사용할 수 있음 */
+
+text-indent : 0;
+
+text-align : center;
+
+width : 100%;
+
+margin : 0;
+
+padding : 0;
+
+}
+
+img.cover{
+
+width : 100%;
+
+margin : 0;
+
+padding : 0;
+
+}
+
+
+
+출처: http://www.epubguide.net/45?category=518600 [내맘대로의 EPUB 제작 가이드]
+```
+

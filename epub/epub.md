@@ -943,3 +943,29 @@ padding : 0;
 출처: http://www.epubguide.net/45?category=518600 [내맘대로의 EPUB 제작 가이드]
 ```
 
+```
+text-indent
+color
+text-align 문단정렬 
+line-height 행간
+letter-spacing 자간
+word-spacing 단어사이간격
+text-decoration
+white-space:?
+direction
+vertical-align
+text-shadow
+```
+
+```
+* {
+margin : 0;
+padding : 0;
+}
+
+p {
+text-indent : 1em;
+text-align : justify;
+line-height : 1.5em;
+}
+```

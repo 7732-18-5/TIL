@@ -21,5 +21,5 @@ echo 'You got to trust me on this, I saved the world'
 ```
 {% endcode %}
 
-![](.gitbook/assets/image-sample.png = 1920*1080)
+![](.gitbook/assets/image-sample.png)
 

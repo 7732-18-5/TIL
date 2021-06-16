@@ -23,4 +23,4 @@ echo 'You got to trust me on this, I saved the world'
 
 ![](.gitbook/assets/image-sample.png)
 
-<img src=".gitbook/assets/image-sample.png" width="1920" height=360 />
+<img src=".gitbook/assets/image-sample.png" width="1920"/>
